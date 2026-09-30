@@ -7,13 +7,13 @@
   "url": "https://elevation75.github.io",
 
   "author": {
-    "name": "Gabi",
+    "name": "Elevation",
     "role": "Autor & pasionat de Linux",
     "bio": "Scriu despre Linux așa cum aș fi vrut să mi-l explice mie cineva la început: fără jargon inutil, cu pași clari și cu răbdare.",
     "photo": "/assets/img/author.jpg"
   },
 
-  "email": "",
+  "email": "elevation@europe.com",
 
   "newsletter": {
     "enabled": false,
@@ -24,10 +24,9 @@
   },
 
   "social": [
-    { "name": "Facebook", "url": "", "icon": "facebook" },
+    { "name": "Telegram", "url": "", "icon": "telegram" },
     { "name": "Instagram", "url": "", "icon": "instagram" },
-    { "name": "Discord", "url": "", "icon": "discord" },
-    { "name": "X", "url": "", "icon": "x" }
+    { "name": "Discord", "url": "", "icon": "discord" }
   ],
 
   "footer": {
