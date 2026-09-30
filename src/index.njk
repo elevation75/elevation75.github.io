@@ -1,0 +1,254 @@
+---
+layout: layouts/base.njk
+bodyClass: page-home
+description: "Blog despre Linux pentru începători: ce este Linux, cum alegi o distribuție, cum îl instalezi și cum îl folosești de la zero, explicat fără jargon."
+---
+{%- from "macros/icons.njk" import icon -%}
+{%- from "partials/post-card.njk" import postCard -%}
+
+{# The guided reading path, ordered for someone starting from zero. #}
+{%- set path = [
+  { "step": "01", "title": "Haideți să învățăm Linux!", "text": "De unde pornim, ce vom explora aici și cum te miști de la zero.", "slug": "haideti-sa-invatam-linux" },
+  { "step": "02", "title": "De ce merită să înveți Linux?", "text": "Cinci motive, fără ocolișuri: gratuit, stabil, sigur și al tău.", "slug": "de-ce-este-benefic-sa-invati-linux" },
+  { "step": "03", "title": "Ce este Linux, de fapt?", "text": "Kernel, distribuție, sistem de operare — pune ordine în termeni înainte de orice altceva.", "slug": "linux-este-miezul-kernel" },
+  { "step": "04", "title": "Alege-ți distribuția", "text": "Sunt sute. Îți arăt familiile importante și cum să alegi una care ți se potrivește.", "slug": "un-ocean-de-distributii" },
+  { "step": "05", "title": "DE sau WM?", "text": "Interfața e prima cu care intri în contact. Vezi ce alegi și de ce contează.", "slug": "de-sau-wm" },
+  { "step": "06", "title": "Linux vs Windows vs macOS", "text": "Ce câștigi, ce pierzi și de ce merită măcar să încerci.", "slug": "linux-vs-mac-vs-windows" }
+] -%}
+
+{# ---------- Hero ---------- #}
+<section class="hero">
+  <div class="hero-glow" aria-hidden="true"></div>
+  <div class="container hero-inner">
+    <div class="hero-copy">
+      <p class="eyebrow"><span class="eyebrow-dot" aria-hidden="true"></span>{{ site.tagline }}</p>
+
+      <h1 class="hero-title">
+        Primii pași spre
+        <span class="hero-title-accent">Linux</span>
+      </h1>
+
+      <p class="hero-lead">
+        Dacă Linux ți se pare o lume închisă, cu oameni care vorbesc repede și scriu
+        comenzi ciudate — ești exact unde trebuie. Aici pornim de la zero: ce este
+        Linux, cum alegi, cum îl instalezi și cum îl faci al tău.
+      </p>
+
+      <div class="hero-actions">
+        <a class="btn btn-primary btn-lg" href="/blog/">
+          Începe cu primul articol
+          {{ icon("arrow-right", "icon-sm") }}
+        </a>
+        <a class="btn btn-ghost btn-lg" href="/despre/">Despre mine</a>
+      </div>
+
+      <dl class="hero-stats">
+        <div class="hero-stat">
+          <dt>Articole publicate</dt>
+          <dd>{{ collections.posts.length }}</dd>
+        </div>
+        <div class="hero-stat">
+          <dt>Categorii</dt>
+          <dd>{{ collections.categories.length }}</dd>
+        </div>
+        <div class="hero-stat">
+          <dt>Cost</dt>
+          <dd>0 lei</dd>
+        </div>
+      </dl>
+    </div>
+
+    <div class="hero-visual">
+      <div class="hero-frame">
+        <picture>
+          <source srcset="/assets/img/hero.webp" type="image/webp">
+          <img src="/assets/img/hero.jpg" alt="Ilustrație: primii pași în lumea Linux"
+               width="963" height="400" decoding="async" fetchpriority="high">
+        </picture>
+      </div>
+
+      <div class="terminal-card" aria-hidden="true">
+        <div class="terminal-bar">
+          <span class="terminal-dot terminal-dot--red"></span>
+          <span class="terminal-dot terminal-dot--yellow"></span>
+          <span class="terminal-dot terminal-dot--green"></span>
+          <span class="terminal-title">primii-pasi ~ termina</span>
+        </div>
+        <div class="terminal-body">
+          <p><span class="t-prompt">$</span> sudo apt install curiozitate</p>
+          <p class="t-out">Lectura se instalează deja…</p>
+          <p><span class="t-prompt">$</span> <span class="t-cursor"></span></p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+{# ---------- De ce ---------- #}
+<section class="section">
+  <div class="container">
+    <div class="section-head section-head--center">
+      <p class="eyebrow">Cum scriu aici</p>
+      <h2 class="section-title">Linux explicat pe înțelesul oricui</h2>
+      <p class="section-sub">
+        Nu ai nevoie de experiență anterioară cu Linux. Fiecare termen tehnic este explicat direct în context, exact atunci când îl întâlnești.
+      </p>
+    </div>
+
+    <div class="feature-grid">
+      <article class="feature">
+        <span class="feature-icon feature-icon--mint">{{ icon("seedling") }}</span>
+        <h3 class="feature-title">Pornești de la zero</h3>
+        <p class="feature-text">
+          Nu trebuie să știi ce e un terminal. Nu trebuie să fi instalat vreodată
+          ceva pe calculator. Începem cu „ce este” înainte de „cum se face”.
+        </p>
+      </article>
+
+      <article class="feature">
+        <span class="feature-icon feature-icon--amber">{{ icon("layers") }}</span>
+        <h3 class="feature-title">Fără jargon aruncat în față</h3>
+        <p class="feature-text">
+          Kernel, distribuție, DE, WM, pachete — toate apar explicate acolo unde
+          ai nevoie de ele, cu exemple din lumea reală.
+        </p>
+      </article>
+
+      <article class="feature">
+        <span class="feature-icon feature-icon--coral">{{ icon("terminal") }}</span>
+        <h3 class="feature-title">Practic, nu doar teorie</h3>
+        <p class="feature-text">
+          Articolele sunt gândite ca să poți face ceva concret după ce le citești:
+          să alegi, să instalezi, să configurezi.
+        </p>
+      </article>
+    </div>
+  </div>
+</section>
+
+{# ---------- Drumul în șase pași ---------- #}
+{%- if collections.posts.length %}
+<section class="section section--tint">
+  <div class="container">
+    <div class="section-head">
+      <div>
+        <p class="eyebrow">Ordinea recomandată</p>
+        <h2 class="section-title">Drumul tău în șase pași</h2>
+        <p class="section-sub">
+          Dacă nu știi de unde să începi, citește-le în ordinea asta. Se construiesc
+          unul pe altul și duc de la „ce e Linux?” la „ok, înțeleg”.
+        </p>
+      </div>
+      <a class="text-link section-head-link" href="/blog/">
+        Toate postările {{ icon("arrow-right", "icon-sm") }}
+      </a>
+    </div>
+
+    <ol class="path">
+      {%- for step in path %}
+      {%- set post = collections.posts | findByUrl("/blog/" + step.slug + "/") %}
+      {%- if post %}
+      <li class="path-item">
+        <span class="path-step" aria-hidden="true">{{ step.step }}</span>
+        <div class="path-body">
+          <h3 class="path-title">
+            <a href="{{ post.url }}">{{ step.title }}</a>
+          </h3>
+          <p class="path-text">{{ step.text }}</p>
+          <div class="path-foot">
+            <span class="path-time">{{ icon("clock", "icon-xs") }} {{ post.data.readingMinutes }} min</span>
+            <a class="text-link" href="{{ post.url }}" aria-label="Citește: {{ step.title }}">
+              Citește {{ icon("arrow-right", "icon-sm") }}
+            </a>
+          </div>
+        </div>
+      </li>
+      {%- endif %}
+      {%- endfor %}
+    </ol>
+  </div>
+</section>
+{%- endif %}
+
+{# ---------- Categorii ---------- #}
+{%- if collections.categories.length %}
+<section class="section">
+  <div class="container">
+    <div class="section-head">
+      <div>
+        <p class="eyebrow">După subiect</p>
+        <h2 class="section-title">Răsfoiește pe categorii</h2>
+      </div>
+    </div>
+
+    <div class="cat-grid">
+      {%- for cat in collections.categories %}
+      <a class="cat-card cat-card--{{ cat.accent }}" href="/categorii/{{ cat.slug }}/">
+        <span class="cat-icon">{{ icon(cat.icon) }}</span>
+        <span class="cat-name">{{ cat.name }}</span>
+        <span class="cat-desc">{{ cat.description }}</span>
+        <span class="cat-count">
+          {%- if cat.posts.length %}
+          {{ cat.posts.length }} {% if cat.posts.length == 1 %}articol{% else %}articole{% endif %}
+          {%- else %}
+          în curând
+          {%- endif %}
+          {{ icon("arrow-right", "icon-sm") }}
+        </span>
+      </a>
+      {%- endfor %}
+    </div>
+  </div>
+</section>
+{%- endif %}
+
+{# ---------- Despre ---------- #}
+<section class="section section--tint">
+  <div class="container">
+    <div class="about-teaser">
+      <div class="about-teaser-photo">
+        <img src="{{ site.author.photo }}" alt="{{ site.author.name }}"
+             width="360" height="360" loading="lazy" decoding="async">
+      </div>
+      <div class="about-teaser-body">
+        <p class="eyebrow">Despre mine</p>
+        <h2 class="section-title">Salut, sunt {{ site.author.name }}.</h2>
+        <p class="about-teaser-text">
+          Scriu despre Linux așa cum aș fi vrut să mi-l explice cineva când am
+          deschis terminalul prima oară: fără grabă, fără presupuneri și fără
+          să-mi fie teamă că „stric ceva”.
+        </p>
+        <p class="about-teaser-text">
+          Dacă ai ajuns aici înseamnă că vrei cel puțin să înțelegi cu ce se
+          mănâncă. Restul vine de la sine.
+        </p>
+        <div class="hero-actions">
+          <a class="btn btn-secondary" href="/despre/">
+            Citește mai multe {{ icon("arrow-right", "icon-sm") }}
+          </a>
+          <a class="btn btn-ghost" href="/contact/">Ia legătura</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+{# ---------- Newsletter / CTA ---------- #}
+{%- if site.newsletter.enabled and site.newsletter.action %}
+<section class="section">
+  <div class="container">
+    <div class="cta-band">
+      <div class="cta-band-copy">
+        <h2 class="cta-band-title">{{ site.newsletter.title }}</h2>
+        <p class="cta-band-text">{{ site.newsletter.blurb }}</p>
+      </div>
+      <form class="newsletter-form" action="{{ site.newsletter.action }}" method="post" target="_blank">
+        <label class="sr-only" for="newsletter-email">Adresa ta de email</label>
+        <input class="newsletter-input" id="newsletter-email" type="email" name="email"
+               placeholder="adresa ta de email" required autocomplete="email">
+        <button class="btn btn-primary newsletter-btn" type="submit">{{ site.newsletter.button }}</button>
+      </form>
+    </div>
+  </div>
+</section>
+{%- endif %}

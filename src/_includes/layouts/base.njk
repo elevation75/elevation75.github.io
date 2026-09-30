@@ -1,0 +1,81 @@
+{%- set fullTitle = (title + " · " + site.name) if title else (site.name + " — " + site.tagline) -%}
+{%- set metaDescription = description or site.description -%}
+{%- set canonical = (site.url | default("", true)) + page.url -%}
+{%- set ogImageAbs = site.url | default("", true) + (ogImage or cover.webp or cover.jpg or "/assets/img/hero.jpg") -%}
+
+<!doctype html>
+<html lang="{{ site.lang }}">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{{ fullTitle }}</title>
+  <meta name="description" content="{{ metaDescription }}">
+  <link rel="canonical" href="{{ canonical }}">
+  <meta name="author" content="{{ site.author.name }}">
+  <meta name="theme-color" content="#FFF9F1">
+  {%- if noindex %}
+  <meta name="robots" content="noindex, follow">
+  {%- else %}
+  <meta name="robots" content="index, follow, max-image-preview:large">
+  {%- endif %}
+
+  {# Open Graph #}
+  <meta property="og:type" content="{{ ogType or 'website' }}">
+  <meta property="og:site_name" content="{{ site.name }}">
+  <meta property="og:title" content="{{ fullTitle }}">
+  <meta property="og:description" content="{{ metaDescription }}">
+  <meta property="og:url" content="{{ canonical }}">
+  <meta property="og:image" content="{{ ogImageAbs }}">
+  <meta property="og:locale" content="ro_RO">
+
+  {# Twitter #}
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="{{ fullTitle }}">
+  <meta name="twitter:description" content="{{ metaDescription }}">
+  <meta name="twitter:image" content="{{ ogImageAbs }}">
+
+  <link rel="icon" href="/assets/img/favicon.svg" type="image/svg+xml">
+  <link rel="alternate icon" href="/assets/img/logo.png" type="image/png">
+  <link rel="apple-touch-icon" href="/assets/img/logo.png">
+  <link rel="alternate" type="application/rss+xml" title="{{ site.name }}" href="/feed.xml">
+
+  <link rel="stylesheet" href="{{ "/assets/css/fonts.css" | assetv }}">
+  <link rel="stylesheet" href="{{ "/assets/css/main.css" | assetv }}">
+
+  {%- if jsonLd %}
+  <script type="application/ld+json">{{ jsonLd | safe }}</script>
+  {%- elif isPost %}
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "headline": {{ title | dump | safe }},
+    "description": {{ metaDescription | dump | safe }},
+    "datePublished": "{{ page.date | isoDate }}",
+    "dateModified": "{{ (updated or page.date) | isoDate }}",
+    "inLanguage": "ro",
+    "author": { "@type": "Person", "name": {{ site.author.name | dump | safe }} },
+    "publisher": { "@type": "Person", "name": {{ site.author.name | dump | safe }} },
+    "mainEntityOfPage": { "@type": "WebPage", "@id": {{ canonical | dump | safe }} },
+    "image": {{ ogImageAbs | dump | safe }},
+    "wordCount": {{ content | stripHtml | wordcount }},
+    "keywords": {{ (category or "") | dump | safe }}
+  }
+  </script>
+  {%- endif %}
+</head>
+
+<body class="{{ bodyClass | default('', true) }}">
+  <a class="skip-link" href="#continut">Sari la conținut</a>
+
+  {% include "partials/header.njk" %}
+
+  <main id="continut">
+    {{ content | safe }}
+  </main>
+
+  {% include "partials/footer.njk" %}
+
+  <script src="{{ "/assets/js/site.js" | assetv }}" defer></script>
+</body>
+</html>

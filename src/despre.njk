@@ -1,0 +1,134 @@
+---
+layout: layouts/base.njk
+bodyClass: page-about
+permalink: /despre/
+title: Despre
+description: "De ce există acest blog despre Linux și ce vei găsi în el: explicații de la zero, fără jargon, pentru cei care vor să încerce Linux pentru prima dată."
+---
+{%- from "macros/icons.njk" import icon -%}
+
+<header class="page-header">
+  <div class="container container--narrow">
+    <p class="eyebrow">Despre</p>
+    <h1 class="page-title">Salut. Aici pornim de la zero.</h1>
+    <p class="page-lead">
+      «{{ site.name }}» este un ghid pentru cei care vor să încerce Linux și
+      să afle, în sfârșit, ce este și cu ce se mănâncă.
+    </p>
+  </div>
+</header>
+
+<section class="section section--flush">
+  <div class="container container--narrow">
+    <div class="about-hero">
+      <img class="about-hero-photo" src="{{ site.author.photo }}"
+           alt="{{ site.author.name }}" width="200" height="200"
+           loading="lazy" decoding="async">
+      <div>
+        <p class="about-hero-name">{{ site.author.name }}</p>
+        <p class="about-hero-role">{{ site.author.role }}</p>
+      </div>
+    </div>
+
+    <div class="prose prose--wide">
+      <p class="lede">
+        Linux are o reputație care îi ține pe mulți la distanță: se spune că e
+        pentru programatori, că trebuie să știi comenzi din memorie și că, dacă
+        apeși greșit ceva, strici calculatorul. Nu e așa — și anume asta încerc
+        să demonstrez aici.
+      </p>
+
+      <p>
+        Am învățat Linux singur, deschizând un terminal și apoi închizându-l la
+        loc, nedumerit. Ce aș fi vrut să am atunci era un loc în care termenii să
+        fie explicați pe rând, în ordinea în care apar, și în care să nu fiu
+        presupus că știu deja ce e un kernel sau o distribuție.
+      </p>
+
+      <h2>Ce vei găsi aici</h2>
+
+      <p>
+        Articole scurte și independente, pe patru categorii. Fiecare răspunde la
+        o singură întrebare și poate fi citit fără să fi citit înainte altceva.
+      </p>
+
+      <ul>
+        <li>
+          <strong>Inițiere</strong> — ce este Linux, cum e structurat, ce sunt
+          distribuțiile și de unde începi.
+        </li>
+        <li>
+          <strong>Instalare</strong> — cum pui Linux pe calculator fără să pierzi
+          ce aveai.
+        </li>
+        <li>
+          <strong>Administrare</strong> — pachete, actualizări, permisiuni, tot
+          ce ține sistemul sănătos.
+        </li>
+        <li>
+          <strong>Customizare</strong> — medii desktop, window managere și teme
+          ca să-l faci al tău.
+        </li>
+      </ul>
+
+      <h2>Cum sunt scrise articolele</h2>
+
+      <p>
+        Pornesc de la ideea că cititorul nu a mai văzut Linux în viața lui.
+        Fiecare termen nou e explicat în momentul în care apare, cu un exemplu
+        concret, și fără să sar peste pași. Dacă un articol folosește o comandă,
+        vei găsi și explicația a ce face ea — nu doar textul de copiat.
+      </p>
+
+      <div class="callout callout--note">
+        <span class="callout-icon">{{ icon("info") }}</span>
+        <div>
+          <p class="callout-title">De unde să începi?</p>
+          <p>
+            Cu categoria <a href="/categorii/initiere/">Inițiere</a>, în ordinea
+            articolelor. Sau direct cu
+            <a href="/blog/linux-este-miezul-kernel/">Linux este… miezul (kernel)</a>,
+            care așază toate conceptele la locul lor.
+          </p>
+        </div>
+      </div>
+
+      <h2>Despre nume</h2>
+
+      <p>
+        Linux nu se învață într-o zi și nici nu trebuie. Se învață în pași mici,
+        unul pe rând, cât să nu te simți pierdut. Exact ce încearcă să facă
+        blogul ăsta.
+      </p>
+
+      <p>
+        Dacă un articol ți-a fost de folos — sau dacă ți-a lăsat o întrebare —
+        <a href="/contact/">scrie-mi</a>. Îmi place să știu pe unde se împiedică
+        oamenii la început, ca să scriu despre asta.
+      </p>
+    </div>
+  </div>
+</section>
+
+<section class="section section--tight">
+  <div class="container container--narrow">
+    <div class="next-steps">
+      <a class="next-step" href="/blog/">
+        <span class="next-step-icon">{{ icon("book") }}</span>
+        <span>
+          <strong>Toate postările</strong>
+          <small>{{ collections.posts.length }} articole, de la cel mai recent</small>
+        </span>
+        {{ icon("arrow-right", "icon-sm") }}
+      </a>
+      <a class="next-step" href="/contact/">
+        <span class="next-step-icon">{{ icon("mail") }}</span>
+        <span>
+          <strong>Ia legătura</strong>
+          <small>Întrebări, sugestii sau subiecte pe care vrei să le acopăr</small>
+        </span>
+        {{ icon("arrow-right", "icon-sm") }}
+      </a>
+    </div>
+  </div>
+</section>

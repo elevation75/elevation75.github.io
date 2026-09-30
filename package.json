@@ -1,0 +1,31 @@
+{
+  "name": "primii-pasi-spre-linux",
+  "version": "1.0.0",
+  "description": "Blog: Primii pași spre Linux — ghid pentru începători",
+  "type": "module",
+  "private": true,
+  "scripts": {
+    "dev": "eleventy --serve --port=8090",
+    "start": "eleventy --serve --port=8090",
+    "predev": "node scripts/sync-covers.mjs",
+    "prebuild": "node scripts/sync-covers.mjs",
+    "build": "npm run clean && eleventy",
+    "clean": "rm -rf dist",
+    "check": "node scripts/lint-posts.mjs && node scripts/check-site.mjs && node scripts/check-html.mjs",
+    "articol": "node scripts/lint-posts.mjs",
+    "verify": "npm run build && npm run check",
+    "images": "bash scripts/fetch-images.sh",
+    "covers": "bash scripts/generate-covers.sh",
+    "cover": "bash scripts/cover-from-photo.sh",
+    "cover:titlu": "bash scripts/generate-covers.sh",
+    "fonts": "node scripts/fetch-fonts.mjs"
+  },
+  "devDependencies": {
+    "@11ty/eleventy": "^3.1.2",
+    "@11ty/eleventy-plugin-rss": "^2.0.2",
+    "@11ty/eleventy-plugin-syntaxhighlight": "^5.0.2",
+    "markdown-it": "^14.1.0",
+    "markdown-it-anchor": "^9.2.0",
+    "markdown-it-footnote": "^4.0.0"
+  }
+}

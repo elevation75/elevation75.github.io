@@ -1,0 +1,63 @@
+---
+layout: layouts/base.njk
+bodyClass: page-category
+pagination:
+  data: collections.categories
+  size: 1
+  alias: category
+permalink: /categorii/{{ category.slug }}/
+eleventyComputed:
+  title: "{{ category.name }}"
+  description: "{{ category.description }}"
+---
+{%- from "macros/icons.njk" import icon -%}
+{%- from "partials/post-card.njk" import postCard -%}
+
+<header class="page-header page-header--accent">
+  <div class="container container--narrow">
+    <nav class="breadcrumb" aria-label="Fir de navigare">
+      <a href="/">Acasă</a>
+      <span class="breadcrumb-sep" aria-hidden="true">/</span>
+      <a href="/blog/">Postări</a>
+      <span class="breadcrumb-sep" aria-hidden="true">/</span>
+      <span class="breadcrumb-current" aria-current="page">{{ category.name }}</span>
+    </nav>
+
+    <span class="chip chip--{{ category.accent }} chip--lg">{{ icon(category.icon, "icon-sm") }} {{ category.name }}</span>
+
+    <h1 class="page-title">{{ category.name }}</h1>
+    <p class="page-lead">{{ category.description }}</p>
+  </div>
+</header>
+
+<section class="section section--flush">
+  <div class="container">
+    {%- if collections.categories.length %}
+    <nav class="filter-bar" aria-label="Filtrează postările după categorie">
+      <a class="filter-chip" href="/blog/">Toate <span class="filter-count">{{ collections.posts.length }}</span></a>
+      {%- for cat in collections.categories %}
+      <a class="filter-chip{% if cat.slug == category.slug %} is-active{% endif %}"
+         href="/categorii/{{ cat.slug }}/"
+         {% if cat.slug == category.slug %}aria-current="page"{% endif %}>
+        {{ cat.name }} <span class="filter-count">{{ cat.posts.length }}</span>
+      </a>
+      {%- endfor %}
+    </nav>
+    {%- endif %}
+
+    {%- if category.posts.length %}
+    <div class="card-grid card-grid--2">
+      {%- for post in category.posts %}
+      {{ postCard(post) }}
+      {%- endfor %}
+    </div>
+    {%- else %}
+    <div class="empty-state">
+      <span class="empty-state-icon">{{ icon(category.icon) }}</span>
+      <h2>Încă nimic aici</h2>
+      <p>Prima postare din categoria «{{ category.name }}» este în lucru.</p>
+      <a class="btn btn-secondary" href="/blog/">Vezi toate postările</a>
+    </div>
+    {%- endif %}
+  </div>
+</section>

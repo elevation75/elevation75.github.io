@@ -1,0 +1,67 @@
+{% from "macros/icons.njk" import icon %}
+{%- set socialLinks = site.social | where("url") -%}
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+
+      <div class="footer-brand">
+        <a class="brand" href="/">
+          <span class="brand-mark">
+            <img src="/assets/img/logo.png" alt="" width="46" height="46" loading="lazy" decoding="async">
+          </span>
+          <span class="brand-text">
+            <span class="brand-title">{{ site.name }}</span>
+            <span class="brand-sub">{{ site.tagline }}</span>
+          </span>
+        </a>
+        <p class="footer-note">{{ site.footer.note }}</p>
+        {%- if socialLinks.length %}
+        <ul class="social-list">
+          {%- for s in socialLinks %}
+          <li><a class="social-link" href="{{ s.url }}" rel="me noopener" target="_blank">{{ s.name }}</a></li>
+          {%- endfor %}
+        </ul>
+        {%- endif %}
+      </div>
+
+      <nav class="footer-col" aria-label="Navigare">
+        <h2 class="footer-heading">Navigare</h2>
+        <ul class="footer-list">
+          <li><a href="/">Acasă</a></li>
+          <li><a href="/blog/">Toate postările</a></li>
+          <li><a href="/cauta/">Caută</a></li>
+          <li><a href="/despre/">Despre mine</a></li>
+          <li><a href="/contact/">Contact</a></li>
+          <li><a href="/feed.xml">{{ icon("rss", "icon-xs") }} Feed RSS</a></li>
+        </ul>
+      </nav>
+
+      {%- if collections.categories.length %}
+      <nav class="footer-col" aria-label="Categorii">
+        <h2 class="footer-heading">Categorii</h2>
+        <ul class="footer-list">
+          {%- for cat in collections.categories %}
+          <li><a href="/categorii/{{ cat.slug }}/">{{ cat.name }} <span class="count">{{ cat.posts.length }}</span></a></li>
+          {%- endfor %}
+        </ul>
+      </nav>
+      {%- endif %}
+
+      <div class="footer-col footer-cta">
+        <h2 class="footer-heading">Începe de aici</h2>
+        <p class="footer-cta-text">Nu știi de unde să pornești? Postările din categoria Inițiere sunt făcute exact pentru asta.</p>
+        <a class="btn btn-secondary btn-sm" href="/categorii/initiere/">
+          Vezi categoria Inițiere
+          {{ icon("arrow-right", "icon-sm") }}
+        </a>
+      </div>
+
+    </div>
+
+    <div class="footer-bottom">
+      <p>© {{ "now" | year }} {{ site.name }}. Toate drepturile rezervate.</p>
+      <p class="footer-built">Static, rapid și fără cookie-uri de urmărire.</p>
+    </div>
+  </div>
+</footer>

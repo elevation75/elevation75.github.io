@@ -1,0 +1,52 @@
+---
+layout: layouts/base.njk
+bodyClass: page-blog
+permalink: /blog/
+title: Postări
+description: "Toate articolele din blogul Primii pași spre Linux, ordonate de la cel mai recent: inițiere, instalare, administrare și customizare."
+---
+{%- from "macros/icons.njk" import icon -%}
+{%- from "partials/post-card.njk" import postCard -%}
+
+<header class="page-header">
+  <div class="container container--narrow">
+    <p class="eyebrow">Arhiva</p>
+    <h1 class="page-title">Toate postările</h1>
+    <p class="page-lead">
+      {{ collections.posts.length }} {% if collections.posts.length == 1 %}articol{% else %}articole{% endif %},
+      de la cel mai recent la cel mai vechi. Dacă ești la început, începe cu
+      categoria <a href="/categorii/initiere/">Inițiere</a>.
+    </p>
+  </div>
+</header>
+
+<section class="section section--flush">
+  <div class="container">
+    {%- if collections.categories.length %}
+    <nav class="filter-bar" aria-label="Filtrează postările după categorie">
+      <a class="filter-chip is-active" href="/blog/" aria-current="page">
+        Toate <span class="filter-count">{{ collections.posts.length }}</span>
+      </a>
+      {%- for cat in collections.categories %}
+      <a class="filter-chip" href="/categorii/{{ cat.slug }}/">
+        {{ cat.name }} <span class="filter-count">{{ cat.posts.length }}</span>
+      </a>
+      {%- endfor %}
+    </nav>
+    {%- endif %}
+
+    {%- if collections.posts.length %}
+    <div class="card-grid card-grid--2">
+      {%- for post in collections.posts %}
+      {{ postCard(post) }}
+      {%- endfor %}
+    </div>
+    {%- else %}
+    <div class="empty-state">
+      <span class="empty-state-icon">{{ icon("book") }}</span>
+      <h2>Primul articol e pe drum</h2>
+      <p>Încă nu am publicat nimic. Revin în curând.</p>
+    </div>
+    {%- endif %}
+  </div>
+</section>

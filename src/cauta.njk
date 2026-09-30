@@ -1,0 +1,56 @@
+---
+layout: layouts/base.njk
+bodyClass: page-search
+permalink: /cauta/
+title: Caută
+description: "Caută în articolele din blogul Primii pași spre Linux: titluri, secțiuni și textul complet al articolelor."
+---
+{%- from "macros/icons.njk" import icon -%}
+
+<header class="page-header">
+  <div class="container container--narrow">
+    <p class="eyebrow">Căutare</p>
+    <h1 class="page-title">Găsește exact ce te interesează</h1>
+    <p class="page-lead">
+      Caută în titluri, secțiuni și în textul articolelor. Scrii un cuvânt sau
+      o expresie — rezultatele apar pe loc, fără să reîncarci pagina.
+    </p>
+
+    <form class="search-form" role="search" data-search-form>
+      <span class="search-form-icon" aria-hidden="true">{{ icon("search") }}</span>
+      <label class="sr-only" for="q">Caută în articole</label>
+      <input class="search-input" id="q" name="q" type="search"
+             autocomplete="off" spellcheck="false"
+             placeholder="Ex: alegerea unei distribuții, apt update, Proton…"
+             data-search-input>
+      <button class="search-clear" type="button" data-search-clear hidden
+              aria-label="Șterge căutarea">{{ icon("close", "icon-sm") }}</button>
+    </form>
+
+    <p class="search-status" data-search-status role="status" aria-live="polite"></p>
+  </div>
+</header>
+
+<section class="section section--flush">
+  <div class="container container--narrow">
+    <div class="search-results" data-search-results></div>
+
+    <div class="search-suggest" data-search-suggest>
+      <p class="search-suggest-title">Încearcă un cuvânt cheie</p>
+      <div class="search-suggest-list">
+        {%- set sugestii = ["distribuții", "instalare", "terminal", "kernel", "Proton", "dual-boot", "actualizări"] -%}
+        {%- for s in sugestii %}
+        <button class="filter-chip" type="button" data-suggest="{{ s }}">{{ s }}</button>
+        {%- endfor %}
+      </div>
+      <p class="search-suggest-alt">
+        Sau răsfoiește <a href="/blog/">toate articolele</a>
+        ori începe cu categoria <a href="/categorii/initiere/">Inițiere</a>.
+      </p>
+    </div>
+  </div>
+</section>
+
+{# Indexul întreg, drept JSON, ca să nu fie nevoie de cereri în plus. #}
+<script type="application/json" id="search-index">{{ search | dump | safe }}</script>
+<script src="{{ "/assets/js/search.js" | assetv }}" defer></script>

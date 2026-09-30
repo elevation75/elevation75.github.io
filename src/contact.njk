@@ -1,0 +1,102 @@
+---
+layout: layouts/base.njk
+bodyClass: page-contact
+permalink: /contact/
+title: Contact
+description: "Ia legătura cu mine: întrebări despre Linux, sugestii de articole sau subiecte pe care vrei să le acopăr pe blog."
+---
+{%- from "macros/icons.njk" import icon -%}
+{%- set socialLinks = site.social | where("url") -%}
+{%- set hasNewsletter = site.newsletter.enabled and site.newsletter.action -%}
+
+<header class="page-header">
+  <div class="container container--narrow">
+    <p class="eyebrow">Contact</p>
+    <h1 class="page-title">Hai să vorbim</h1>
+    <p class="page-lead">
+      Ai rămas blocat într-un articol, ai o sugestie sau un subiect pe care ai
+      vrea să-l acoper? Scrie-mi — exact despre asta e făcut blogul.
+    </p>
+  </div>
+</header>
+
+<section class="section section--flush">
+  <div class="container container--narrow">
+    <div class="contact-grid">
+
+      {%- if site.email %}
+      <div class="contact-card contact-card--primary">
+        <span class="contact-icon contact-icon--coral">{{ icon("mail") }}</span>
+        <h2 class="contact-title">Email</h2>
+        <p class="contact-text">
+          Cel mai rapid mod de a ajunge la mine. Răspund de obicei în câteva zile,
+          și cu siguranță întrebărilor despre Linux.
+        </p>
+        <a class="btn btn-primary" href="mailto:{{ site.email }}?subject=De%20pe%20blogul%20Primii%20pa%C8%99i%20spre%20Linux">
+          {{ site.email }}
+        </a>
+      </div>
+      {%- endif %}
+
+      {%- if socialLinks.length %}
+      <div class="contact-card">
+        <span class="contact-icon contact-icon--mint">{{ icon("users") }}</span>
+        <h2 class="contact-title">Altundeva</h2>
+        <p class="contact-text">Preferi alt canal? Mă găsești și aici.</p>
+        <ul class="contact-social">
+          {%- for s in socialLinks %}
+          <li>
+            <a href="{{ s.url }}" rel="me noopener" target="_blank">
+              {{ s.name }} {{ icon("arrow-right", "icon-sm") }}
+            </a>
+          </li>
+          {%- endfor %}
+        </ul>
+      </div>
+      {%- endif %}
+
+      {%- if hasNewsletter %}
+      <div class="contact-card">
+        <span class="contact-icon contact-icon--amber">{{ icon("rss") }}</span>
+        <h2 class="contact-title">{{ site.newsletter.title }}</h2>
+        <p class="contact-text">{{ site.newsletter.blurb }}</p>
+        <form class="newsletter-form newsletter-form--stack"
+              action="{{ site.newsletter.action }}" method="post" target="_blank">
+          <label class="sr-only" for="contact-email">Adresa ta de email</label>
+          <input class="newsletter-input" id="contact-email" type="email" name="email"
+                 placeholder="adresa ta de email" required autocomplete="email">
+          <button class="btn btn-primary" type="submit">{{ site.newsletter.button }}</button>
+        </form>
+      </div>
+      {%- endif %}
+
+      {%- if not site.email and not socialLinks.length and not hasNewsletter %}
+      <div class="contact-card contact-card--primary">
+        <span class="contact-icon contact-icon--coral">{{ icon("rss") }}</span>
+        <h2 class="contact-title">Până una-alta</h2>
+        <p class="contact-text">
+          Datele de contact se pregătesc. Până atunci, cel mai bun mod de a
+          ține legătura e să urmărești blogul — apare câte un articol nou
+          din când în când.
+        </p>
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="/feed.xml">{{ icon("rss", "icon-sm") }} Abonează-te la RSS</a>
+          <a class="btn btn-ghost" href="/blog/">Vezi postările</a>
+        </div>
+      </div>
+      {%- endif %}
+
+    </div>
+
+    <div class="contact-topics">
+      <h2 class="contact-topics-title">Despre ce-mi poți scrie</h2>
+      <ul class="topic-list">
+        <li>{{ icon("check", "icon-sm") }} Nu înțelegi un termen dintr-un articol</li>
+        <li>{{ icon("check", "icon-sm") }} Ai încercat ceva și nu a mers</li>
+        <li>{{ icon("check", "icon-sm") }} Vrei un articol despre o distribuție anume</li>
+        <li>{{ icon("check", "icon-sm") }} Ai greșit ceva în articol și vrei să corectez</li>
+      </ul>
+    </div>
+
+  </div>
+</section>

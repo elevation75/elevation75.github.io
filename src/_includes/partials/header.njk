@@ -1,0 +1,73 @@
+{% from "macros/icons.njk" import icon %}
+
+{%- set nav = [
+  { "label": "Acasă", "url": "/" },
+  { "label": "Postări", "url": "/blog/" },
+  { "label": "Despre", "url": "/despre/" },
+  { "label": "Contact", "url": "/contact/" }
+] -%}
+
+<header class="site-header" data-header>
+  <div class="container header-inner">
+    <a class="brand" href="/" aria-label="{{ site.name }} — pagina de start">
+      <span class="brand-mark">
+        <img src="/assets/img/logo.png" alt="" width="46" height="46" decoding="async">
+      </span>
+      <span class="brand-text">
+        <span class="brand-title">{{ site.name }}</span>
+        <span class="brand-sub">{{ site.tagline }}</span>
+      </span>
+    </a>
+
+    <nav class="nav" aria-label="Navigare principală">
+      <ul class="nav-list">
+        {%- for item in nav %}
+        {%- set isActive = item.url == "/" and page.url == "/" or item.url != "/" and page.url.startsWith(item.url) %}
+        <li>
+          <a href="{{ item.url }}" class="nav-link{% if isActive %} is-active{% endif %}"
+             {% if isActive %}aria-current="page"{% endif %}>{{ item.label }}</a>
+        </li>
+        {%- endfor %}
+      </ul>
+    </nav>
+
+    <div class="header-actions">
+      <a class="nav-search" href="/cauta/" title="Caută pe blog (sau apasă /)"
+         aria-label="Caută pe blog">
+        {{ icon("search", "icon-lg") }}
+      </a>
+      <a class="btn btn-primary btn-sm header-cta" href="/blog/">
+        Începe să citești
+        {{ icon("arrow-right", "icon-sm") }}
+      </a>
+      <button class="nav-toggle" type="button" data-nav-toggle
+              aria-expanded="false" aria-controls="mobile-nav" aria-label="Deschide meniul">
+        {{ icon("menu", "icon-lg nav-toggle-open") }}
+        {{ icon("close", "icon-lg nav-toggle-close") }}
+      </button>
+    </div>
+  </div>
+
+  <div class="mobile-nav" id="mobile-nav" data-nav-panel hidden>
+    <nav class="container" aria-label="Navigare mobilă">
+      <ul class="mobile-nav-list">
+        {%- for item in nav %}
+        {%- set isActive = item.url == "/" and page.url == "/" or item.url != "/" and page.url.startsWith(item.url) %}
+        <li>
+          <a href="{{ item.url }}" class="mobile-nav-link{% if isActive %} is-active{% endif %}">
+            <span>{{ item.label }}</span>
+            {{ icon("chevron-right", "icon-sm") }}
+          </a>
+        </li>
+        {%- endfor %}
+        <li>
+          <a href="/cauta/" class="mobile-nav-link{% if page.url == "/cauta/" %} is-active{% endif %}">
+            <span>Caută</span>
+            {{ icon("search", "icon-sm") }}
+          </a>
+        </li>
+      </ul>
+      <a class="btn btn-primary btn-block" href="/blog/">Toate postările</a>
+    </nav>
+  </div>
+</header>
