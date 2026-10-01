@@ -35,6 +35,14 @@ const categories = [
     accent: "blue",
   },
   {
+    name: "Utilizare",
+    slug: "utilizare",
+    description:
+      "Zi de zi cu Linux: programe, fișiere, scurtături și gesturi care fac utilizarea comodă, fără să cauți prin meniuri.",
+    icon: "zap",
+    accent: "teal",
+  },
+  {
     name: "Administrare",
     slug: "administrare",
     description:

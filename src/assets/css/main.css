@@ -33,6 +33,9 @@
   --plum:         #7b4aa6;
   --plum-050:     #f2e9fb;
 
+  --teal:         #0d6e7e;
+  --teal-050:     #e0f2f3;
+
   --blue:         #1f6fb2;
   --blue-700:     #1a5a94;
   --blue-050:     #e8f1fb;
@@ -285,6 +288,7 @@ a.chip:hover { filter: brightness(0.94); transform: translateY(-1px); }
 .chip--coral  { background: var(--coral-050);  color: var(--coral-700); }
 .chip--violet { background: var(--plum-050);   color: var(--plum); }
 .chip--blue   { background: var(--blue-050);   color: var(--blue-700); }
+.chip--teal   { background: var(--teal-050);   color: var(--teal); }
 
 .icon { width: 1.15em; height: 1.15em; flex: none; }
 .icon-xs { width: 1em; height: 1em; }
@@ -816,6 +820,7 @@ a.chip:hover { filter: brightness(0.94); transform: translateY(-1px); }
 .cat-card--coral  { color: var(--coral-700); }
 .cat-card--violet { color: var(--plum); }
 .cat-card--blue   { color: var(--blue); }
+.cat-card--teal   { color: var(--teal); }
 
 .cat-icon {
   display: grid;
