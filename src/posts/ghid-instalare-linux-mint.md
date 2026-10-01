@@ -1,7 +1,7 @@
 ---
 title: "Ghid de instalare Linux Mint: pas cu pas (Cinnamon, MATE și Xfce)"
 description: "Instalezi Linux Mint de la zero: cele trei arome explicite, stick-ul bootabil, fiecare ecran al instalatorului și primii pași de după instalare."
-date: 2026-10-01
+date: 2026-09-30
 category: Ghid Distribuții
 cover:
   webp: /assets/img/cover-linux-mint.webp
