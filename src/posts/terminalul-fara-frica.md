@@ -41,6 +41,14 @@ De ce merită efortul de zece minute din articolul ăsta? Pentru că:
 
 Cea mai rapidă cale, pe aproape orice distribuție: **Ctrl + Alt + T**. Dacă nu merge, caută în meniul de aplicații după **„Terminal"** sau **„Consolă"** — pe Linux Mint îl găsești la *Meniu → Accesorii*, pe Ubuntu și Fedora îl ai în lista de aplicații, iar pe Zorin în *Start → Accesorii*. Poți scrie pur și simplu „term" în căutarea meniului și apare imediat.
 
+<div class="callout callout--tip">
+  <span class="callout-icon" aria-hidden="true">💡</span>
+  <div>
+    <p class="callout-title">Fiecare mediu desktop are terminalul lui — dar oricare merge</p>
+    <p>Programul din spate se numește <strong>emulator de terminal</strong>, iar fiecare mediu desktop (DE) își vine cu al lui: <strong>Konsole</strong> pe KDE, <strong>GNOME Terminal</strong> (Linux Mint, Ubuntu) sau <strong>Ptyxis</strong> (noul terminal GNOME, implicit pe Fedora) pe sistemele GNOME, <strong>xfce4-terminal</strong> pe Xfce. În meniu le poți găsi pur și simplu sub numele de „Terminal" sau „Consolă" — numele diferă, programul de dedesubt e altul, dar asta nu contează pentru tine: <strong>orice aplicație de terminal funcționează pe orice mediu desktop</strong>, fiindcă toate sunt programe obișnuite, pe care le instalezi și le folosești la fel ca pe oricare alta. Poți pune Konsole pe un sistem cu GNOME și merge perfect, ca și invers. Fereastra și meniurile diferă, dar <strong>comenzile sunt aceleași în toate</strong> — <code>ls</code> e <code>ls</code> oriunde ai ajunge. Dacă folosești în schimb un window manager minimalist (i3, Sway, Hyprland), acolo nu vine cu unul deloc: ți-l alegi și îl instalezi tu, dintre zeci de variante.</p>
+  </div>
+</div>
+
 La deschidere, vezi ceva de genul ăsta:
 
 {% image "term-fereastra", "O fereastră de terminal abia deschisă, cu rândul de comandă așteptând", "Terminalul tocmai deschis: un singur rând cu numele tău și un cursor care pâlpâie. Nimic nu s-a întâmplat încă — nimeni nu șterge, nu mută și nu instalează nimic." %}
@@ -54,7 +62,7 @@ Rândul pe care îl vezi se numește **prompt** și îți spune trei lucruri în
 ```
 utilizator@calculator:~$
 │           │        │
-│           │        └─ unde te afli („acasă”)
+│           │        └─ unde te afli („acasă")
 │           └────────── numele calculatorului
 └────────────────────── numele tău de utilizator
 ```
@@ -136,7 +144,7 @@ Nu e nevoie să înveți toate coloanele acum. Reține doar că **prima literă 
 
 Nu *dacă*, ci *când* — greșelile sunt normalul, nu semnul că ceva nu merge. Iată primele două, cu o sesiune în care am greșit intenționat:
 
-{% image "term-erori", "Terminal în care comanda lst dă „command not found”, iar cd Documnete dă „No such file or directory”", "Am scris greșit numele comenzii, apoi numele folderului. Sistemul a refuzat politicos, nimic nu s-a stricat, iar a treia încercare a mers." %}
+{% image "term-erori", "Terminal în care comanda lst dă 'command not found', iar cd Documnete dă 'No such file or directory'", "Am scris greșit numele comenzii, apoi numele folderului. Sistemul a refuzat politicos, nimic nu s-a stricat, iar a treia încercare a mers." %}
 
 Cele două mesaje pe care le vei vedea cel mai des:
 
