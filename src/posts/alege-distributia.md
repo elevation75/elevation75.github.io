@@ -38,7 +38,7 @@ Alege distribuția dorită mai jos. Ghidul ei detaliat de instalare pas cu pas e
 - <img src="/assets/img/logos/ubuntu.svg" alt="" width="24" height="24" class="distro-logo"> **[Ghid instalare Ubuntu](/blog/cum-instalezi-ubuntu/)** — Cea mai populară distribuție, cu suport extins și comunitate uriașă.
 - <img src="/assets/img/logos/popos.svg" alt="" width="24" height="24" class="distro-logo"> **[Ghid instalare Pop!_OS](/blog/ghid-instalare-popos/)** — Ideal pentru gaming și laptopuri cu plăci video dedicate NVIDIA; vine cu un avertisment cinstit despre desktopul COSMIC.
 - <img src="/assets/img/logos/zorin.svg" alt="" width="24" height="24" class="distro-logo"> **[Ghid instalare Zorin OS](/blog/ghid-instalare-zorin/)** — Cel mai prietenos cu cei care vin de pe Windows: interfață ca Windows 11 și comutator de layouturi (Zorin Appearance).
-- <img src="/assets/img/logos/endeavouros.svg" alt="" width="24" height="24" class="distro-logo"> **Ghid instalare EndeavourOS / Calamares** — Pentru cei care doresc performanța Arch Linux cu un instalator grafic prietenos.
+- <img src="/assets/img/logos/endeavouros.svg" alt="" width="24" height="24" class="distro-logo"> **[Ghid instalare EndeavourOS](/blog/ghid-instalare-endeavouros/)** — Pentru cei care doresc performanța Arch Linux cu un instalator grafic prietenos.
 
 <p><em>Logourile sunt mărci ale proiectelor respective și apar aici doar pentru identificarea ghidurilor.</em></p>
 

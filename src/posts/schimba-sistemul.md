@@ -35,7 +35,7 @@ Ecosistemul Linux oferă variante adaptate pentru diferite tipuri de utilizatori
 
 - **Pentru o interfață familiară cu Windows:** **[Linux Mint](/blog/ghid-instalare-linux-mint/)** sau **KDE Neon**. Oferă un meniu de start similar, o bară de sarcini intuitivă și consum redus de resurse.
 - **Pentru performanță generală și simplitate:** **Ubuntu** sau **[Pop!_OS](/blog/ghid-instalare-popos/)**. Au comunități uriașe, suport excelent pentru plăci video dedicate (NVIDIA/AMD) și instalare simplă.
-- **Pentru libertate totală și personalizare avansată:** Distribuțiile bazate pe Arch Linux (precum **EndeavourOS**) sau mediile moderne de tip **Hyprland** pentru utilizatorii care doresc control complet asupra fiecărei taste și animații.
+- **Pentru libertate totală și personalizare avansată:** Distribuțiile bazate pe Arch Linux (precum **[EndeavourOS](/blog/ghid-instalare-endeavouros/)**) sau mediile moderne de tip **Hyprland** pentru utilizatorii care doresc control complet asupra fiecărei taste și animații.
 
 Poți încerca distribuțiile Linux **direct în browserul tău, fără nicio instalare**, cu [DistroSea](https://distrosea.com).
 

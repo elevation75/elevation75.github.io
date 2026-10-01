@@ -71,8 +71,8 @@ Dacă ești genul de persoană care vrea să învețe tot despre Linux și să �
 <div class="callout callout--note">
   <span class="callout-icon" aria-hidden="true">ℹ️</span>
   <div>
-    <p class="callout-title">Arch are un copil mai prietenos</p>
-    <p><strong>Manjaro</strong> pornește de la Arch, dar vine cu instalator grafic și cu drivere pregăite. E calea bună dacă vrei „feel”-ul de Arch fără bătăile de cap.</p>
+    <p class="callout-title">Arch are copii mai prietenoși</p>
+    <p><strong>Manjaro</strong> pornește de la Arch, dar vine cu instalator grafic și cu drivere pregăite. Și <strong><a href="/blog/ghid-instalare-endeavouros/">EndeavourOS</a></strong> îți dă „feel”-ul de Arch cu instalator grafic — ambele sunt căi bune dacă nu vrei să construiești sistemul de la zero.</p>
   </div>
 </div>
 
