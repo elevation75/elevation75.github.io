@@ -93,6 +93,8 @@ cd ~             # acasă, oricând, din orice loc
 cd /             # rădăcina sistemului de fișiere
 ```
 
+Iar dacă `cd /` ți-a stârnit curiozitatea — ce e, de fapt, acolo, sus, la rădăcină? Exact despre asta e următorul articol al seriei: [Structura unui sistem Linux: ce e în fiecare folder](/blog/structura-sistemului-linux/), unde te plimbi cu `ls` prin `/home`, `/etc`, `/usr` și `/var` și afli ce e fiecare.
+
 Iată cum arată o plimbare reală:
 
 {% image "term-navigare", "Terminal în care se rulează pwd, ls, cd Documente, pwd, ls și cd ..", "O sesiune scurtă: vezi unde ești, intri în Documente, te convingi că ești acolo, te uiți înăuntru și te întorci înapoi." %}
