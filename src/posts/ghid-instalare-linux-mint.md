@@ -101,7 +101,7 @@ Alternative bune:
   <span class="callout-icon" aria-hidden="true">⚠️</span>
   <div>
     <p class="callout-title">Tot ce e pe stick va fi șters</p>
-    <p>Salvează în altă parte ce ai pe el. În plus, nu scrie fișierul `.iso` pe un DVD așa cum este — scrie <strong>conținutul</strong> lui, altfel discul rămâne inutilizabil (iar DVD-urile sunt lente și predispuse la erori).</p>
+    <p>Salvează în altă parte ce ai pe el. În plus, nu scrie fișierul <code>.iso</code> pe un DVD așa cum este — scrie <strong>conținutul</strong> lui, altfel discul rămâne inutilizabil (iar DVD-urile sunt lente și predispuse la erori).</p>
   </div>
 </div>
 

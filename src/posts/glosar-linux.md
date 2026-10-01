@@ -11,7 +11,7 @@ cover:
 
 Dacă ai citit măcar un ghid de-al nostru, ai dat probabil peste cuvinte ca **ISO**, **UEFI**, **partiție**, **rolling release** sau **tiling** — și poate te-ai oprit o clipă, întrebându-te exact ce înseamnă. Acest articol e făcut pentru momentele acelea.
 
-Am extras **toți termenii tehnici** din cele 19 articole ale blogului și i-am adunat aici, grupați pe teme. Fiecare termen are:
+Am extras **toți termenii tehnici** din articolele blogului și i-am adunat aici, grupați pe teme. Fiecare termen are:
 
 - o **definiție** scurtă, scrisă pe limba unui începător (fără jargon peste jargon);
 - un **exemplu practic** — de unde îl știi deja din articolele noastre;

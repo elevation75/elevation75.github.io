@@ -38,7 +38,7 @@ const categories = [
     name: "Utilizare",
     slug: "utilizare",
     description:
-      "Zi de zi cu Linux: programe, fișiere, scurtături și gesturi care fac utilizarea comodă, fără să cauți prin meniuri.",
+      "Zi de zi cu Linux: primele comenzi de terminal, programe, fișiere și gesturi care fac utilizarea comodă, fără să cauți prin meniuri.",
     icon: "zap",
     accent: "teal",
   },

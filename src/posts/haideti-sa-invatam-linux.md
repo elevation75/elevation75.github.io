@@ -38,4 +38,4 @@ Nu în ultimul rând, vom explora evoluția Linux-ului pe ani. De la primele sal
 
 În concluzie, acest blog va oferi o perspectivă cuprinzătoare asupra Linux-ului și primilor pași spre acest sistem de operare. Fie că ești un începător sau un utilizator cu experiență, te invit să descoperi alături de mine fascinanta lume a Linux-ului!
 
-Citește mai departe: [De ce este benefic să învățați Linux?](/blog/de-ce-este-benefic-sa-invati-linux/) — merită, scurt și fără ocolișuri.
+Citește mai departe: [De ce este benefic să învățați Linux?](/blog/de-ce-este-benefic-sa-invati-linux/) — merită, scurt și fără ocolișuri. Iar când vrei să treci de la citit la făcut, [Terminalul fără frică](/blog/terminalul-fara-frica/) e primul articol din categoria Utilizare: deschizi terminalul și îl folosești chiar tu, pas cu pas.

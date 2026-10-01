@@ -39,7 +39,7 @@ Linux oferă câteva avantaje distincte care îl fac să fie o alegere atractiv�
   <span class="callout-icon" aria-hidden="true">ℹ️</span>
   <div>
     <p class="callout-title">Ce înseamnă „manager de pachete”?</p>
-    <p>Un program care știe de unde să descarce, să instaleze și să actualizeze programele — ca un magazin de aplicații, dar din terminal. Fără să cauți pe internet fișiere `.exe`.</p>
+    <p>Un program care știe de unde să descarce, să instaleze și să actualizeze programele — ca un magazin de aplicații, dar din terminal. Fără să cauți pe internet fișiere <code>.exe</code>.</p>
   </div>
 </div>
 
