@@ -36,7 +36,7 @@ Alege distribuția dorită mai jos. Ghidul ei detaliat de instalare pas cu pas e
 - 🟢 **[Ghid instalare Linux Mint](/blog/ghid-instalare-linux-mint/)** — Recomandat pentru începători și foști utilizatori de Windows (interfață familiară, instalator Ubiquity).
 - 🔵 **[Ghid instalare Fedora](/blog/ghid-instalare-fedora/)** — Excelent pentru stabilitate, tehnologii noi și mediu GNOME curat (instalator Anaconda).
 - 🟠 **[Ghid instalare Ubuntu](/blog/cum-instalezi-ubuntu/)** — Cea mai populară distribuție, cu suport extins și comunitate uriașă.
-- 🚀 **Ghid instalare Pop!_OS** — Ideal pentru gaming și laptopuri cu plăci video dedicate NVIDIA.
+- 🚀 **[Ghid instalare Pop!_OS](/blog/ghid-instalare-popos/)** — Ideal pentru gaming și laptopuri cu plăci video dedicate NVIDIA; vine cu un avertisment cinstit despre desktopul COSMIC.
 - 💜 **Ghid instalare EndeavourOS / Calamares** — Pentru cei care doresc performanța Arch Linux cu un instalator grafic prietenos.
 
 <div class="callout callout--warn">
