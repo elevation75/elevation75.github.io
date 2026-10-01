@@ -125,6 +125,16 @@ export default function (eleventyConfig) {
     formatRoDate(value, typeof opts === "object" ? opts : {})
   );
 
+  /* Dată RFC 822 pentru feed, validă și stabilă: mereu în UTC, indiferent de
+   * fusul orar al mașinii pe care se face build-ul. Filtrul implicit din
+   * eleventy-plugin-rss formatrează în ora locală și, pe GitHub Actions,
+   * producea ora invalidă „24:00:00 GMT” (cititoarele de feed-uri ar putea
+   * derula data la ziua următoare). */
+  eleventyConfig.addFilter("rfc822", (value) => {
+    const d = new Date(value);
+    return isNaN(d.getTime()) ? "" : d.toUTCString();
+  });
+
   eleventyConfig.addFilter("readingTime", (html = "") => {
     const words = stripHtml(html).split(/\s+/).filter(Boolean).length;
     return Math.max(1, Math.round(words / 200));

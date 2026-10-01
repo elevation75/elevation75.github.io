@@ -11,9 +11,9 @@ metadata:
   <link href="{{ site.url }}/feed.xml" rel="self"/>
   <link href="{{ site.url }}/"/>
   {%- if collections.posts.length %}
-  <updated>{{ collections.posts | getNewestCollectionItemDate | dateToRfc822 }}</updated>
+  <updated>{{ collections.posts | getNewestCollectionItemDate | rfc822 }}</updated>
   {%- else %}
-  <updated>{{ "now" | isoDate | dateToRfc822 }}</updated>
+  <updated>{{ "now" | isoDate | rfc822 }}</updated>
   {%- endif %}
   <id>{{ site.url }}/</id>
   <author><name>{{ site.author.name }}</name></author>
@@ -23,7 +23,7 @@ metadata:
   <entry>
     <title>{{ post.data.title }}</title>
     <link href="{{ absolutePostUrl }}"/>
-    <updated>{{ post.date | dateToRfc822 }}</updated>
+    <updated>{{ post.date | rfc822 }}</updated>
     <id>{{ absolutePostUrl }}</id>
     <category term="{{ post.data.category }}"/>
     <summary>{{ post.data.description }}</summary>
