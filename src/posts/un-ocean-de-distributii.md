@@ -216,7 +216,7 @@ Deși e foarte puternic, **nu e destinat uzului zilnic** ca un desktop obișnuit
 
 În afară de distribuțiile majore din lista noastră, există **sute de alte distribuții bazate pe ele**, fiecare adaptată pentru nevoi și preferințe specifice. Multe dintre ele sunt construite pe fundațiile solide ale Debian, Ubuntu, Arch, Fedora și altele, dar vin cu propriile modificări și optimizări.
 
-De exemplu, Ubuntu a inspirat distribuții populare precum **Zorin OS**, **Kubuntu** și **Lubuntu**, fiecare având un public țintă diferit. De asemenea, Arch Linux a stat la baza distribuțiilor mai prietenoase cu utilizatorul, cum ar fi **Manjaro**.
+De exemplu, Ubuntu a inspirat distribuții populare precum **[Zorin OS](/blog/ghid-instalare-zorin/)**, **Kubuntu** și **Lubuntu**, fiecare având un public țintă diferit. De asemenea, Arch Linux a stat la baza distribuțiilor mai prietenoase cu utilizatorul, cum ar fi **Manjaro**.
 
 Un loc excelent unde poți explora toate aceste variații este [**DistroWatch**](https://distrowatch.com/) — un site care urmărește popularitatea și dezvoltarea a sute de distribuții Linux, oferind informații despre caracteristicile fiecăreia și noutăți despre lansările lor. DistroWatch este, practic, *catalogul* preferat al pasionaților de Linux.
 

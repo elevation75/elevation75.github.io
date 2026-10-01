@@ -37,6 +37,7 @@ Alege distribuția dorită mai jos. Ghidul ei detaliat de instalare pas cu pas e
 - 🔵 **[Ghid instalare Fedora](/blog/ghid-instalare-fedora/)** — Excelent pentru stabilitate, tehnologii noi și mediu GNOME curat (instalator Anaconda).
 - 🟠 **[Ghid instalare Ubuntu](/blog/cum-instalezi-ubuntu/)** — Cea mai populară distribuție, cu suport extins și comunitate uriașă.
 - 🚀 **[Ghid instalare Pop!_OS](/blog/ghid-instalare-popos/)** — Ideal pentru gaming și laptopuri cu plăci video dedicate NVIDIA; vine cu un avertisment cinstit despre desktopul COSMIC.
+- 🔷 **[Ghid instalare Zorin OS](/blog/ghid-instalare-zorin/)** — Cel mai prietenos cu cei care vin de pe Windows: interfață ca Windows 11 și comutator de layouturi (Zorin Appearance).
 - 💜 **Ghid instalare EndeavourOS / Calamares** — Pentru cei care doresc performanța Arch Linux cu un instalator grafic prietenos.
 
 <div class="callout callout--warn">
