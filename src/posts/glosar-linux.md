@@ -503,9 +503,17 @@ Capitolul care desființează „frica de terminal": sunt doar cuvinte pe care l
 
 **Terminal (consolă, emulator de terminal)** — fereastra în care scrii comenzi și primești răspuns text. Se deschide cu **Ctrl + Alt + T** pe majoritatea distribuțiilor. Nu e obligatoriu, dar îți dă control direct — și e colacul de salvare când interfața nu mai răspunde ([ghidul Ubuntu](/blog/cum-instalezi-ubuntu/)).
 
+<a id="prompt"></a>
+
+**Prompt (rândul de comandă)** — rândul care te așteaptă în terminal, în forma `utilizator@calculator:~$`. Spune trei lucruri înainte de fiecare comandă: cine ești, pe ce calculator, unde te afli (`~` înseamnă „acasă") — și că sistemul așteaptă ceva de la tine. Scrii după simbolul `$` și apeși Enter; dacă în loc de `$` vezi `#`, comanda rulează ca administrator. Cu ce se mănâncă, pas cu pas, în [Terminalul fără frică](/blog/terminalul-fara-frica/).
+
 <a id="comanda"></a>
 
 **Comandă** — instrucțiunea pe care o scrii în terminal, de obicei „verbul + ce": `apt update` (actualizează lista), `sudo pacman -Syu` (actualizează tot). Fiecare ghid are secțiunea lui de comenzi, executate pas cu pas.
+
+<a id="man"></a>
+
+**`man` (manual)** — manualul fiecărei comenzi, deschis din terminal: `man ls` îți arată fișa completă a lui `ls`, cu toate opțiunile explicite. Navighezi cu săgețile (sau PgDn) și **ieși apăsând q**. Dacă vrei doar varianta scurtă, `ls --help` e la fel de util — ambele, cu exemple, în [Terminalul fără frică](/blog/terminalul-fara-frica/).
 
 <a id="sudo"></a>
 
@@ -576,7 +584,7 @@ Reveni aici de fiecare dată când un cuvânt te oprește din citit: deschizi **
 
 ## Index alfabetic
 
-Toți cei 125 de termeni, în ordine alfabetică. Dai clic pe un termen și ajungi direct la explicația lui.
+Toți cei 127 de termeni, în ordine alfabetică. Dai clic pe un termen și ajungi direct la explicația lui.
 
 **A** — [Actualizare (upgrade)](#actualizare) · [Actualizări complete, nu parțiale](#actualizari-complete) · [Administrator (superuser, root)](#administrator) · [AHCI](#ahci) · [apt](#apt) · [Arhitecturi (Intel/AMD, ARM/ARM64, Apple Silicon, 64 biți)](#arhitecturi) · [AUR (Arch User Repository)](#aur)
 
@@ -602,13 +610,13 @@ Toți cei 125 de termeni, în ordine alfabetică. Dai clic pe un termen și ajun
 
 **L** — [Libertate (software liber)](#libertate) · [Licență](#licenta) · [Linus Torvalds](#torvalds) · [`lspci`, `dxdiag`, `inxi`](#unelte-hardware) · [LTS (Long Term Support — suport pe termen lung)](#lts)
 
-**M** — [Malware](#malware) · [Manager de fișiere](#manager-fisiere) · [Mașină virtuală (VM)](#masina-virtuala) · [MATE](#mate) · [MBR](#mbr) · [Mediu desktop (Desktop Environment, DE)](#mediu-desktop) · [Mediu live (sesiune live, live USB)](#mediu-live) · [Memorie RAM](#ram) · [memtest (test RAM)](#memtest) · [Meniu de boot (Boot Menu)](#meniu-de-boot) · [Minix](#minix) · [Mod DD (scriere brută)](#mod-dd) · [Modul de kernel](#modul-kernel) · [Modurile instalatorului (Alongside / Replace / Erase / Manual)](#moduri-instalator) · [Montare (mount)](#montare) · [Multiboot](#multiboot)
+**M** — [Malware](#malware) · [`man` (manual)](#man) · [Manager de fișiere](#manager-fisiere) · [Mașină virtuală (VM)](#masina-virtuala) · [MATE](#mate) · [MBR](#mbr) · [Mediu desktop (Desktop Environment, DE)](#mediu-desktop) · [Mediu live (sesiune live, live USB)](#mediu-live) · [Memorie RAM](#ram) · [memtest (test RAM)](#memtest) · [Meniu de boot (Boot Menu)](#meniu-de-boot) · [Minix](#minix) · [Mod DD (scriere brută)](#mod-dd) · [Modul de kernel](#modul-kernel) · [Modurile instalatorului (Alongside / Replace / Erase / Manual)](#moduri-instalator) · [Montare (mount)](#montare) · [Multiboot](#multiboot)
 
 **N** — [`nomodeset`](#nomodeset) · [NVIDIA / nouveau / nvidia-open](#nvidia)
 
 **O** — [Oglindă (mirror)](#oglinda)
 
-**P** — [Pachet](#pachet) · [pacman](#pacman) · [Panou / taskbar / bară de activități / dock / meniu de start](#interfata) · [Pantheon (elementary OS), Deepin, LXDE, LXQt, MATE Desktop](#alte-medii) · [Partiție](#partitie) · [Partiționare](#partitionare) · [Placă de rețea (Wi-Fi)](#placa-retea) · [Placă video (GPU)](#gpu) · [Procesor (CPU)](#procesor) · [Puncte de montare](#puncte-de-montare)
+**P** — [Pachet](#pachet) · [pacman](#pacman) · [Panou / taskbar / bară de activități / dock / meniu de start](#interfata) · [Pantheon (elementary OS), Deepin, LXDE, LXQt, MATE Desktop](#alte-medii) · [Partiție](#partitie) · [Partiționare](#partitionare) · [Placă de rețea (Wi-Fi)](#placa-retea) · [Placă video (GPU)](#gpu) · [Procesor (CPU)](#procesor) · [Prompt (rândul de comandă)](#prompt) · [Puncte de montare](#puncte-de-montare)
 
 **Q** — [QEMU](#qemu)
 
