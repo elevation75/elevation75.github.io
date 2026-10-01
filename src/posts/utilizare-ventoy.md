@@ -85,7 +85,7 @@ Când vrei să instalezi un sistem sau să testezi o distribuție în mod live:
 
 Ventoy este un instrument indispensabil pentru orice pasionat de tehnologie, administrator de sistem sau utilizator care vrea să exploreze lumea Linux fără bătăi de cap. Cu un singur stick USB de capacitate medie, ai la tine o întreagă trusă de scule digitale, pregătită pentru orice situație — de la testarea unei distribuții noi până la recuperarea datelor sau reinstalarea Windows-ului.
 
-Dacă vrei în schimb un ghid pas cu pas pentru instalarea unui singur sistem, începe de la [Ghidul de instalare Ubuntu](/blog/cum-instalezi-ubuntu/), iar pentru alegerea distribuției potrivite, [Ghidul complet de instalare Linux](/blog/alege-distributia/).
+Dacă vrei în schimb un ghid pas cu pas pentru instalarea unui singur sistem, începe de la [Ghidul de instalare Ubuntu](/blog/cum-instalezi-ubuntu/) sau [Ghidul de instalare Linux Mint](/blog/ghid-instalare-linux-mint/), iar pentru alegerea distribuției potrivite, [Ghidul complet de instalare Linux](/blog/alege-distributia/).
 
 ---
 

@@ -104,7 +104,7 @@ Este super stabil, ceea ce-l face popular pentru servere. Dacă vrei să te joci
 
 *Motto: „Mai ușor ca Ubuntu!”*
 
-**Linux Mint** este copilul născut din Ubuntu în 2006, dar cu o atitudine mai relaxată. Dacă Ubuntu îți place, dar vrei ceva și mai simplu și cu un aer de Windows, Mint e prietenul tău.
+**Linux Mint** este copilul născut din Ubuntu în 2006, dar cu o atitudine mai relaxată. Dacă Ubuntu îți place, dar vrei ceva și mai simplu și cu un aer de Windows, Mint e prietenul tău — pentru el avem deja un [ghid de instalare pas cu pas](/blog/ghid-instalare-linux-mint/).
 
 A fost creat pentru a face trecerea la Linux cât mai lină și pentru a evita unele dintre capcanele care pot apărea pe Ubuntu.
 

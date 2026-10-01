@@ -33,7 +33,7 @@ Indiferent ce distribuție alegi, există trei pași obligatorii pe care trebuie
 
 Alege distribuția dorită mai jos. Ghidul ei detaliat de instalare pas cu pas este legat aici pe măsură ce este publicat:
 
-- 🟢 **Ghid instalare Linux Mint** — Recomandat pentru începători și foști utilizatori de Windows (interfață familiară, instalator Ubiquity/Calamares).
+- 🟢 **[Ghid instalare Linux Mint](/blog/ghid-instalare-linux-mint/)** — Recomandat pentru începători și foști utilizatori de Windows (interfață familiară, instalator Ubiquity).
 - 🔵 **[Ghid instalare Fedora](/blog/ghid-instalare-fedora/)** — Excelent pentru stabilitate, tehnologii noi și mediu GNOME curat (instalator Anaconda).
 - 🟠 **[Ghid instalare Ubuntu](/blog/cum-instalezi-ubuntu/)** — Cea mai populară distribuție, cu suport extins și comunitate uriașă.
 - 🚀 **Ghid instalare Pop!_OS** — Ideal pentru gaming și laptopuri cu plăci video dedicate NVIDIA.

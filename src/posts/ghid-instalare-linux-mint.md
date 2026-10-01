@@ -13,7 +13,7 @@ Linux Mint este distribuția pe care ți-o recomandă cel mai des cineva care vr
 
 Instalarea durează circa 20 de minute și nu cere cunoștințe tehnice: instalatorul te întreabă doar câteva lucruri, iar **opțiunea implicită este, ca de obicei, alegerea bună**. Mai jos, fiecare pas ecran cu ecran.
 
-Dacă încă nu ești sigur că Mint e alegerea ta, [Ghidul complet de instalare Linux](/blog/alege-distributia/) te ajută să compari distribuțiile, iar [Un ocean de distribuții](/blog/un-ocean-de-distributii/) îți arată cu ce se deosebește Mint de celelalte.
+Dacă încă nu ești sigur că Mint e alegerea ta, [Ghidul complet de instalare Linux](/blog/alege-distributia/) te ajută să compari distribuțiile, iar [Un ocean de distribuții](/blog/un-ocean-de-distributii/) îți arată cu ce se deosebește Mint de celelalte. Dacă până la urmă alegi altceva, aceleași explicații pas cu pas le găsești la [Ubuntu](/blog/cum-instalezi-ubuntu/) și la [Fedora](/blog/ghid-instalare-fedora/).
 
 ## Cele trei arome: Cinnamon, MATE sau Xfce
 
