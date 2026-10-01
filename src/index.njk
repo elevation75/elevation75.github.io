@@ -48,8 +48,8 @@ description: "Blog despre Linux pentru începători: ce este Linux, cum alegi o 
           <dd>{{ collections.posts.length }}</dd>
         </div>
         <div class="hero-stat">
-          <dt>Categorii</dt>
-          <dd>{{ collections.categories.length }}</dd>
+          <dt><a href="#categorii">Categorii</a></dt>
+          <dd><a href="#categorii">{{ collections.categories.length }}</a></dd>
         </div>
         <div class="hero-stat">
           <dt>Cost</dt>
@@ -84,8 +84,46 @@ description: "Blog despre Linux pentru începători: ce este Linux, cum alegi o 
   </div>
 </section>
 
+{# ---------- Categorii (sus, imediat după hero) ---------- #}
+{%- if collections.categories.length %}
+<section class="section" id="categorii">
+  <div class="container">
+    <div class="section-head">
+      <div>
+        <p class="eyebrow">După subiect</p>
+        <h2 class="section-title">Răsfoiește pe categorii</h2>
+        <p class="section-sub">
+          Alege ce te interesează acum: de la primii pași până la administrare și personalizare.
+        </p>
+      </div>
+      <a class="text-link section-head-link" href="/blog/">
+        Toate postările {{ icon("arrow-right", "icon-sm") }}
+      </a>
+    </div>
+
+    <div class="cat-grid">
+      {%- for cat in collections.categories %}
+      <a class="cat-card cat-card--{{ cat.accent }}" href="/categorii/{{ cat.slug }}/">
+        <span class="cat-icon">{{ icon(cat.icon) }}</span>
+        <span class="cat-name">{{ cat.name }}</span>
+        <span class="cat-desc">{{ cat.description }}</span>
+        <span class="cat-count">
+          {%- if cat.posts.length %}
+          {{ cat.posts.length }} {% if cat.posts.length == 1 %}articol{% else %}articole{% endif %}
+          {%- else %}
+          în curând
+          {%- endif %}
+          {{ icon("arrow-right", "icon-sm") }}
+        </span>
+      </a>
+      {%- endfor %}
+    </div>
+  </div>
+</section>
+{%- endif %}
+
 {# ---------- De ce ---------- #}
-<section class="section">
+<section class="section section--tint">
   <div class="container">
     <div class="section-head section-head--center">
       <p class="eyebrow">Cum scriu aici</p>
@@ -110,7 +148,9 @@ description: "Blog despre Linux pentru începători: ce este Linux, cum alegi o 
         <h3 class="feature-title">Fără jargon aruncat în față</h3>
         <p class="feature-text">
           Kernel, distribuție, DE, WM, pachete — toate apar explicate acolo unde
-          ai nevoie de ele, cu exemple din lumea reală.
+          ai nevoie de ele, cu exemple din lumea reală. Iar dacă îți scapă vreun
+          termen, îl găsești explicat în
+          <a href="/blog/glosar-linux/">Glosarul de termeni</a>.
         </p>
       </article>
 
@@ -128,7 +168,7 @@ description: "Blog despre Linux pentru începători: ce este Linux, cum alegi o 
 
 {# ---------- Drumul în șase pași ---------- #}
 {%- if collections.posts.length %}
-<section class="section section--tint">
+<section class="section">
   <div class="container">
     <div class="section-head">
       <div>
@@ -166,38 +206,6 @@ description: "Blog despre Linux pentru începători: ce este Linux, cum alegi o 
       {%- endif %}
       {%- endfor %}
     </ol>
-  </div>
-</section>
-{%- endif %}
-
-{# ---------- Categorii ---------- #}
-{%- if collections.categories.length %}
-<section class="section">
-  <div class="container">
-    <div class="section-head">
-      <div>
-        <p class="eyebrow">După subiect</p>
-        <h2 class="section-title">Răsfoiește pe categorii</h2>
-      </div>
-    </div>
-
-    <div class="cat-grid">
-      {%- for cat in collections.categories %}
-      <a class="cat-card cat-card--{{ cat.accent }}" href="/categorii/{{ cat.slug }}/">
-        <span class="cat-icon">{{ icon(cat.icon) }}</span>
-        <span class="cat-name">{{ cat.name }}</span>
-        <span class="cat-desc">{{ cat.description }}</span>
-        <span class="cat-count">
-          {%- if cat.posts.length %}
-          {{ cat.posts.length }} {% if cat.posts.length == 1 %}articol{% else %}articole{% endif %}
-          {%- else %}
-          în curând
-          {%- endif %}
-          {{ icon("arrow-right", "icon-sm") }}
-        </span>
-      </a>
-      {%- endfor %}
-    </div>
   </div>
 </section>
 {%- endif %}

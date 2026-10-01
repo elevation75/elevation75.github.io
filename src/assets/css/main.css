@@ -517,6 +517,8 @@ a.chip:hover { filter: brightness(0.94); transform: translateY(-1px); }
   font-weight: 700;
   letter-spacing: -0.03em;
 }
+.hero-stat a { text-decoration: none; }
+.hero-stat a:hover { color: var(--coral-700); }
 
 .hero-visual { position: relative; }
 .hero-frame {
@@ -614,6 +616,8 @@ a.chip:hover { filter: brightness(0.94); transform: translateY(-1px); }
 .feature-icon--coral { background: var(--coral-050); color: var(--coral-700); }
 .feature-title { font-size: 1.28rem; margin-bottom: 0.6rem; }
 .feature-text { color: var(--ink-2); font-size: 1rem; margin: 0; }
+.feature-text a { color: var(--coral-700); font-weight: 620; text-decoration: none; }
+.feature-text a:hover { text-decoration: underline; }
 
 /* ---------------------------------------------------------------- 9. Path */
 
