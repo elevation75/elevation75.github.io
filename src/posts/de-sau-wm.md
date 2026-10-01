@@ -10,7 +10,7 @@ cover:
   alt: "Medii desktop și window managere din Linux"
 ---
 
-Dacă ești nou în lumea Linux, probabil ai auzit termeni precum **Desktop Environment** și **Window Manager**, și te întrebi ce sunt și de ce contează. Nu-ți face griji, este un subiect care poate părea complex la început, dar este ușor de înțeles odată ce ai o imagine clară. În acest articol, îți voi explica pe înțelesul tuturor ce reprezintă fiecare termen și care este diferența dintre ele.
+Dacă ești nou în lumea Linux, probabil ai auzit termeni precum **Desktop Environment** și **Window Manager**, și te întrebi ce sunt și de ce contează. Nu-ți face griji, este un subiect care poate părea complex la început, dar este ușor de înțeles odată ce ai o imagine clară. În acest articol, îți voi explica pe înțelesul tuturor ce reprezintă fiecare termen și care este diferența dintre ele. (Dacă dai și peste alți termeni tehnici pe parcurs, îi găsești pe toți în [Glosarul Linux](/blog/glosar-linux/).)
 
 ## Ce este un Desktop Environment (DE)?
 

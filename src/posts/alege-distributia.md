@@ -13,6 +13,8 @@ Instalarea unui sistem de operare Linux a devenit astăzi un proces simplu și i
 
 În acest ghid vei parcurge pașii universali de pregătire a calculatorului, iar apoi vei putea selecta distribuția dorită pentru a vedea ghidul pas cu pas.
 
+Dacă vreun termen îți e neclar — UEFI, partiție, bootloader, snapshot —, îl găsești explicat în [Glosarul Linux](/blog/glosar-linux/), cu link către articolul în care apare.
+
 ## Pregătirea universală (Înainte de instalare)
 
 Indiferent ce distribuție alegi, există trei pași obligatorii pe care trebuie să îi faci de pe sistemul tău actual:

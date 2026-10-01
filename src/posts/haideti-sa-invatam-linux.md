@@ -30,7 +30,7 @@ Nu în ultimul rând, vom explora evoluția Linux-ului pe ani. De la primele sal
   <span class="callout-icon" aria-hidden="true">💡</span>
   <div>
     <p class="callout-title">De unde începi</p>
-    <p>Ordinea recomandată e pe pagina principală: de la „ce este Linux?” până la „ok, înțeleg”. Niciun articol nu presupune că ai mai folosit Linux înainte.</p>
+    <p>Ordinea recomandată e pe pagina principală: de la „ce este Linux?” până la „ok, înțeleg”. Niciun articol nu presupune că ai mai folosit Linux înainte. Iar dacă un cuvânt te oprește din citit, <a href="/blog/glosar-linux/">Glosarul Linux</a> îți explică toți termenii tehnici, într-un loc singur.</p>
   </div>
 </div>
 
