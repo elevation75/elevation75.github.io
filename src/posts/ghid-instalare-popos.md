@@ -1,6 +1,6 @@
 ---
 title: "Ghid de instalare Pop!_OS: pas cu pas (cu desktop COSMIC)"
-description: "Instalezi Pop!_OS 24.04 LTS de la zero: ce imagine alegi (generic sau NVIDIA), verificarea checksum-ului, Secure Boot, stick-ul cu Etcher, fiecare ecran al instalatorului, criptarea discului și primii pași — plus un avertisment cinstit despre tânărul desktop COSMIC."
+description: "Instalezi Pop!_OS 24.04 LTS de la zero: ce imagine alegi (generic sau NVIDIA), Secure Boot, stick-ul cu Etcher, fiecare ecran al instalatorului, criptarea discului și primii pași — plus un avertisment cinstit despre tânărul desktop COSMIC."
 date: 2026-10-01
 category: Ghid Distribuții
 cover:
@@ -29,13 +29,13 @@ Dacă încă nu ești sigur că Pop!_OS e alegerea ta, [Ghidul complet de instal
 - **Memorie RAM:** 4 GB minimum (8 GB recomandați)
 - **Spațiu pe disc:** minimum 20 GB
 - **Stick USB:** 8 GB, care va fi șters complet
-- **Secure Boot: dezactivat** — obligatoriu, vezi Pasul 4
+- **Secure Boot: dezactivat** — obligatoriu, vezi Pasul 3
 
 <div class="callout callout--warn">
   <span class="callout-icon" aria-hidden="true">⚠️</span>
   <div>
     <p class="callout-title">Secure Bootul blochează instalarea</p>
-    <p>Pagina de download scrie negru pe alb: <strong>„Disable Secure Boot in your BIOS to install Pop!_OS”</strong>. Se dezactivează din BIOS (vezi Pasul 4) și, spre deosebire de Ubuntu sau Mint, aici nu există scurtătură.</p>
+    <p>Pagina de download scrie negru pe alb: <strong>„Disable Secure Boot in your BIOS to install Pop!_OS”</strong>. Se dezactivează din BIOS (vezi Pasul 3) și, spre deosebire de Ubuntu sau Mint, aici nu există scurtătură.</p>
   </div>
 </div>
 
@@ -66,33 +66,7 @@ Celelalte două sunt pentru **ARM** (Raspberry Pi 4, Thelio Astra) — nu pentru
   </div>
 </div>
 
-## Pasul 2: Verifică checksum-ul
-
-Pe pagina de download, sub fiecare imagine, găsești **SHA256 Sum**. Deschide un terminal în dosarul cu ISO și compară:
-
-**Linux:**
-
-```bash
-sha256sum Downloads/pop-os_*.iso
-```
-
-**macOS:**
-
-```bash
-shasum -a 256 ~/Downloads/pop-os_*.iso
-```
-
-**Windows (Command Prompt):**
-
-```cmd
-CertUtil -hashfile Downloads\pop-os_*.iso SHA256
-```
-
-{% image "pop-checksum", "Ieșirea în terminal a comenzii sha256sum pentru imaginea Pop!_OS", "Blocul de litere și cifre de sub numele fișierului trebuie să corespundă exact cu cel de pe pagina de download." %}
-
-Dacă sumele nu se potriveșc, fișierul s-a stricat pe drum — **descarcă-l din nou** înainte de a merge mai departe.
-
-## Pasul 3: Creează stick-ul bootabil
+## Pasul 2: Creează stick-ul bootabil
 
 ### Pe Windows sau macOS: Etcher
 
@@ -126,7 +100,7 @@ Apasă tasta Super, scrie **diskuri** și deschide aplicația. Selectează stick
   </div>
 </div>
 
-## Pasul 4: Dezactivează Secure Boot și pornește de pe stick
+## Pasul 3: Dezactivează Secure Boot și pornește de pe stick
 
 1. Introdu stick-ul și repornește calculatorul.
 2. Intră în BIOS/UEFI ca să **dezactivezi Secure Boot**. De obicei ții apăsat **F2** sau **Del** la pornire; meniul diferă după producător, dar opțiunea se află aproape întotdeauna la *Boot* sau *Security*.
@@ -149,7 +123,7 @@ Apasă tasta Super, scrie **diskuri** și deschide aplicația. Selectează stick
   </div>
 </div>
 
-## Pasul 5: Sesiunea live — testează înainte să instalezi
+## Pasul 4: Sesiunea live — testează înainte să instalezi
 
 Pop!_OS pornește direct într-un mediu live complet, de unde poți deschide instalatorul. Testează **Wi-Fi-ul, sunetul, ecranul, tastatura și touchpad-ul** — dacă ceva nu merge aici, nu va merge nici după instalare.
 
@@ -163,7 +137,7 @@ Pop!_OS pornește direct într-un mediu live complet, de unde poți deschide ins
   </div>
 </div>
 
-## Pasul 6: Limba, localizarea și tastatura
+## Pasul 5: Limba, localizarea și tastatura
 
 Instalatorul te întreabă patru lucruri, în ordine:
 
@@ -188,7 +162,7 @@ Instalatorul te întreabă patru lucruri, în ordine:
   </div>
 </div>
 
-## Pasul 7: Tipul de instalare
+## Pasul 6: Tipul de instalare
 
 {% image "pop-clean-install", "Ecranul Clean Install din instalatorul Pop!_OS", "Clean Install pentru instalare curată, Try Demo Mode pentru testat, Custom (Advanced) pentru avansați." %}
 
@@ -206,7 +180,7 @@ Ai trei opțiuni:
   </div>
 </div>
 
-## Pasul 8: Erase and Install
+## Pasul 7: Erase and Install
 
 După ce ai ales unitatea, apeși **Erase and Install**. De aici, Pop!_OS face totul singur: creează partițiile, copiază sistemul și instalează bootloader-ul.
 
@@ -220,7 +194,7 @@ După ce ai ales unitatea, apeși **Erase and Install**. De aici, Pop!_OS face t
   </div>
 </div>
 
-## Pasul 9: Contul de utilizator
+## Pasul 8: Contul de utilizator
 
 Instalatorul îți cere numele complet și numele de utilizator, apoi parola.
 
@@ -231,7 +205,7 @@ Instalatorul îți cere numele complet și numele de utilizator, apoi parola.
 
 {% image "pop-password", "Ecranul de setare a parolei în instalatorul Pop!_OS", "O parolă puternică, ținută minte — o vei folosi la fiecare autentificare." %}
 
-## Pasul 10: Criptarea discului (opțională)
+## Pasul 9: Criptarea discului (opțională)
 
 Pop!_OS îți oferă criptare completă a discului din instalator — singura distribuție care ți-o pune la îndemână fără pași suplimentari:
 
@@ -249,7 +223,7 @@ Pop!_OS îți oferă criptare completă a discului din instalator — singura di
   </div>
 </div>
 
-## Pasul 11: Instalarea și prima repornire
+## Pasul 10: Instalarea și prima repornire
 
 {% image "pop-progress", "Bara de progres a instalării Pop!_OS", "Instalarea durează de obicei între 5 și 15 minute." %}
 
@@ -343,14 +317,13 @@ Desktopul e tânăr, dar nu e abandonat — dimpotrivă. Ce e de făcut:
 
 - **Instalatorul nu pornește sau apare un mesaj despre Secure Boot:** intră în BIOS și **dezactivează Secure Boot** — e obligatoriu la Pop!_OS.
 - **Stick-ul nu apare în meniul de boot:** alt port USB (ideal cele din spate), dezactivează Fast Startup din Windows, verifică ordinea de boot în BIOS.
-- **Checksum-ul nu se potrivește:** imaginea s-a stricat; descarc-o din nou.
 - **Placa video NVIDIA nu funcționează bine:** confirmă că ai luat **ISO-ul NVIDIA** pentru seria 16 și mai nouă, sau instalează `system76-driver-nvidia` după instalare.
 - **Se aude voce la prima logare:** e cititorul de ecran pornit implicit — oprește-l din comutatorul din dreapta al ecranului de configurare.
 - **Windows nu mai apare în meniul de pornire:** la dual boot, intră în BIOS și asigură-te că ambele unități sunt vizibile; Pop!_OS folosește un meniu de pornire propriu, nu GRUB.
 
 ## Concluzie
 
-Pop!_OS se instalează în circa 15 minute: alegi imaginea, verifici checksum-ul, dezactivezi Secure Boot, scrii stick-ul și urmezi unsprezece pași simpli. Sistemul e rapid, curat și gata de gaming sau de muncă — iar desktopul COSMIC, deși tânăr, se maturizează vizibil de la o actualizare la alta.
+Pop!_OS se instalează în circa 15 minute: alegi imaginea, dezactivezi Secure Boot, scrii stick-ul și urmezi zece pași simpli. Sistemul e rapid, curat și gata de gaming sau de muncă — iar desktopul COSMIC, deși tânăr, se maturizează vizibil de la o actualizare la alta.
 
 Ca să mergi mai departe: [Ghidul de instalare Linux Mint](/blog/ghid-instalare-linux-mint/) dacă vrei ceva mai copt azi, [Ghidul de instalare Fedora](/blog/ghid-instalare-fedora/) pentru software foarte recent, [DE-uri sau WM-uri](/blog/de-sau-wm/) dacă vrei să înțelegi mai bine mediile desktop, iar [stick-ul multiboot cu Ventoy](/blog/utilizare-ventoy/) ca să ții mai multe distribuții pe același stick.
 
