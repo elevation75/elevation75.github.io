@@ -1,6 +1,6 @@
 ---
 title: "Ghid de instalare Linux Mint: pas cu pas (Cinnamon, MATE și Xfce)"
-description: "Instalezi Linux Mint de la zero: cele trei arome explicite, verificarea imaginii ISO, stick-ul bootabil, fiecare ecran al instalatorului și primii pași de după instalare."
+description: "Instalezi Linux Mint de la zero: cele trei arome explicite, stick-ul bootabil, fiecare ecran al instalatorului și primii pași de după instalare."
 date: 2026-10-01
 category: Ghid Distribuții
 cover:
@@ -80,45 +80,7 @@ Din Linux Mint 20 încoace există **doar varianta pe 64 de biți** — procesoa
 
 Intră pe **linuxmint.com/download.php** și alege aroma dorită — primești un fișier `.iso` de aproximativ 3 GB.
 
-Tot de acolo, din același loc de unde descarci imaginea, ia și cele două fișiere de verificare:
-
-- `sha256sum.txt` — suma de control a imaginii ISO
-- `sha256sum.txt.gpg` — semnătura electronică a acestei sume
-
-<div class="callout callout--note">
-  <span class="callout-icon" aria-hidden="true">📝</span>
-  <div>
-    <p class="callout-title">De ce verifici</p>
-    <p>Verificarea confirmă că fișierul a ajuns intact (integritate) și că vine chiar de la proiectul Linux Mint, nu de la altcineva (autenticitate). Durează două minute și elimină o cauză clasică a instalărilor eșuate.</p>
-  </div>
-</div>
-
-## Pasul 2: Verifică imaginea descărcată
-
-Deschide un terminal în dosarul unde ai descărcat fișierele. Înlocuiește `mint.iso` cu numele real al imaginii tale:
-
-```bash
-sha256sum -b mint.iso
-```
-
-Compară suma obținută cu cea din `sha256sum.txt`. Dacă **se potrivesc**, fișierul e în regulă; dacă nu, descarcă imaginea din nou.
-
-Pentru autenticitate, importă cheia de semnare a proiectului și verifică semnătura:
-
-```bash
-gpg --keyserver hkp://keys.openpgp.org:80 --recv-key 27DEB15644C6B3CF3BD7D291300F846BA25BAE09
-gpg --verify sha256sum.txt.gpg sha256sum.txt
-```
-
-<div class="callout callout--note">
-  <span class="callout-icon" aria-hidden="true">📝</span>
-  <div>
-    <p class="callout-title">Avertismentul „untrusted” este normal</p>
-    <p>GPG poate spune că semnătura nu este de încredere de calculatorul tău. Contează ca răspunsul să arate „signature is good” și cheia <code>27DE B156 … A25B AE09</code> — aceea este cheia oficială Linux Mint.</p>
-  </div>
-</div>
-
-## Pasul 3: Creează stick-ul bootabil
+## Pasul 2: Creează stick-ul bootabil
 
 Cel mai simplu este cu **Etcher**, disponibil pe Windows, macOS și Linux:
 
@@ -143,7 +105,7 @@ Alternative bune:
   </div>
 </div>
 
-## Pasul 4: Backup și pregătirea Windows-ului
+## Pasul 3: Backup și pregătirea Windows-ului
 
 Înainte să atingi partițiile, salvează documentele, pozele și fișierele importante pe un disc extern sau în cloud.
 
@@ -160,7 +122,7 @@ Dacă instalezi **alături de Windows**, pregătește-l din Windows:
   </div>
 </div>
 
-## Pasul 5: Pornește de pe stick
+## Pasul 4: Pornește de pe stick
 
 1. Introdu stick-ul și repornește calculatorul.
 2. În timpul pornirii apasă tasta pentru alegerea dispozitivului de boot. Apare scurt pe ecran și diferă după producător: **F12**, **F11**, **F10**, **F2**, **Esc** sau **Delete**. Pe Mac, ține apăsat **Option** (Alt) imediat ce auzi sunetul de start.
@@ -188,7 +150,7 @@ Linux Mint pornește în **sesiunea live**: un desktop complet, care rulează di
   </div>
 </div>
 
-## Pasul 6: Limba, conexiunea și codecurile
+## Pasul 5: Limba, conexiunea și codecurile
 
 Pe desktopul live dă dublu-clic pe **Install Linux Mint**. Instalatorul te întreabă în ordine:
 
@@ -204,7 +166,7 @@ Pe desktopul live dă dublu-clic pe **Install Linux Mint**. Instalatorul te înt
 
 {% image "mint-codecs", "Opțiunea de instalare a codecurilor multimedia din instalator", "Cu codecurile bifate, filmele și muzica merg din prima zi." %}
 
-## Pasul 7: Tipul instalării și partiționarea
+## Pasul 6: Tipul instalării și partiționarea
 
 Ecranul **Installation Type** este singurul în care o decizie greșită poate șterge date. Alege una dintre variante:
 
@@ -244,7 +206,7 @@ Alege **Something else** dacă vrei control total. Linux Mint are nevoie de o pa
   </div>
 </div>
 
-## Pasul 8: Fus orar, tastatură și utilizatorul
+## Pasul 7: Fus orar, tastatură și utilizatorul
 
 4. **Fusul orar** — alege **Bucharest** (sau orașul tău).
 
@@ -271,7 +233,7 @@ Alege **Something else** dacă vrei control total. Linux Mint are nevoie de o pa
   </div>
 </div>
 
-## Pasul 9: Instalarea și prima repornire
+## Pasul 8: Instalarea și prima repornire
 
 Apasă **Install**. Rulează o prezentare cu ecrane în timp ce sistemul se copiază pe disc — durează de obicei între 5 și 20 de minute, în funcție de viteza discului.
 
@@ -341,7 +303,7 @@ Primele snapshot-uri ocupă mai mult, apoi se salvează doar fișierele modifica
 
 ## Concluzie
 
-Linux Mint este una dintre cele mai prietenoase uși de intrare în lumea Linux: alegi aroma care ți se potrivește, urmezi nouă pași și ai un sistem rapid, stabil, care nu cere atenție lună de lună. Cinnamon pentru experiența completă, MATE pentru calculatoare mai vechi, Xfce pentru viteză maximă — pașii sunt aceiași, așa că poți încerca oricare.
+Linux Mint este una dintre cele mai prietenoase uși de intrare în lumea Linux: alegi aroma care ți se potrivește, urmezi opt pași și ai un sistem rapid, stabil, care nu cere atenție lună de lună. Cinnamon pentru experiența completă, MATE pentru calculatoare mai vechi, Xfce pentru viteză maximă — pașii sunt aceiași, așa că poți încerca oricare.
 
 Ca să mergi mai departe: [De ce este benefic să învățați Linux](/blog/de-ce-este-benefic-sa-invati-linux/) dacă vrei argumentele, [Linux vs Mac vs Windows](/blog/linux-vs-mac-vs-windows/) pentru o comparație onestă, iar [DE-uri sau WM-uri](/blog/de-sau-wm/) dacă vrei să schimbi interfața mai târziu.
 

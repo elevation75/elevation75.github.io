@@ -30,7 +30,7 @@ Intră pe site-ul oficial, **fedoraproject.org**, și descarcă **Fedora Worksta
   <span class="callout-icon" aria-hidden="true">💡</span>
   <div>
     <p class="callout-title">Cea mai simplă variantă</p>
-    <p>Fedora Media Writer face totul într-un singur pas. Dacă descarci ISO-ul manual, verifică suma de control (checksum) publicată pe site, ca să te asiguri că fișierul nu este corupt sau modificat.</p>
+    <p>Fedora Media Writer face totul într-un singur pas: descarcă imaginea și o scrie direct pe stick, fără pași intermediari.</p>
   </div>
 </div>
 
