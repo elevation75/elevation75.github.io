@@ -132,7 +132,7 @@ Opțiunile sunt prefixate cu liniuță. Cele cu **o literă** (`-l`, `-a`) sunt 
 
 {% image "term-optiuni", "Terminal cu comenzi ls -l și ls -l Documente, cu listarea detaliată a fișierelor", "ls -l adaugă detalii: permisiunile, cine deține fișierul, mărimea, data și, la final, numele. Directoarele apar albastre." %}
 
-Nu e nevoie să înveți toate coloanele acum. Reține doar că **prima literă îți spune ce e** (`d` = folder, `-` = fișier), iar restul — literele `r`, `w`, `x` și cifrele de după ele — îl găsești în [articolul despre permisiuni](/blog/permisiuni-linux/).
+Nu e nevoie să înveți toate coloanele acum. Reține doar că **prima literă îți spune ce e** (`d` = folder, `-` = fișier), iar restul — literele `r`, `w`, `x` și cifrele de după ele — le găsești explicate în detaliu în [articolul despre permisiuni](/blog/permisiuni-linux/).
 
 <div class="callout callout--tip">
   <span class="callout-icon" aria-hidden="true">💡</span>
