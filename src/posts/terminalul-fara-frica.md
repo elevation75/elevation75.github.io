@@ -6,7 +6,7 @@ category: Utilizare
 cover:
   webp: /assets/img/cover-terminal.webp
   jpg: /assets/img/cover-terminal.jpg
-  alt: "O fereastră de terminal pe fundal întunecat, cu rândul de comandă așteptând prima comandă"
+  alt: "Coperta articolului: „Terminalul fără frică” pe fundal albastru închis, lângă o fereastră de terminal care arată ieșirea comenzii ls -lhaR"
 ---
 
 Dacă ai ajuns pe blogul ăsta, probabil ți-a spus cineva, la un moment dat, că „pe Linux totul se face din terminal" — și că sună înfricoșător. Echipa de la birou, un prieten mai tehnic, un video de pe YouTube: toate lasă impresia că trebuie să înveți o limbă străină înainte să poți folosi un calculator cu adevărat.
