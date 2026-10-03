@@ -6,7 +6,7 @@ category: Utilizare
 cover:
   webp: /assets/img/cover-permisii.webp
   jpg: /assets/img/cover-permisii.jpg
-  alt: "Desen cu titlul Permisii în Linux, cine ce poate"
+  alt: "Coperta articolului: „Permisii în Linux — cine ce poate”, pe fundal albastru, cu pictograme de yale și un folder"
 ---
 
 În articolul [Terminalul fără frică](/blog/terminalul-fara-frica/) ai dat peste un rând ciudat, de genul `-rw-r--r--`, și am zis că lăsăm coloanele pe mai târziu. Acum e mai târziu.
