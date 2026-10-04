@@ -18,8 +18,10 @@ Folderele sunt numerotate **în ordinea creării articolelor**, ca să le postez
 
 1. Deschizi `descrieri.md` și copiezi descrierea articolului ales.
 2. Iei `post.jpg` din folderul cu același număr.
-3. Lipești descrierea, pui linkul articolului și hashtag-urile de la final (cele de bază + cele
-   specific articolului).
+3. Lipești descrierea și hashtag-urile de la final (cele de bază + cele specific articolului).
+   **Fără `<` și `>` în jurul linkului** — Instagram nu înțelege Markdown. Și ține minte:
+   linkul din descriere nu se poate apăsa; cel clicabil e cel din **bio**
+   (`https://elevation75.github.io`), pus o dată în Profil → Editare profil → Site.
 4. Publici.
 
 ## Cum regenerezi imaginile
