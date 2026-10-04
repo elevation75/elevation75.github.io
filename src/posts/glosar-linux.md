@@ -171,6 +171,10 @@ Al treilea capitol: ce se întâmplă pe disc în timpul instalării. Aici se te
 
 **Montare (mount)** — legarea unei partiții sau a unui dispozitiv în arborele de fișiere, ca să poată fi folosit. Linux nu are litere de unități: totul e un singur copac, iar partițiile „urcă" în el la anumite ramuri. Termenul apare când explicăm unde montăm ESP-ul ([EndeavourOS](/blog/ghid-instalare-endeavouros/)).
 
+<a id="fhs"></a>
+
+**FHS (Filesystem Hierarchy Standard)** — convenția care spune ce stă unde în arborele de fișiere: configurările în `/etc`, programele în `/usr`, alea din surse externe în `/opt`, datele tale în `/home`, temporarele în `/tmp`. De asta folderele de la rădăcină arată **la fel** pe Ubuntu, Fedora sau EndeavourOS — înveți structura o dată și o știi peste tot. E explicat pas cu pas în [Structura unui sistem Linux](/blog/structura-sistemului-linux/).
+
 <a id="swap"></a>
 
 **Swap** — spațiul de pe disc folosit ca **memorie de schimb**: când RAM-ul se umfă, sistemul mută temporar date pe disc. Fără el, aplicațiile grele pot tăia procese; cu prea mult, calculatorul devine lent. Instalatorul îți propune o partiție swap sau un fișier echivalent ([Ubuntu](/blog/cum-instalezi-ubuntu/), [Mint](/blog/ghid-instalare-linux-mint/)).
@@ -469,7 +473,7 @@ Capitolul cu piesele din calculator și cu cuvântul care sperie pe toată lumea
 
 ## Siguranță, backup și recuperare
 
-Termenii care îți dau liniște: ce faci înainte să riști și cum te întorci dacă ceva merge prost.
+Termenii care îți dau liniște: cine are voie la ce, ce faci înainte să riști și cum te întorci dacă ceva merge prost.
 
 <a id="backup"></a>
 
@@ -490,6 +494,18 @@ Termenii care îți dau liniște: ce faci înainte să riști și cum te întorc
 <a id="firewall"></a>
 
 **Firewall (FirewallD)** — filtrul care decide ce conexiuni exterioare sunt lăsate să intre în calculator. E activ din fabrică pe multe distribuții ([EndeavourOS](/blog/ghid-instalare-endeavouros/)) — adică sistemul e protejat chiar înainte să te gândești la asta.
+
+<a id="permisiuni"></a>
+
+**Permisiuni (drepturi de acces)** — cine are voie să **citească**, să **scrie** sau să **ruleze** un fișier. Fiecare fișier are un proprietar, un grup și restul lumii, iar literele `r`, `w`, `x` (sau cifrele 4, 2, 1) spun ce poate fiecare. Se citesc cu `ls -l` și se schimbă cu `chmod` — cu capturi reale, în [articolul despre permisiuni](/blog/permisiuni-linux/).
+
+<a id="grup"></a>
+
+**Grup (grup de utilizatori)** — o mulțime de utilizatori cărora li se aplică aceleași reguli **deodată**. Când un fișier are un grup, membrii lui primesc drepturile din a doua coloană a lui `ls -l`, fără să le dai pe rând. Utilizatorii sunt trecuți în `/etc/passwd`, iar grupurile în `/etc/group` — două fișiere text obișnuite, arătate în [articolul despre permisiuni](/blog/permisiuni-linux/).
+
+<a id="chmod"></a>
+
+**chmod (change mode)** — comanda care **schimbă** permisiunile unui fișier: `chmod 600 nume` lasă doar proprietarul să intre, `chmod +x nume` dă tuturor voie să-l ruleze, iar `chmod u+r nume` adaugă doar citirea proprietarului. Regula de aur din articol: întâi te uiți cu `ls -l`, apoi atingi — și dai cât mai puține drepturi cu putință ([articolul despre permisiuni](/blog/permisiuni-linux/)).
 
 <a id="recuperare"></a>
 
@@ -526,6 +542,10 @@ Capitolul care desființează „frica de terminal": sunt doar cuvinte pe care l
 <a id="comanda"></a>
 
 **Comandă** — instrucțiunea pe care o scrii în terminal, de obicei „verbul + ce": `apt update` (actualizează lista), `sudo pacman -Syu` (actualizează tot). Fiecare ghid are secțiunea lui de comenzi, executate pas cu pas.
+
+<a id="conducta"></a>
+
+**Conductă (pipe, `|`)** — semnul care leagă două comenzi: ieșirea celei din **stânga** intră în cea din **dreapta**. `ls /etc | head -18` ia lista din `/etc` și păstrează doar primele 18 rânduri — exact ce vrei când o listă e prea lungă pentru ecran. Se citește „conductă" și e unul dintre primele lucruri cu care te obișnuiești în [Structura unui sistem Linux](/blog/structura-sistemului-linux/).
 
 <a id="man"></a>
 
@@ -600,21 +620,21 @@ Reveni aici de fiecare dată când un cuvânt te oprește din citit: deschizi **
 
 ## Index alfabetic
 
-Toți cei 131 de termeni, în ordine alfabetică. Dai clic pe un termen și ajungi direct la explicația lui.
+Toți cei 136 de termeni, în ordine alfabetică. Dai clic pe un termen și ajungi direct la explicația lui.
 
 **A** — [Actualizare (upgrade)](#actualizare) · [Actualizări complete, nu parțiale](#actualizari-complete) · [Administrator (superuser, root)](#administrator) · [AHCI](#ahci) · [AppImage](#appimage) · [apt](#apt) · [Arhitecturi (Intel/AMD, ARM/ARM64, Apple Silicon, 64 biți)](#arhitecturi) · [AUR (Arch User Repository)](#aur)
 
 **B** — [Backup (copie de siguranță)](#backup) · [BIOS](#bios) · [Bluetooth](#bluetooth) · [Bootloader](#bootloader) · [Browser (navigator web)](#browser) · [BTRFS](#btrfs) · [Budgie](#budgie)
 
-**C** — [Cale (path, calea către un fișier)](#cale) · [Cinnamon](#cinnamon) · [Cloud (calcul în cloud)](#cloud) · [Codecuri (codecs)](#codecuri) · [Comandă](#comanda) · [Comenzi de sistem (`systemctl`, `lsblk`, `grub2-mkconfig`)](#comenzi-sistem) · [Confidențialitate](#confidentialitate) · [Container (containerizare)](#container) · [COSMIC](#cosmic) · [Criptarea discului](#criptare) · [CSM / Legacy (modul vechi de pornire)](#csm)
+**C** — [Cale (path, calea către un fișier)](#cale) · [chmod (change mode)](#chmod) · [Cinnamon](#cinnamon) · [Cloud (calcul în cloud)](#cloud) · [Codecuri (codecs)](#codecuri) · [Comandă](#comanda) · [Comenzi de sistem (`systemctl`, `lsblk`, `grub2-mkconfig`)](#comenzi-sistem) · [Conductă (pipe, `|`)](#conducta) · [Confidențialitate](#confidentialitate) · [Container (containerizare)](#container) · [COSMIC](#cosmic) · [Criptarea discului](#criptare) · [CSM / Legacy (modul vechi de pornire)](#csm)
 
 **D** — [`dd`](#dd) · [Dependențe](#dependente) · [Depozit (repositoriu, repo)](#depozit) · [Distribuție (distro)](#distributie) · [DistroWatch](#distrowatch) · [dnf](#dnf) · [Driver (suport de hardware)](#driver) · [Dual boot](#dual-boot)
 
 **E** — [Ediție / versiune / ramură](#editie) · [EFI Shell](#efi-shell) · [ESP (EFI System Partition)](#esp) · [ext4](#ext4)
 
-**F** — [Fallback (varianta de rezervă)](#fallback) · [Fast Startup](#fast-startup) · [Firewall (FirewallD)](#firewall) · [Firmware](#firmware) · [Flatpak (Flathub)](#flatpak) · [Formatare](#formatare)
+**F** — [Fallback (varianta de rezervă)](#fallback) · [Fast Startup](#fast-startup) · [FHS (Filesystem Hierarchy Standard)](#fhs) · [Firewall (FirewallD)](#firewall) · [Firmware](#firmware) · [Flatpak (Flathub)](#flatpak) · [Formatare](#formatare)
 
-**G** — [GitHub / GitLab](#github) · [GNOME](#gnome) · [GNU](#gnu) · [GParted / Disk Management / Blivet-GUI / KDE Partition Manager](#gparted) · [GPL (GNU General Public License)](#gpl) · [GPT](#gpt) · [Grafică hibridă](#grafica-hibrida) · [GRUB](#grub)
+**G** — [GitHub / GitLab](#github) · [GNOME](#gnome) · [GNU](#gnu) · [GParted / Disk Management / Blivet-GUI / KDE Partition Manager](#gparted) · [GPL (GNU General Public License)](#gpl) · [GPT](#gpt) · [Grafică hibridă](#grafica-hibrida) · [GRUB](#grub) · [Grup (grup de utilizatori)](#grup)
 
 **H** — [HTML](#html) · [Hyprland, i3, Sway, bspwm, AwesomeWM](#hyprland-i3)
 
@@ -632,7 +652,7 @@ Toți cei 131 de termeni, în ordine alfabetică. Dai clic pe un termen și ajun
 
 **O** — [Oglindă (mirror)](#oglinda)
 
-**P** — [Pachet](#pachet) · [Pachet `.deb` / `.rpm`](#deb-rpm) · [pacman](#pacman) · [Panou / taskbar / bară de activități / dock / meniu de start](#interfata) · [Pantheon (elementary OS), Deepin, LXDE, LXQt, MATE Desktop](#alte-medii) · [Partiție](#partitie) · [Partiționare](#partitionare) · [Placă de rețea (Wi-Fi)](#placa-retea) · [Placă video (GPU)](#gpu) · [Procesor (CPU)](#procesor) · [Prompt (rândul de comandă)](#prompt) · [Puncte de montare](#puncte-de-montare)
+**P** — [Pachet](#pachet) · [Pachet `.deb` / `.rpm`](#deb-rpm) · [pacman](#pacman) · [Panou / taskbar / bară de activități / dock / meniu de start](#interfata) · [Pantheon (elementary OS), Deepin, LXDE, LXQt, MATE Desktop](#alte-medii) · [Partiție](#partitie) · [Partiționare](#partitionare) · [Permisiuni (drepturi de acces)](#permisiuni) · [Placă de rețea (Wi-Fi)](#placa-retea) · [Placă video (GPU)](#gpu) · [Procesor (CPU)](#procesor) · [Prompt (rândul de comandă)](#prompt) · [Puncte de montare](#puncte-de-montare)
 
 **Q** — [QEMU](#qemu)
 
