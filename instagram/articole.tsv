@@ -1,0 +1,17 @@
+# Primele 15 articole ale blogului, în ordinea creării lor.
+# Câmpuri: număr <TAB> slug (fișierul din src/posts/) <TAB> copertă (în src/assets/img/) <TAB> titlu
+01	de-ce-este-benefic-sa-invati-linux	cover-benefic.jpg	De ce este benefic să învățați Linux?
+02	haideti-sa-invatam-linux	cover-haideti.jpg	Haideți să învățăm Linux!
+03	unix-linus-linux	cover-unix-linus.jpg	Unix + Linus = Linux
+04	avem-si-mascota	mascota-tux.jpg	Avem și mascotă
+05	putina-istorie	cover-istorie.jpg	Puțină istorie
+06	linux-este-miezul-kernel	cover-kernel.jpg	Linux este ... miezul (kernel)
+07	linux-vs-mac-vs-windows	cover-comparatie.jpg	Linux vs Mac vs Windows
+08	un-ocean-de-distributii	cover-distributii.jpg	Un ocean de ... distribuții
+09	de-sau-wm	cover-de-wm.jpg	DE-uri sau WM-uri
+10	alege-distributia	cover-alege-distributia.jpg	Ghidul complet de instalare Linux: Alege distribuția potrivită pentru tine
+11	cum-instalezi-ubuntu	cover-cum-instalezi-ubuntu.jpg	Ghid pas cu pas: Cum să instalezi Ubuntu Linux pe calculatorul tău
+12	ghid-instalare-fedora	cover-fedora.jpg	Ghid de instalare Fedora Workstation: pas cu pas
+13	schimba-sistemul	cover-future-linux.jpg	Cum treci de la Windows la Linux fără bătăi de cap: Ghid practic bazat pe nevoile tale
+14	utilizare-ventoy	cover-ventoy.jpg	Cum creezi un stick USB multiboot cu Ventoy: Linux și Windows pe un singur stick
+15	viitor-linux	cover-viitor-linux.jpg	Viitorul este Open Source: De ce Linux este pregătit să cucerească Desktop-ul
