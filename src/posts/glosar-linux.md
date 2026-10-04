@@ -271,9 +271,13 @@ Cum ajung programele pe sistem și cum le ții la zi — capitolul pe care îl v
 
 **Pachet** — programul ambalat pentru instalare, în formatul pe care îl înțelege distribuția ta, împreună cu dependențele lui. În loc să descarci un instalator `.exe`, alegi „pachetul" X și sistemul rezolvă restul. Exemplu concret: `sudo dnf install gnome-tweaks` din [ghidul Fedora](/blog/ghid-instalare-fedora/).
 
+<a id="dependente"></a>
+
+**Dependențe** — programele și librăriile mici de care un program are nevoie ca să meargă. Vestea bună: managerul de pachete le vede singur și le aduce odată cu programul, așa că tu scrii doar numele lui. Exemplu: `sudo apt install htop`, din [programele instalate fără magazin](/blog/instalare-programe-fara-magazin/).
+
 <a id="depozit"></a>
 
-**Depozit (repozițiu, repo)** — biblioteca oficială de pachete de unde sistemul tău descarcă. Fiecare distribuție are depozitele ei, testate ca să meargă împreună — de aceea instalarea din depozit e mai sigură decât orice fișier de pe internet. Termenul apare în [ghidul Fedora](/blog/ghid-instalare-fedora/) și [Zorin](/blog/ghid-instalare-zorin/).
+**Depozit (repositoriu, repo)** — biblioteca oficială de pachete de unde sistemul tău descarcă. Fiecare distribuție are depozitele ei, testate ca să meargă împreună — de aceea instalarea din depozit e mai sigură decât orice fișier de pe internet, iar acolo se rezolvă și dependențele. Le compari cu celelalte surse în [programele instalate fără magazin](/blog/instalare-programe-fara-magazin/); termenul mai apare în [ghidul Fedora](/blog/ghid-instalare-fedora/) și [Zorin](/blog/ghid-instalare-zorin/).
 
 <a id="oglinda"></a>
 
@@ -293,11 +297,23 @@ Cum ajung programele pe sistem și cum le ții la zi — capitolul pe care îl v
 
 <a id="flatpak"></a>
 
-**Flatpak (Flathub)** — formatul de pachete universal: aceeași aplicație rulează pe **orice** distribuție Linux, izolată și mereu la zi. Magazinul lui se numește **Flathub**. Mint, Fedora și Zorin îl folosesc, iar în [Zorin OS](/blog/ghid-instalare-zorin/) e calea recomandată pentru aplicațiile noi.
+**Flatpak (Flathub)** — formatul de pachete universal: aceeași aplicație rulează pe **orice** distribuție Linux, izolată și mereu la zi. Magazinul lui se numește **Flathub**. Mint, Fedora și Zorin îl folosesc, iar în [Zorin OS](/blog/ghid-instalare-zorin/) e calea recomandată pentru aplicațiile noi. Comenzi și capturi reale sunt în [programele instalate fără magazin](/blog/instalare-programe-fara-magazin/).
+
+<a id="id-program"></a>
+
+**ID de program (Flatpak)** — numele tehnic sub care e înregistrat un program pe Flathub, de forma `org.videolan.VLC`. Căutarea îți dă **ID-ul**, iar tu îl pui exact așa după `flatpak install` — la Flatpak contează identificatorul, nu denumirea comercială. Se vede în capturile din [programele instalate fără magazin](/blog/instalare-programe-fara-magazin/).
 
 <a id="snap"></a>
 
 **Snap** — formatul de pachete al Canonical (compania din spatele Ubuntu): aplicații care se actualizează singure, automat, în fundal. E preinstalat pe Ubuntu, opțional în Fedora și adesea dezinstalat de cine vrea control total — vezi comparația în [schimbarea sistemului](/blog/schimba-sistemul/).
+
+<a id="deb-rpm"></a>
+
+**Pachet `.deb` / `.rpm`** — formatele de pachete ale celor două mari familii: `.deb` pentru Debian, Ubuntu, Mint și Zorin, `.rpm` pentru Fedora. Sunt în regulă când vin de pe site-ul oficial al programului; luate de pe linkuri necunoscute rămân în urmă la actualizări și pot fi periculoase. Regula completă e în [programele instalate fără magazin](/blog/instalare-programe-fara-magazin/).
+
+<a id="appimage"></a>
+
+**AppImage** — al treilea fel de „ambalaj": un singur fișier care conține programul întreg și **pornește fără instalare** — îl dai clic dreapta, îi permiți executarea și merge. Ușor de dus pe stick și de șters, dar la fel de dependent de cine l-a făcut. Apare în [programele instalate fără magazin](/blog/instalare-programe-fara-magazin/).
 
 <a id="rpm-fusion"></a>
 
@@ -584,15 +600,15 @@ Reveni aici de fiecare dată când un cuvânt te oprește din citit: deschizi **
 
 ## Index alfabetic
 
-Toți cei 127 de termeni, în ordine alfabetică. Dai clic pe un termen și ajungi direct la explicația lui.
+Toți cei 131 de termeni, în ordine alfabetică. Dai clic pe un termen și ajungi direct la explicația lui.
 
-**A** — [Actualizare (upgrade)](#actualizare) · [Actualizări complete, nu parțiale](#actualizari-complete) · [Administrator (superuser, root)](#administrator) · [AHCI](#ahci) · [apt](#apt) · [Arhitecturi (Intel/AMD, ARM/ARM64, Apple Silicon, 64 biți)](#arhitecturi) · [AUR (Arch User Repository)](#aur)
+**A** — [Actualizare (upgrade)](#actualizare) · [Actualizări complete, nu parțiale](#actualizari-complete) · [Administrator (superuser, root)](#administrator) · [AHCI](#ahci) · [AppImage](#appimage) · [apt](#apt) · [Arhitecturi (Intel/AMD, ARM/ARM64, Apple Silicon, 64 biți)](#arhitecturi) · [AUR (Arch User Repository)](#aur)
 
 **B** — [Backup (copie de siguranță)](#backup) · [BIOS](#bios) · [Bluetooth](#bluetooth) · [Bootloader](#bootloader) · [Browser (navigator web)](#browser) · [BTRFS](#btrfs) · [Budgie](#budgie)
 
 **C** — [Cale (path, calea către un fișier)](#cale) · [Cinnamon](#cinnamon) · [Cloud (calcul în cloud)](#cloud) · [Codecuri (codecs)](#codecuri) · [Comandă](#comanda) · [Comenzi de sistem (`systemctl`, `lsblk`, `grub2-mkconfig`)](#comenzi-sistem) · [Confidențialitate](#confidentialitate) · [Container (containerizare)](#container) · [COSMIC](#cosmic) · [Criptarea discului](#criptare) · [CSM / Legacy (modul vechi de pornire)](#csm)
 
-**D** — [`dd`](#dd) · [Depozit (repozițiu, repo)](#depozit) · [Distribuție (distro)](#distributie) · [DistroWatch](#distrowatch) · [dnf](#dnf) · [Driver (suport de hardware)](#driver) · [Dual boot](#dual-boot)
+**D** — [`dd`](#dd) · [Dependențe](#dependente) · [Depozit (repositoriu, repo)](#depozit) · [Distribuție (distro)](#distributie) · [DistroWatch](#distrowatch) · [dnf](#dnf) · [Driver (suport de hardware)](#driver) · [Dual boot](#dual-boot)
 
 **E** — [Ediție / versiune / ramură](#editie) · [EFI Shell](#efi-shell) · [ESP (EFI System Partition)](#esp) · [ext4](#ext4)
 
@@ -602,7 +618,7 @@ Toți cei 127 de termeni, în ordine alfabetică. Dai clic pe un termen și ajun
 
 **H** — [HTML](#html) · [Hyprland, i3, Sway, bspwm, AwesomeWM](#hyprland-i3)
 
-**I** — [ISO (imagine de disc)](#iso) · [isolinux](#isolinux)
+**I** — [ID de program (Flatpak)](#id-program) · [ISO (imagine de disc)](#iso) · [isolinux](#isolinux)
 
 **J** — [Jurnal (log)](#jurnal)
 
@@ -616,7 +632,7 @@ Toți cei 127 de termeni, în ordine alfabetică. Dai clic pe un termen și ajun
 
 **O** — [Oglindă (mirror)](#oglinda)
 
-**P** — [Pachet](#pachet) · [pacman](#pacman) · [Panou / taskbar / bară de activități / dock / meniu de start](#interfata) · [Pantheon (elementary OS), Deepin, LXDE, LXQt, MATE Desktop](#alte-medii) · [Partiție](#partitie) · [Partiționare](#partitionare) · [Placă de rețea (Wi-Fi)](#placa-retea) · [Placă video (GPU)](#gpu) · [Procesor (CPU)](#procesor) · [Prompt (rândul de comandă)](#prompt) · [Puncte de montare](#puncte-de-montare)
+**P** — [Pachet](#pachet) · [Pachet `.deb` / `.rpm`](#deb-rpm) · [pacman](#pacman) · [Panou / taskbar / bară de activități / dock / meniu de start](#interfata) · [Pantheon (elementary OS), Deepin, LXDE, LXQt, MATE Desktop](#alte-medii) · [Partiție](#partitie) · [Partiționare](#partitionare) · [Placă de rețea (Wi-Fi)](#placa-retea) · [Placă video (GPU)](#gpu) · [Procesor (CPU)](#procesor) · [Prompt (rândul de comandă)](#prompt) · [Puncte de montare](#puncte-de-montare)
 
 **Q** — [QEMU](#qemu)
 
