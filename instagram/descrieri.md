@@ -1,8 +1,9 @@
-# Descrieri Instagram — primele 15 articole
+# Descrieri Instagram — postul de prezentare + primele 15 articole
 
-Gata de copiat: deschizi folderul articolelui (ex. `01-de-ce-este-benefic-sa-invati-linux/`),
+Gata de copiat: deschizi folderul (ex. `00-prezentare/` sau `01-de-ce-este-benefic-sa-invati-linux/`),
 iei imaginea `post.jpg`, copiezi descrierea de mai jos și înlocuiești linkul dacă e nevoie.
-Ordinea este cea a creării articolelor, la fel ca numerele din foldere.
+Ordinea foldoarelor este cea a creării articolelor; `00-prezentare` e postul-manifest al contului
+(îl postezi primul și îl fixezi).
 
 ---
 
@@ -34,6 +35,31 @@ a Instagram.
 ```
 
 Pui hashtag-urile la finalul descrierii, pe un rând nou, iar linkul articolului înaintea lor.
+
+---
+
+## 00 — Postul de prezentare (doar Instagram)
+
+Folder: `00-prezentare/` — **nu se publică pe blog**, e doar pentru cont.
+
+**Descriere:**
+
+Bună! Aici e „Primii pași spre Linux" — un loc în care învățăm împreună, de la zero.
+
+Ce găsești: ghiduri pas cu pas, în română — instalare ecran cu ecran, primele comenzi, fișiere,
+permisiuni, programe. Explicații pe înțelesul începătorilor, fără jargon și fără grabă.
+
+Ce nu găsești: râs de întrebări „prostești" și presupuneri că știi deja ce e un terminal. Toate
+articolele sunt gratuite, pe blog.
+
+Dacă vrei să intri în lumea Linux-ului, ai nimerit bine. 🐧
+
+🔗 Blogul întreg (link în bio): https://elevation75.github.io/
+
+**Hashtag-uri:** `#linuxforbeginners #linuxinromana #incepatori #pasiprimi #ghidlinux #invataceva #romania #comunitate #faraJargon #primulpas`
+
+> 📌 **După ce-l postezi:** ⋯ → **Fixează postarea**. Rămâne primul din profil, indiferent în ce
+> ordine postezi restul — exact rolul lui e să spună în trei secunde cine e contul.
 
 ---
 

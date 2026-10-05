@@ -7,10 +7,16 @@ descrierile gata de copiat.
 
 | Fișier / folder | Ce e |
 |---|---|
-| `descrieri.md` | Cele 15 descrieri + setul de hashtag-uri |
+| `descrieri.md` | Postul de prezentare + cele 15 descrieri + setul de hashtag-uri |
+| `00-prezentare/post.jpg` | Imaginea de prezentare a contului (fără fotografie, cu logo) |
 | `01-…/post.jpg` … `15-…/post.jpg` | Câte o imagine 4:5 pentru fiecare articol |
 | `articole.tsv` | Lista articolelor (număr, folder, copertă, titlu) |
-| `gen-postere.sh` | Scriptul care generează imaginile |
+| `gen-postere.sh` | Scriptul care generează imaginile de articole |
+| `gen-prezentare.sh` | Scriptul care generează imaginea de prezentare |
+| `lib-fonturi.sh` | Fonturile blogului, descărcate o singură dată |
+
+**Postul de prezentare (`00-…`) e doar pentru Instagram**, nu se publică pe blog: îl postezi primul
+și îl **fixezi** (⋯ → Fixează postarea), ca să fie prima vedere din profil.
 
 Folderele sunt numerotate **în ordinea creării articolelor**, ca să le postezi în ordine.
 
@@ -29,8 +35,9 @@ Folderele sunt numerotate **în ordinea creării articolelor**, ca să le postez
 Dacă schimbi o copertă sau adaugi un articol:
 
 ```bash
-./instagram/gen-postere.sh          # toate cele 15
+./instagram/gen-postere.sh          # toate cele 15 postări de articole
 ./instagram/gen-postere.sh 07       # doar postările care încep cu 07
+./instagram/gen-prezentare.sh       # postul de prezentare (00)
 ```
 
 Pentru un articol nou: adaugi un rând nou în `articole.tsv` (număr, slug, copertă, titlu), rulezi
