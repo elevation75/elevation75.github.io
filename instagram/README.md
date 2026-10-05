@@ -7,9 +7,9 @@ descrierile gata de copiat.
 
 | Fișier / folder | Ce e |
 |---|---|
-| `descrieri.md` | Postul de prezentare + cele 15 descrieri + setul de hashtag-uri |
+| `descrieri.md` | Postul de prezentare + cele 24 de descrieri + setul de hashtag-uri |
 | `00-prezentare/post.jpg` | Imaginea de prezentare a contului (fără fotografie, cu logo) |
-| `01-…/post.jpg` … `15-…/post.jpg` | Câte o imagine 4:5 pentru fiecare articol |
+| `01-…/post.jpg` … `24-…/post.jpg` | Câte o imagine 4:5 pentru fiecare articol |
 | `articole.tsv` | Lista articolelor (număr, folder, copertă, titlu) |
 | `gen-postere.sh` | Scriptul care generează imaginile de articole |
 | `gen-prezentare.sh` | Scriptul care generează imaginea de prezentare |
@@ -35,7 +35,7 @@ Folderele sunt numerotate **în ordinea creării articolelor**, ca să le postez
 Dacă schimbi o copertă sau adaugi un articol:
 
 ```bash
-./instagram/gen-postere.sh          # toate cele 15 postări de articole
+./instagram/gen-postere.sh          # toate cele 24 de postări de articole
 ./instagram/gen-postere.sh 07       # doar postările care încep cu 07
 ./instagram/gen-prezentare.sh       # postul de prezentare (00)
 ```

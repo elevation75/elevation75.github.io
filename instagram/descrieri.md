@@ -1,4 +1,4 @@
-# Descrieri Instagram — postul de prezentare + primele 15 articole
+# Descrieri Instagram — postul de prezentare + toate cele 24 de articole
 
 Gata de copiat: deschizi folderul (ex. `00-prezentare/` sau `01-de-ce-este-benefic-sa-invati-linux/`),
 iei imaginea `post.jpg`, copiezi descrierea de mai jos și înlocuiești linkul dacă e nevoie.
@@ -340,3 +340,178 @@ Nu e vorba că Linux va „cuceri” într-o zi — e vorba că momentul e acum,
 🔗 Articolul complet (link în bio): https://elevation75.github.io/blog/viitor-linux/
 
 **Hashtag-uri:** `#opensource #linuxgaming #proton #steamdeck #viitorul #techro #linuxforbeginners #foss #gratuit #calculator`
+
+---
+
+## 16 — Ghid de instalare Linux Mint: pas cu pas
+
+Folder: `16-ghid-instalare-linux-mint/`
+Link: https://elevation75.github.io/blog/ghid-instalare-linux-mint/
+
+**Descriere:**
+
+Poate cea mai bună primă impresie din lumea Linux: arată familiar, merge lin și nu te trimite la
+terminal din prima.
+
+În ghid sunt cele trei arome explicate (Cinnamon, MATE și Xfce) și pe care să o alegi, stick-ul
+bootabil, fiecare ecran al instalatorului și primii pași de după instalare.
+
+Dacă vii de pe Windows și vrei o trecere lină, începe de aici.
+
+🔗 Articolul complet (link în bio): https://elevation75.github.io/blog/ghid-instalare-linux-mint/
+
+**Hashtag-uri:** `#linuxmint #mint #cinnamon #mate #xfce #instalarelinux #linuxforbeginners #distro #opensource #pasiprimi`
+
+---
+
+## 17 — Ghid de instalare Pop!_OS: pas cu pas
+
+Folder: `17-ghid-instalare-popos/`
+Link: https://elevation75.github.io/blog/ghid-instalare-popos/
+
+**Descriere:**
+
+Pop!_OS e făcut de System76, e prietenos cu plăcile NVIDIA și arată curat — dar are și un
+revers: desktopul COSMIC e tânăr.
+
+Ghidul trece prin alegerea imaginii (generic sau NVIDIA), Secure Boot, stick-ul cu Etcher,
+fiecare ecran al instalatorului, criptarea discului și primii pași — plus un avertisment cinstit
+despre COSMIC.
+
+🔗 Articolul complet (link în bio): https://elevation75.github.io/blog/ghid-instalare-popos/
+
+**Hashtag-uri:** `#popos #system76 #cosmic #nvidia #instalarelinux #linuxforbeginners #ubuntu #distro #opensource #pasiprimi`
+
+---
+
+## 18 — Ghid de instalare Zorin OS: pas cu pas
+
+Folder: `18-ghid-instalare-zorin/`
+Link: https://elevation75.github.io/blog/ghid-instalare-zorin/
+
+**Descriere:**
+
+Cel mai prietenos cu cine vine de pe Windows: meniul, aspectul, gesturile — totul îți e familiar
+din prima secundă.
+
+Ce alegi dintre ediții (Core, Lite, Education, Pro), stick-ul cu Etcher, meniul de boot cu
+opțiunea NVIDIA, fiecare ecran al instalatorului, dual boot cu Windows și primii pași — plus
+răspunsul cinstit la întrebarea „nu e doar Ubuntu?”.
+
+🔗 Articolul complet (link în bio): https://elevation75.github.io/blog/ghid-instalare-zorin/
+
+**Hashtag-uri:** `#zorinos #zorin #windows11 #trecerealinux #instalarelinux #linuxforbeginners #ubuntu #distro #opensource #pasiprimi`
+
+---
+
+## 19 — Ghid de instalare EndeavourOS: pas cu pas
+
+Folder: `19-ghid-instalare-endeavouros/`
+Link: https://elevation75.github.io/blog/ghid-instalare-endeavouros/
+
+**Descriere:**
+
+Arch Linux fără să construiești totul de mână — asta e EndeavourOS.
+
+De ce varianta Online e cea corectă (Offline e doar fallback), stick-ul fără greșeli, meniul de
+boot EFI cu opțiunile de drivere, fiecare pas al instalatorului, actualizări rolling cu pacman,
+AUR cu yay și Timeshift ca plasă de siguranță.
+
+🔗 Articolul complet (link în bio): https://elevation75.github.io/blog/ghid-instalare-endeavouros/
+
+**Hashtag-uri:** `#endeavouros #archlinux #pacman #aur #rollingrelease #instalarelinux #linuxforbeginners #distro #opensource #pasiprimi`
+
+---
+
+## 20 — Glosar Linux: toți termenii tehnici
+
+Folder: `20-glosar-linux/`
+Link: https://elevation75.github.io/blog/glosar-linux/
+
+**Descriere:**
+
+„Ce înseamnă UEFI? Și AUR? Și rolling release?”
+
+Dicționarul complet al termenilor folosiți pe blog — ISO, UEFI, ESP, partiții, drivere, DE vs
+WM, Timeshift — fiecare explicat simplu, cu exemplu practic și cu link către articolul în care
+apare.
+
+Îl salvezi și revii de fiecare dată când dai de un cuvânt nou.
+
+🔗 Articolul complet (link în bio): https://elevation75.github.io/blog/glosar-linux/
+
+**Hashtag-uri:** `#glosarlinux #termenitehnici #dictionar #linuxforbeginners #faraJargon #invatlinux #explicat #techro #foss #educativ`
+
+---
+
+## 21 — Terminalul fără frică
+
+Folder: `21-terminalul-fara-frica/`
+Link: https://elevation75.github.io/blog/terminalul-fara-frica/
+
+**Descriere:**
+
+Terminalul nu e o placă de testare a răbdării — e doar o fereastră în care calculatorul îți
+răspunde.
+
+Ce e, de ce nu trebuie să-ți fie teamă de el, cum îl deschizi și primele comenzi cu care te
+plimbi prin fișierele tale — pas cu pas, pe înțelesul începătorilor.
+
+🔗 Articolul complet (link în bio): https://elevation75.github.io/blog/terminalul-fara-frica/
+
+**Hashtag-uri:** `#terminal #liniacomenzilor #bash #comenzi #linuxforbeginners #invatlinux #techro #foss #prietenos #pasiprimi`
+
+---
+
+## 22 — Structura unui sistem Linux
+
+Folder: `22-structura-sistemului-linux/`
+Link: https://elevation75.github.io/blog/structura-sistemului-linux/
+
+**Descriere:**
+
+Fiecare folder din rădăcina Linux-ului are un rol — și, de obicei, un motiv pentru nume.
+
+Ce fac /home, /etc, /usr, /var și /tmp, ce e la rădăcină și cum te plimbi printre ele din
+terminal. La final știi unde să cauți, în loc să ghicești.
+
+🔗 Articolul complet (link în bio): https://elevation75.github.io/blog/structura-sistemului-linux/
+
+**Hashtag-uri:** `#filesystem #foldere #linuxstructure #fhs #linuxforbeginners #terminal #techro #invatlinux #foss #educativ`
+
+---
+
+## 23 — Permisii în Linux
+
+Folder: `23-permisiuni-linux/`
+Link: https://elevation75.github.io/blog/permisiuni-linux/
+
+**Descriere:**
+
+rw-r--r-- nu e un cod secret — e o listă de cine are voie să facă ce.
+
+Cine sunt user, group și other, cum se calculează cifrele 644 și 755 și cum schimbi
+permisiunile cu chmod. Explicat simplu, cu exemple, fără presupuneri.
+
+🔗 Articolul complet (link în bio): https://elevation75.github.io/blog/permisiuni-linux/
+
+**Hashtag-uri:** `#permisiuni #chmod #linuxsecurity #drepturi #linuxforbeginners #terminal #techro #invatlinux #foss #simplu`
+
+---
+
+## 24 — Cum instalezi programe fără magazin
+
+Folder: `24-instalare-programe-fara-magazin/`
+Link: https://elevation75.github.io/blog/instalare-programe-fara-magazin/
+
+**Descriere:**
+
+Când programul pe care-l vrei nu e în magazin, ai comenzi: apt, dnf, pacman — și Flatpak când
+vrei ultima versiune, indiferent de distribuție.
+
+Căutare, instalare și ștergere din terminal pentru fiecare, cu exemple reale, plus ce alegi
+când magazinul pur și simplu nu-l are.
+
+🔗 Articolul complet (link în bio): https://elevation75.github.io/blog/instalare-programe-fara-magazin/
+
+**Hashtag-uri:** `#apt #dnf #pacman #flatpak #pachete #instalareprograme #linuxforbeginners #terminal #techro #foss`

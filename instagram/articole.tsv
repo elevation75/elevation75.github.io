@@ -1,4 +1,4 @@
-# Primele 15 articole ale blogului, în ordinea creării lor.
+# Cele 24 de articole ale blogului, în ordinea creării lor.
 # Câmpuri: număr <TAB> slug (fișierul din src/posts/) <TAB> copertă (în src/assets/img/) <TAB> titlu
 01	de-ce-este-benefic-sa-invati-linux	cover-benefic.jpg	De ce este benefic să învățați Linux?
 02	haideti-sa-invatam-linux	cover-haideti.jpg	Haideți să învățăm Linux!
@@ -15,3 +15,12 @@
 13	schimba-sistemul	cover-future-linux.jpg	Cum treci de la Windows la Linux fără bătăi de cap: Ghid practic bazat pe nevoile tale
 14	utilizare-ventoy	cover-ventoy.jpg	Cum creezi un stick USB multiboot cu Ventoy: Linux și Windows pe un singur stick
 15	viitor-linux	cover-viitor-linux.jpg	Viitorul este Open Source: De ce Linux este pregătit să cucerească Desktop-ul
+16	ghid-instalare-linux-mint	cover-linux-mint.jpg	Ghid de instalare Linux Mint: pas cu pas (Cinnamon, MATE și Xfce)
+17	ghid-instalare-popos	cover-popos.jpg	Ghid de instalare Pop!_OS: pas cu pas (cu desktop COSMIC)
+18	ghid-instalare-zorin	cover-zorin.jpg	Ghid de instalare Zorin OS: pas cu pas (cel mai prietenos cu Windows)
+19	ghid-instalare-endeavouros	cover-endeavouros.jpg	Ghid de instalare EndeavourOS: pas cu pas (Arch cu instalator grafic)
+20	glosar-linux	cover-glosar.jpg	Glosar Linux: toți termenii tehnici, explicați pe înțelesul tău
+21	terminalul-fara-frica	cover-terminal.jpg	Terminalul fără frică
+22	structura-sistemului-linux	cover-structura.jpg	Structura unui sistem Linux: ce e în fiecare folder
+23	permisiuni-linux	cover-permisii.jpg	Permisii în Linux: cine are voie să facă ce
+24	instalare-programe-fara-magazin	cover-programe.jpg	Cum instalezi programe fără magazin: apt, dnf, pacman și Flatpak
