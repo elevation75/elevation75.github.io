@@ -14,7 +14,7 @@ const categories = [
     name: "Inițiere",
     slug: "initiere",
     description:
-      "Fundațiile: ce este Linux, cum e structurat, cu ce se mănâncă și de unde începi fără să te pierzi.",
+      "Bazele: ce este Linux, cum e structurat, cu ce se mănâncă și de unde începi fără să te pierzi.",
     icon: "seedling",
     accent: "mint",
   },
