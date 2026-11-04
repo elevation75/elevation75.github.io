@@ -303,17 +303,29 @@ Capitolul cu termenii care dau sensul de ansamblu: ce e Linux de fapt, cine l-a 
 
 **libc (glibc, musl)** — biblioteca C care stă între fiecare program și kernel: ea transformă apelurile simple din program în apeluri de sistem reale. Pe majoritatea distribuțiilor e **glibc** (GNU C Library), pe sistemele ușoare (Alpine) **musl**. N-o vezi niciodată, dar aproape orice program se sprijină pe ea ([Harta Linux, strat cu strat](/blog/harta-linux/)).
 
+<a id="server-display"></a>
+
+**Server de display** — programul care desenează ferestrele, cursorul și tastatura pe ecran și traduce ce apăsă tu în ce văd programele. Pe Linux au fost două mari: **X11** (clasicul) și **Wayland** (cel nou) — comparația completă e în [Xorg vs Wayland](/blog/xorg-vs-wayland/).
+
+<a id="protocol"></a>
+
+**Protocol (X11, Wayland)** — un set de reguli care spune **cum** vorbesc două programe între ele, fără să implice vreuna dintre ele. Wayland e protocol, nu program: îl implementează compozitorii (Mutter, KWin). Analogia din articol: **HTTP e protocolul, Apache e serverul** ([Xorg vs Wayland](/blog/xorg-vs-wayland/)).
+
 <a id="x11-wayland"></a>
 
-**X11 / Wayland** — protocoalele care fac posibilă fereastra, cursorul și tastatura pe ecran. **X11** e standardul moștenit din anii '80, **Wayland** e înlocuitorul mai modern, curat și securizat, pe care distribuțiile îl adoptează treptat. Diferența se discută în [DE sau WM?](/blog/de-sau-wm/).
+**X11 / Wayland** — protocoalele care fac posibilă fereastra, cursorul și tastatura pe ecran. **X11** e standardul moștenit din anii '80, **Wayland** e înlocuitorul mai modern, curat și securizat, pe care distribuțiile îl adoptează treptat. Diferențele pe larg sunt în [Xorg vs Wayland](/blog/xorg-vs-wayland/); pe scurt, în [DE sau WM?](/blog/de-sau-wm/).
 
 <a id="compositor"></a>
 
-**Compositor** — programul care decide cum arată fiecare fereastră pe ecran: unde stă, ce se ascunde sub ea, cum se suprapun. Pe Wayland, compozitorul e și serverul de display, într-un singur program — spre deosebire de X11, unde erau două piese separate. Vezi [Harta Linux, strat cu strat](/blog/harta-linux/).
+**Compositor** — programul care decide cum arată fiecare fereastră pe ecran: unde stă, ce se ascunde sub ea, cum se suprapun. Pe Wayland, compozitorul e **și** serverul de display, într-un singur program — fără middleman-ul din X11, unde erau două piese separate. Implementările Wayland sunt Mutter, KWin, Sway și Weston, detaliate în [compozitorii Wayland](#compozitori-wayland) și în [Xorg vs Wayland](/blog/xorg-vs-wayland/).
 
 <a id="xwayland"></a>
 
-**XWayland** — stratul de compatibilitate care rulează aplicațiile vechi, scrise pentru X11, într-un sistem Wayland. Fără el, multe programe mai vechi n-ar merge pe distribuțiile noi. Apare în [Harta Linux, strat cu strat](/blog/harta-linux/).
+**XWayland** — un **mini server X care rulează în interiorul Wayland** și **traduce** cererile vechilor aplicații X11 în comenzi Wayland. Fără el, milioanele de programe scrise pentru X11 n-ar merge pe distribuțiile noi. Funcționează, dar trec printr-un strat de traducere ([Xorg vs Wayland](/blog/xorg-vs-wayland/)).
+
+<a id="xlibre"></a>
+
+**Xlibre** — fork al serverului X.Org, pornit în **iunie 2025** de Enrico Weigelt: curățare masivă de cod, funcții noi și suport repornit pentru driverele Nvidia vechi (340/390/470). Versiunile 25.0 și 25.1; folosit ca implicit de OpenMandriva și Artix. **Nu** înlocuiește Wayland — e partea veche, reînnoită ([Xorg vs Wayland](/blog/xorg-vs-wayland/)).
 
 <a id="sandbox"></a>
 
@@ -434,6 +446,18 @@ Cel mai colorat capitol: interfața pe care o vezi zilnic, numele pe care le vez
 <a id="stacking-compositing"></a>
 
 **Stacking / Compositing** — extremele opuse tilingului: **stacking** așază ferestrele ca Windows-ul (una peste alta, cu colțuri de prins), iar **compositing** adaugă efecte: umbre, transparențe, animații. **Openbox** și **Fluxbox** sunt stacking clasice, **Compiz** e celebrul care făcea ferestrele să se rotească ([DE sau WM?](/blog/de-sau-wm/)).
+
+<a id="compozitori-wayland"></a>
+
+**Compozitori Wayland (Mutter, KWin, Weston)** — programele care **implementează** protocolul Wayland: **Mutter** la GNOME (Ubuntu, Fedora), **KWin** la KDE Plasma, **Sway** standalone pentru tiling, iar **Weston** e implementarea de referință, „din manual", folosită la teste. Fiecare desktop și-a rescris compozitorul — de aia tranziția a durat ani ([Xorg vs Wayland](/blog/xorg-vs-wayland/)).
+
+<a id="tearing"></a>
+
+**Tearing (ruptură de imagine)** — efectul când o fereastră pare „ruptă" în două la derulare, pentru că ecranul prinde imaginea pe jumătate de desenat. În Xorg apărea des, pentru că pixelul trecea prin server X și compozitor ([Xorg vs Wayland](/blog/xorg-vs-wayland/)).
+
+<a id="damage-tracking"></a>
+
+**Damage tracking** — trucul prin care Wayland **redesenează doar partea de ecran care s-a schimbat**, nu tot ecranul. GPU-ul muncește mai puțin, bateria ține mai mult, animațiile sunt fluide ([Xorg vs Wayland](/blog/xorg-vs-wayland/)).
 
 <a id="gnome"></a>
 
@@ -679,6 +703,10 @@ Ultimul capitol, cu termeni pe care îi prinzi din zbor în discuțiile despre �
 
 **D-Bus (magistrala de mesaje)** — linia liniștită prin care programele își trimit mesaje unul altuia: ai bagat un stick, managerul de fișiere se deschide singur; ai dat volumul mai tare, interfața se actualizează. E sistemul nervos al desktop-ului ([Procesul de bootare Linux](/blog/procesul-de-bootare-linux/)).
 
+<a id="portal-xdg"></a>
+
+**Portal (XDG Desktop Portal)** — mecanismul prin care o aplicație **cere voie** să facă ceva ce altfel ar fi blocat de izolare: să partajeze ecranul, să deschidă un fișier, să tipărească. E prețul securității Wayland: dacă nimeni nu poate privi în ferestrele altuia, fiecare dorință trece printr-o cerere formală ([Xorg vs Wayland](/blog/xorg-vs-wayland/)).
+
 <a id="browser"></a>
 
 **Browser (navigator web)** — programul cu care intri pe internet: Firefox, Chrome, Chromium, Brave. Pe Linux vine deja instalat unul, iar schimbarea lui e primul lucru pe care îl fac mulți ([Ubuntu](/blog/cum-instalezi-ubuntu/)).
@@ -704,15 +732,15 @@ Reveni aici de fiecare dată când un cuvânt te oprește din citit: deschizi **
 
 ## Index alfabetic
 
-Toți cei 157 de termeni, în ordine alfabetică. Dai clic pe un termen și ajungi direct la explicația lui.
+Toți cei 164 de termeni, în ordine alfabetică. Dai clic pe un termen și ajungi direct la explicația lui.
 
 **A** — [Actualizare (upgrade)](#actualizare) · [Actualizări complete, nu parțiale](#actualizari-complete) · [Administrator (superuser, root)](#administrator) · [AHCI](#ahci) · [Apel de sistem (system call)](#apel-sistem) · [AppImage](#appimage) · [apt](#apt) · [Arhitecturi (Intel/AMD, ARM/ARM64, Apple Silicon, 64 biți)](#arhitecturi) · [AUR (Arch User Repository)](#aur)
 
 **B** — [Backup (copie de siguranță)](#backup) · [BIOS](#bios) · [Bluetooth](#bluetooth) · [Bootloader](#bootloader) · [Browser (navigator web)](#browser) · [BTRFS](#btrfs) · [Budgie](#budgie)
 
-**C** — [Cale (path, calea către un fișier)](#cale) · [chmod (change mode)](#chmod) · [Cinnamon](#cinnamon) · [Cloud (calcul în cloud)](#cloud) · [Codecuri (codecs)](#codecuri) · [Comandă](#comanda) · [Comenzi de sistem (`systemctl`, `lsblk`, `grub2-mkconfig`)](#comenzi-sistem) · [Compositor](#compositor) · [Conductă (pipe, `|`)](#conducta) · [Confidențialitate](#confidentialitate) · [Container (containerizare)](#container) · [coreutils (ls, cp, mv, cat)](#coreutils) · [COSMIC](#cosmic) · [Criptarea discului](#criptare) · [CSM / Legacy (modul vechi de pornire)](#csm)
+**C** — [Cale (path, calea către un fișier)](#cale) · [chmod (change mode)](#chmod) · [Cinnamon](#cinnamon) · [Cloud (calcul în cloud)](#cloud) · [Codecuri (codecs)](#codecuri) · [Comandă](#comanda) · [Comenzi de sistem (`systemctl`, `lsblk`, `grub2-mkconfig`)](#comenzi-sistem) · [Compositor](#compositor) · [Compozitori Wayland (Mutter, KWin, Weston)](#compozitori-wayland) · [Conductă (pipe, `|`)](#conducta) · [Confidențialitate](#confidentialitate) · [Container (containerizare)](#container) · [coreutils (ls, cp, mv, cat)](#coreutils) · [COSMIC](#cosmic) · [Criptarea discului](#criptare) · [CSM / Legacy (modul vechi de pornire)](#csm)
 
-**D** — [`dd`](#dd) · [D-Bus (magistrala de mesaje)](#dbus) · [Dependențe](#dependente) · [Depozit (repositoriu, repo)](#depozit) · [Distribuție (distro)](#distributie) · [DistroWatch](#distrowatch) · [Display manager (GDM, LightDM, SDDM)](#display-manager) · [dnf](#dnf) · [Driver (suport de hardware)](#driver) · [Dual boot](#dual-boot)
+**D** — [Damage tracking](#damage-tracking) · [`dd`](#dd) · [D-Bus (magistrala de mesaje)](#dbus) · [Dependențe](#dependente) · [Depozit (repositoriu, repo)](#depozit) · [Distribuție (distro)](#distributie) · [DistroWatch](#distrowatch) · [Display manager (GDM, LightDM, SDDM)](#display-manager) · [dnf](#dnf) · [Driver (suport de hardware)](#driver) · [Dual boot](#dual-boot)
 
 **E** — [Ediție / versiune / ramură](#editie) · [EFI Shell](#efi-shell) · [ESP (EFI System Partition)](#esp) · [ext4](#ext4)
 
@@ -736,15 +764,15 @@ Toți cei 157 de termeni, în ordine alfabetică. Dai clic pe un termen și ajun
 
 **O** — [Oglindă (mirror)](#oglinda)
 
-**P** — [Pachet](#pachet) · [Pachet `.deb` / `.rpm`](#deb-rpm) · [pacman](#pacman) · [Panou / taskbar / bară de activități / dock / meniu de start](#interfata) · [Pantheon (elementary OS), Deepin, LXDE, LXQt, MATE Desktop](#alte-medii) · [Partiție](#partitie) · [Partiționare](#partitionare) · [Permisiuni (drepturi de acces)](#permisiuni) · [PID 1 (procesul inițial, init)](#pid-1) · [Placă de rețea (Wi-Fi)](#placa-retea) · [Placă video (GPU)](#gpu) · [POST (Power-On Self-Test)](#post) · [Procesor (CPU)](#procesor) · [Programator (scheduler)](#programator) · [Prompt (rândul de comandă)](#prompt) · [Puncte de montare](#puncte-de-montare)
+**P** — [Pachet](#pachet) · [Pachet `.deb` / `.rpm`](#deb-rpm) · [pacman](#pacman) · [Panou / taskbar / bară de activități / dock / meniu de start](#interfata) · [Pantheon (elementary OS), Deepin, LXDE, LXQt, MATE Desktop](#alte-medii) · [Partiție](#partitie) · [Partiționare](#partitionare) · [Permisiuni (drepturi de acces)](#permisiuni) · [PID 1 (procesul inițial, init)](#pid-1) · [Placă de rețea (Wi-Fi)](#placa-retea) · [Placă video (GPU)](#gpu) · [Portal (XDG Desktop Portal)](#portal-xdg) · [POST (Power-On Self-Test)](#post) · [Procesor (CPU)](#procesor) · [Programator (scheduler)](#programator) · [Prompt (rândul de comandă)](#prompt) · [Protocol (X11, Wayland)](#protocol) · [Puncte de montare](#puncte-de-montare)
 
 **Q** — [QEMU](#qemu)
 
 **R** — [Recuperare / SystemRescue](#recuperare) · [Richard Stallman (FSF)](#stallman) · [Rolling release](#rolling-release) · [RPM Fusion](#rpm-fusion) · [RSYNC](#rsync)
 
-**S** — [Sandbox (cutie de nisip)](#sandbox) · [Secure Boot](#secure-boot) · [Sesiune de utilizator](#sesiune) · [Shell (Bash, Zsh, Fish)](#shell) · [Sincronizare („așteaptă 10 minute")](#sincronizare) · [Snap](#snap) · [Snapshot (instantaneu)](#snapshot) · [Stacking / Compositing](#stacking-compositing) · [Stick USB bootabil](#stick-usb-bootabil) · [`sudo`](#sudo) · [Sursă deschisă (open source)](#sursa-deschisa) · [Swap](#swap) · [systemd](#systemd) · [`systemd-analyze`](#systemd-analyze) · [systemd-boot](#systemd-boot)
+**S** — [Sandbox (cutie de nisip)](#sandbox) · [Secure Boot](#secure-boot) · [Server de display](#server-display) · [Sesiune de utilizator](#sesiune) · [Shell (Bash, Zsh, Fish)](#shell) · [Sincronizare („așteaptă 10 minute")](#sincronizare) · [Snap](#snap) · [Snapshot (instantaneu)](#snapshot) · [Stacking / Compositing](#stacking-compositing) · [Stick USB bootabil](#stick-usb-bootabil) · [`sudo`](#sudo) · [Sursă deschisă (open source)](#sursa-deschisa) · [Swap](#swap) · [systemd](#systemd) · [`systemd-analyze`](#systemd-analyze) · [systemd-boot](#systemd-boot)
 
-**T** — [Telemetrie](#telemetrie) · [Terminal (consolă, emulator de terminal)](#terminal) · [Tiling (WM în mozaic)](#tiling) · [Timeshift](#timeshift) · [Țintă systemd (target)](#tinta-systemd)
+**T** — [Tearing (ruptură de imagine)](#tearing) · [Telemetrie](#telemetrie) · [Terminal (consolă, emulator de terminal)](#terminal) · [Tiling (WM în mozaic)](#tiling) · [Timeshift](#timeshift) · [Țintă systemd (target)](#tinta-systemd)
 
 **U** — [udev (managerul de dispozitive)](#udev) · [UEFI / EFI](#uefi-efi) · [Unelte de scris pe stick](#unelte-de-stick) · [Unix (UNIX)](#unix)
 
@@ -752,7 +780,7 @@ Toți cei 157 de termeni, în ordine alfabetică. Dai clic pe un termen și ajun
 
 **W** — [Widget](#widgeti) · [Window manager (WM)](#window-manager)
 
-**X** — [X11 / Wayland](#x11-wayland) · [Xfce](#xfce) · [XWayland](#xwayland)
+**X** — [X11 / Wayland](#x11-wayland) · [Xfce](#xfce) · [Xlibre](#xlibre) · [XWayland](#xwayland)
 
 **Y** — [yay](#yay)
 
