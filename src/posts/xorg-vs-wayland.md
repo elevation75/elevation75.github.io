@@ -25,7 +25,7 @@ Miști mouse-ul și fereastra se mișcă. Dar **cine** a desenat-o acolo, de fap
 
 Până de curând, acel rol l-a avut un singur proiect, **X11** și implementarea lui de pe Linux, **Xorg**. Azi îl preia treptat altul: **Wayland**. Restul articolului e despre diferența dintre ele — și despre un al treilea nume care a apărut recent: **Xlibre**.
 
-## X11: nașterea feștreelor (1984)
+## X11: nașterea ferestrelor (1984)
 
 În **1984**, o echipă de la **MIT** a construit **X Window System** (prescurtat **X11**). A fost primul strat care a permis calculatoarelor Unix să aibă ferestre, meniuri și cursor — până atunci era doar text pe fundal negru.
 
