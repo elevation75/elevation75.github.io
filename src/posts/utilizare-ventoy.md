@@ -77,7 +77,7 @@ Când vrei să instalezi un sistem sau să testezi o distribuție în mod live:
   <span class="callout-icon" aria-hidden="true">💡</span>
   <div>
     <p class="callout-title">Instalezi sau doar încerci?</p>
-    <p>Majoritatea distribuțiilor pornesc direct în varianta <strong>live</strong> („încearcă fără instalare"), de unde poți deschide apoi instalatorul — exact cum procedează și [ghidul de instalare Ubuntu](/blog/cum-instalezi-ubuntu/). Așa vezi dacă îți merge hardware-ul înainte să atingi vreun disc.</p>
+    <p>Majoritatea distribuțiilor pornesc direct în varianta <strong>live</strong> („încearcă fără instalare"), de unde poți deschide apoi instalatorul — exact cum procedează și <a href="/blog/cum-instalezi-ubuntu/">ghidul de instalare Ubuntu</a>. Așa vezi dacă îți merge hardware-ul înainte să atingi vreun disc.</p>
   </div>
 </div>
 

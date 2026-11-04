@@ -53,7 +53,7 @@ Răspunsul stă într-o partiție mică de pe disc, numită [ESP](/blog/glosar-l
   <span class="callout-icon" aria-hidden="true">💡</span>
   <div>
     <p class="callout-title">De ce contează pentru tine</p>
-    <p>De-aici vin „meniul de boot" și opțiunea de a alege Windows sau Linux la pornire. Dacă ai fost vreodată blocat pe un ecran albastru cu texte la pornire, te aflai în stratul acesta — vezi [Glosarul: meniu de boot](/blog/glosar-linux/#meniu-de-boot).</p>
+    <p>De-aici vin „meniul de boot" și opțiunea de a alege Windows sau Linux la pornire. Dacă ai fost vreodată blocat pe un ecran albastru cu texte la pornire, te aflai în stratul acesta — vezi <a href="/blog/glosar-linux/#meniu-de-boot">Glosarul: meniu de boot</a>.</p>
   </div>
 </div>
 
@@ -124,7 +124,7 @@ Harta completă a acestui arbore, cu tot ce înseamnă fiecare folder, e în [St
   <span class="callout-icon" aria-hidden="true">⚠️</span>
   <div>
     <p class="callout-title">Nu umbla prin /etc fără să știi ce faci</p>
-    <p>Configurația stă toată în `/etc`, iar o virgulă scoasă din loc poate strica pornirea. Regula simplă: schimbările se fac cu comenzile din documentația distribuției, nu cu editarea la ghicire. Vezi și [permisiunile](/blog/permisiuni-linux/).</p>
+    <p>Configurația stă toată în <code>/etc</code>, iar o virgulă scoasă din loc poate strica pornirea. Regula simplă: schimbările se fac cu comenzile din documentația distribuției, nu cu editarea la ghicire. Vezi și <a href="/blog/permisiuni-linux/">permisiunile</a>.</p>
   </div>
 </div>
 

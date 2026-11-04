@@ -154,7 +154,7 @@ Fiecare pas predă altuia, ca într-o ștafetă perfectă. Întregul lanț durea
 
 ## Încearcă acum
 
-Cel mai bun mod de a înțelege bootarea e să **măsori propria ta**. Deschide un terminal și scrie:
+Cel mai bun mod de a înțelege bootarea e să **măsori cum pornește calculatorul tău.**. Deschide un terminal și scrie:
 
 ```bash
 systemd-analyze
@@ -172,7 +172,7 @@ Primești un **clasament al tuturor serviciilor**, ordonat după cât a durat st
   <span class="callout-icon" aria-hidden="true">💡</span>
   <div>
     <p class="callout-title">Un raport de performanță pentru pornire</p>
-    <p>Dacă ai impresia că „Linux-ul pornește greu", aceste două comenzi îți arată exact unde se duc secundele — în loc să ghicești. Rezultatele se citesc ușor, iar explicațiile sunt în [Terminalul fără frică](/blog/terminalul-fara-frica/).</p>
+    <p>Dacă ai impresia că „Linux-ul pornește greu", aceste două comenzi îți arată exact unde se duc secundele — în loc să ghicești. Rezultatele se citesc ușor, iar explicațiile sunt în <a href="/blog/terminalul-fara-frica/">Terminalul fără frică</a>.</p>
   </div>
 </div>
 
