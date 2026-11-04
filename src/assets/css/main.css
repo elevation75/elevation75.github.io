@@ -1391,10 +1391,6 @@ a.chip:hover { filter: brightness(0.94); transform: translateY(-1px); }
 }
 .post-figure img { width: 100%; }
 
-/* Imagine din articol care nu trebuie să umple coloana de text
-   (diagrame mici, rezoluție nativă redusă). */
-.post-figure--sm { max-width: 340px; margin-inline: auto; }
-
 .inline-thumb {
   float: right;
   display: block;
@@ -1447,6 +1443,8 @@ a.chip:hover { filter: brightness(0.94); transform: translateY(-1px); }
   border-left: 4px solid var(--ink-3);
 }
 .callout-icon { flex: none; font-size: 1.2rem; line-height: 1.5; }
+/* Iconiță înlocuită cu o imagine din articol (același slot ca emoji-ul). */
+.callout-icon img { display: block; width: 44px; height: auto; }
 .callout-title {
   margin: 0 0 0.3em;
   font-family: var(--font-sans);

@@ -267,12 +267,10 @@ export default function (eleventyConfig) {
   }
 
   // {% image "cover-kernel", "Descriere", "Textul de sub imagine" %}
-  // Al 4-lea argument (opțional): clasă suplimentară pe <figure>, ex. "post-figure--sm".
-  eleventyConfig.addShortcode("image", function (base, alt = "", caption = "", cls = "") {
-    const figureCls = ["post-figure", cls].filter(Boolean).join(" ");
-    const fig = `<figure class="${figureCls}">${picture(base, alt)}</figure>`;
+  eleventyConfig.addShortcode("image", function (base, alt = "", caption = "") {
+    const fig = `<figure class="post-figure">${picture(base, alt)}</figure>`;
     if (!caption) return fig;
-    return `<figure class="${figureCls} has-caption">${picture(base, alt)}` +
+    return `<figure class="post-figure has-caption">${picture(base, alt)}` +
       `<figcaption>${caption}</figcaption></figure>`;
   });
 
