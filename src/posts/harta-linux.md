@@ -37,6 +37,8 @@ Acest articol e imaginea de pe cutie. Construim **o singură hartă**, strat cu 
 10. **Interfața grafică** — X11 sau Wayland, compozitorul, desktop-ul.
 11. **Aplicațiile** — programele tale, ambalate în Flatpak, Snap sau AppImage.
 
+{% image "straturi", "Diagramă cu straturile Linux: de la hardware în jos până la aplicații în sus, cu săgeți care arată fluxul de date de la utilizator înapoi către utilizator", "Straturile, desenate: comenzile tale coboară de la utilizator spre hardware, iar răspunsul se întoarce înapoi." %}
+
 Fără hardware, restul e nisip scump. Fără kernel, hardware-ul e o piesă de mobilier. Hai să urcăm.
 
 ## Primul strat: hardware-ul și firmware-ul
