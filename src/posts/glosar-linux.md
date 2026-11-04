@@ -83,6 +83,10 @@ Al doilea capitol e despre primele secunde după ce apeși butonul de pornire �
 
 **Firmware** — denumirea generică a programelor mici care trăiesc în dispozitive (placa de bază, routerul, placa video) și le fac să funcționeze. BIOS-ul/UEFI-ul e firmware-ul plăcii de bază; unele periferice au și ele firmware propriu, care mai primește actualizări. Apare în [ghidurile de instalare](/blog/ghid-instalare-endeavouros/).
 
+<a id="post"></a>
+
+**POST (Power-On Self-Test)** — verificarea pe care o face firmware-ul în secunda în care apeși butonul de power: memoria, procesorul, tastatura, monitorul. Dacă trece, se caută de unde să pornească; dacă nu, auzi **beep codes** sau vezi mesaj de eroare — singurul moment în care calculatorul îți spune direct ce are, înainte de orice sistem de operare. Pas cu pas, în [Procesul de bootare Linux](/blog/procesul-de-bootare-linux/).
+
 <a id="csm"></a>
 
 **CSM / Legacy (modul vechi de pornire)** — comutatorul din UEFI care imită BIOS-ul vechi, ca să pornească și sisteme mai noi pe calculatoare mai bătrâne. Pe sistemele moderne **trebuie dezactivat**: instalatorul nu detectează corect modul mixt, iar stickul poate apărea greșit în meniu. Îl vezi menționat în [ghidul EndeavourOS](/blog/ghid-instalare-endeavouros/) și în [ghidul Zorin](/blog/ghid-instalare-zorin/).
@@ -283,6 +287,14 @@ Capitolul cu termenii care dau sensul de ansamblu: ce e Linux de fapt, cine l-a 
 
 **systemd** — „organizatorul" de start al distribuțiilor moderne: pornește serviciile, ține jurnalele și gestionează comenzile `systemctl`. E și împărțit în comunitate (unii îl urăsc), dar practic toate distribuțiile din ghidurile noastre îl folosesc ([EndeavourOS](/blog/ghid-instalare-endeavouros/)).
 
+<a id="tinta-systemd"></a>
+
+**Țintă systemd (target)** — o etapă din pornire, un „checkpoint" pe care systemd îl bifează: `basic.target` (nucleul funcționează), `multi-user.target` (toate serviciile, prin linia de comandă) și `graphical.target` (cu desktop cu tot). Dacă sistemul tău pornește în mod text, se oprește la al doilea. Vezi [Procesul de bootare Linux](/blog/procesul-de-bootare-linux/).
+
+<a id="unit-file"></a>
+
+**Fișier de unitate systemd (unit file)** — instrucțiunea text care îi spune lui systemd ce să pornească, cum și după ce: un serviciu, o montare de disc, un program programat. Fișierele stau în `/usr/lib/systemd/system/` și sunt citibile — de aia systemd e configurabil, nu ascuns ([Procesul de bootare Linux](/blog/procesul-de-bootare-linux/)).
+
 <a id="pid-1"></a>
 
 **PID 1 (procesul inițial, init)** — primul program pe care kernelul îl pornește după ce a montat discul; primește numărul de proces 1 și devine părintele tuturor celorlalte procese. Pe distribuțiile moderne e de obicei [systemd](#systemd). Rolul îl are fiecare sistem, chiar dacă unealta e alta ([Harta Linux, strat cu strat](/blog/harta-linux/)).
@@ -403,6 +415,14 @@ Cel mai colorat capitol: interfața pe care o vezi zilnic, numele pe care le vez
 
 **Mediu desktop (Desktop Environment, DE)** — **pachetul complet** al interfeței: meniuri, panou, setări, manager de fișiere, totul într-un singur ansamblu. Alegi unul în instalator și primești un desktop gata de lucru. Diferențele dintre ele, pe scurt, sunt în [DE sau WM?](/blog/de-sau-wm/).
 
+<a id="display-manager"></a>
+
+**Display manager (GDM, LightDM, SDDM)** — ecranul de login grafic: apare după ce serverul de display e gata și înainte de desktop. **GDM** vine cu GNOME (Ubuntu), **LightDM** e ușor, **SDDM** e folosit de KDE. Treaba lui e să te autentifice — verifică utilizatorul și parola, apoi lansează sesiunea ta ([Procesul de bootare Linux](/blog/procesul-de-bootare-linux/)).
+
+<a id="sesiune"></a>
+
+**Sesiune de utilizator** — tot ce se încarcă după ce te-ai autentificat și care e **al tău**: profilul (`.bashrc`, `.profile`), aplicațiile de start, wallpaper-ul, tema, scurtăturile. Sesiunea de desktop și cea de terminal sunt diferite — vezi [Procesul de bootare Linux](/blog/procesul-de-bootare-linux/).
+
 <a id="window-manager"></a>
 
 **Window manager (WM)** — doar partea care **plasează și decoră ferestrele**: unde se așază, cum se redimensionează, ce taste le controlează. Fără meniuri sau unelte incluse — motivul pentru care cine alege un WM își construiește desktopul piesă cu piesă. Explicația completă: [DE sau WM?](/blog/de-sau-wm/).
@@ -495,6 +515,10 @@ Capitolul cu piesele din calculator și cu cuvântul care sperie pe toată lumea
 
 **Driver (suport de hardware)** — programul care învață sistemul de operare să vorbească cu o piesă anume: placa video, sunetul, WiFi-ul. Varianta **open source** vine cu kernelul (funcționează, dar poate fi mai lentă), cea **proprietară** vine de la producător (mai rapidă, dar mai rigidă). Nu-l mai căuta pe net: în [Pop!_OS](/blog/ghid-instalare-popos/) și [EndeavourOS](/blog/ghid-instalare-endeavouros/) există unelte care îl instalează singure.
 
+<a id="udev"></a>
+
+**udev (managerul de dispozitive)** — serviciul care sesizează ce bagi în calculator (stick USB, placă video, tastatură) și pornește driverul potrivit pe loc. Fără el, ar trebui să repornești de fiecare dată ca să recunoască o piesă nouă. Pornește împreună cu celelalte servicii în [Procesul de bootare Linux](/blog/procesul-de-bootare-linux/).
+
 <a id="nvidia"></a>
 
 **NVIDIA / nouveau / nvidia-open** — trei straturi ale aceleiași povești: **nouveau** e driverul deschis pentru plăcile NVIDIA (merge, dar e mai lent), **nvidia-open** e versiunea modernă, cu cod deschis, pentru plăcile GTX 16xx și mai noi, iar driverele **NVIDIA** propriu-zise sunt cele proprietare de la producător. Alegerea corectă o face uneltea din [EndeavourOS](/blog/ghid-instalare-endeavouros/), iar Pop!_OS are ISO separat [cu drivere NVIDIA](/blog/ghid-instalare-popos/).
@@ -554,6 +578,10 @@ Termenii care îți dau liniște: cine are voie la ce, ce faci înainte să riș
 <a id="jurnal"></a>
 
 **Jurnal (log)** — lista evenimentelor din sistem, cu oră și mesaj: ce s-a instalat, ce a eșuat, de ce. Când instalarea pică, primul pas e să scoți jurnalul (cu `inxi`), nu să repornești — e exact ce cere [ghidul EndeavourOS](/blog/ghid-instalare-endeavouros/).
+
+<a id="journald"></a>
+
+**journald (jurnalul sistemului)** — caseta neagră a Linux: serviciul care înregistrează tot ce se întâmplă în sistem, cu oră și mesaj, de la pornire până acum. Se citește cu `journalctl` și e primul loc în care te uiți când ceva merge prost ([Procesul de bootare Linux](/blog/procesul-de-bootare-linux/)).
 
 <a id="telemetrie"></a>
 
@@ -615,6 +643,10 @@ Capitolul care desființează „frica de terminal": sunt doar cuvinte pe care l
 
 **Comenzi de sistem (`systemctl`, `lsblk`, `grub2-mkconfig`)** — uneltele de administrare din terminal: `systemctl enable --now cronie.service` pornește un serviciu, `lsblk` arată discurile și partițiile, `grub2-mkconfig` reconstruiește meniul de pornire. Toate apar cu copy-paste în ghiduri ([EndeavourOS](/blog/ghid-instalare-endeavouros/), [Fedora](/blog/ghid-instalare-fedora/)).
 
+<a id="systemd-analyze"></a>
+
+**`systemd-analyze`** — comanda care îți arată **cât a durat fiecare fază a pornirii**: firmware, bootloader, kernel, spațiu de utilizator. Cu `systemd-analyze blame` primești un clasament al serviciilor după cât au stat la startare — exact cum găsești secundele pierdute ([Procesul de bootare Linux](/blog/procesul-de-bootare-linux/)).
+
 ## Virtualizare
 
 Trei termeni pentru „calculator în calculatorul tău".
@@ -643,6 +675,10 @@ Ultimul capitol, cu termeni pe care îi prinzi din zbor în discuțiile despre �
 
 **Container (containerizare)** — programul ambalat împreună cu toate dependențele lui, ca să meargă identic pe orice mașină. E standardul în dezvoltarea modernă, iar Linux-ul e mediul lui natural ([Linux vs. Mac vs. Windows](/blog/linux-vs-mac-vs-windows/)).
 
+<a id="dbus"></a>
+
+**D-Bus (magistrala de mesaje)** — linia liniștită prin care programele își trimit mesaje unul altuia: ai bagat un stick, managerul de fișiere se deschide singur; ai dat volumul mai tare, interfața se actualizează. E sistemul nervos al desktop-ului ([Procesul de bootare Linux](/blog/procesul-de-bootare-linux/)).
+
 <a id="browser"></a>
 
 **Browser (navigator web)** — programul cu care intri pe internet: Firefox, Chrome, Chromium, Brave. Pe Linux vine deja instalat unul, iar schimbarea lui e primul lucru pe care îl fac mulți ([Ubuntu](/blog/cum-instalezi-ubuntu/)).
@@ -668,7 +704,7 @@ Reveni aici de fiecare dată când un cuvânt te oprește din citit: deschizi **
 
 ## Index alfabetic
 
-Toți cei 148 de termeni, în ordine alfabetică. Dai clic pe un termen și ajungi direct la explicația lui.
+Toți cei 157 de termeni, în ordine alfabetică. Dai clic pe un termen și ajungi direct la explicația lui.
 
 **A** — [Actualizare (upgrade)](#actualizare) · [Actualizări complete, nu parțiale](#actualizari-complete) · [Administrator (superuser, root)](#administrator) · [AHCI](#ahci) · [Apel de sistem (system call)](#apel-sistem) · [AppImage](#appimage) · [apt](#apt) · [Arhitecturi (Intel/AMD, ARM/ARM64, Apple Silicon, 64 biți)](#arhitecturi) · [AUR (Arch User Repository)](#aur)
 
@@ -676,11 +712,11 @@ Toți cei 148 de termeni, în ordine alfabetică. Dai clic pe un termen și ajun
 
 **C** — [Cale (path, calea către un fișier)](#cale) · [chmod (change mode)](#chmod) · [Cinnamon](#cinnamon) · [Cloud (calcul în cloud)](#cloud) · [Codecuri (codecs)](#codecuri) · [Comandă](#comanda) · [Comenzi de sistem (`systemctl`, `lsblk`, `grub2-mkconfig`)](#comenzi-sistem) · [Compositor](#compositor) · [Conductă (pipe, `|`)](#conducta) · [Confidențialitate](#confidentialitate) · [Container (containerizare)](#container) · [coreutils (ls, cp, mv, cat)](#coreutils) · [COSMIC](#cosmic) · [Criptarea discului](#criptare) · [CSM / Legacy (modul vechi de pornire)](#csm)
 
-**D** — [`dd`](#dd) · [Dependențe](#dependente) · [Depozit (repositoriu, repo)](#depozit) · [Distribuție (distro)](#distributie) · [DistroWatch](#distrowatch) · [dnf](#dnf) · [Driver (suport de hardware)](#driver) · [Dual boot](#dual-boot)
+**D** — [`dd`](#dd) · [D-Bus (magistrala de mesaje)](#dbus) · [Dependențe](#dependente) · [Depozit (repositoriu, repo)](#depozit) · [Distribuție (distro)](#distributie) · [DistroWatch](#distrowatch) · [Display manager (GDM, LightDM, SDDM)](#display-manager) · [dnf](#dnf) · [Driver (suport de hardware)](#driver) · [Dual boot](#dual-boot)
 
 **E** — [Ediție / versiune / ramură](#editie) · [EFI Shell](#efi-shell) · [ESP (EFI System Partition)](#esp) · [ext4](#ext4)
 
-**F** — [Fallback (varianta de rezervă)](#fallback) · [Fast Startup](#fast-startup) · [FHS (Filesystem Hierarchy Standard)](#fhs) · [Firewall (FirewallD)](#firewall) · [Firmware](#firmware) · [Flatpak (Flathub)](#flatpak) · [Formatare](#formatare)
+**F** — [Fallback (varianta de rezervă)](#fallback) · [Fast Startup](#fast-startup) · [Fișier de unitate systemd (unit file)](#unit-file) · [FHS (Filesystem Hierarchy Standard)](#fhs) · [Firewall (FirewallD)](#firewall) · [Firmware](#firmware) · [Flatpak (Flathub)](#flatpak) · [Formatare](#formatare)
 
 **G** — [GitHub / GitLab](#github) · [GNOME](#gnome) · [GNU](#gnu) · [GParted / Disk Management / Blivet-GUI / KDE Partition Manager](#gparted) · [GPL (GNU General Public License)](#gpl) · [GPT](#gpt) · [Grafică hibridă](#grafica-hibrida) · [GRUB](#grub) · [Grup (grup de utilizatori)](#grup)
 
@@ -688,7 +724,7 @@ Toți cei 148 de termeni, în ordine alfabetică. Dai clic pe un termen și ajun
 
 **I** — [ID de program (Flatpak)](#id-program) · [initramfs](#initramfs) · [ISO (imagine de disc)](#iso) · [isolinux](#isolinux)
 
-**J** — [Jurnal (log)](#jurnal)
+**J** — [Jurnal (log)](#jurnal) · [journald (jurnalul sistemului)](#journald)
 
 **K** — [KDE Plasma](#kde-plasma) · [Kernel (nucleu, miez)](#kernel)
 
@@ -700,17 +736,17 @@ Toți cei 148 de termeni, în ordine alfabetică. Dai clic pe un termen și ajun
 
 **O** — [Oglindă (mirror)](#oglinda)
 
-**P** — [Pachet](#pachet) · [Pachet `.deb` / `.rpm`](#deb-rpm) · [pacman](#pacman) · [Panou / taskbar / bară de activități / dock / meniu de start](#interfata) · [Pantheon (elementary OS), Deepin, LXDE, LXQt, MATE Desktop](#alte-medii) · [Partiție](#partitie) · [Partiționare](#partitionare) · [Permisiuni (drepturi de acces)](#permisiuni) · [PID 1 (procesul inițial, init)](#pid-1) · [Placă de rețea (Wi-Fi)](#placa-retea) · [Placă video (GPU)](#gpu) · [Procesor (CPU)](#procesor) · [Programator (scheduler)](#programator) · [Prompt (rândul de comandă)](#prompt) · [Puncte de montare](#puncte-de-montare)
+**P** — [Pachet](#pachet) · [Pachet `.deb` / `.rpm`](#deb-rpm) · [pacman](#pacman) · [Panou / taskbar / bară de activități / dock / meniu de start](#interfata) · [Pantheon (elementary OS), Deepin, LXDE, LXQt, MATE Desktop](#alte-medii) · [Partiție](#partitie) · [Partiționare](#partitionare) · [Permisiuni (drepturi de acces)](#permisiuni) · [PID 1 (procesul inițial, init)](#pid-1) · [Placă de rețea (Wi-Fi)](#placa-retea) · [Placă video (GPU)](#gpu) · [POST (Power-On Self-Test)](#post) · [Procesor (CPU)](#procesor) · [Programator (scheduler)](#programator) · [Prompt (rândul de comandă)](#prompt) · [Puncte de montare](#puncte-de-montare)
 
 **Q** — [QEMU](#qemu)
 
 **R** — [Recuperare / SystemRescue](#recuperare) · [Richard Stallman (FSF)](#stallman) · [Rolling release](#rolling-release) · [RPM Fusion](#rpm-fusion) · [RSYNC](#rsync)
 
-**S** — [Sandbox (cutie de nisip)](#sandbox) · [Secure Boot](#secure-boot) · [Shell (Bash, Zsh, Fish)](#shell) · [Sincronizare („așteaptă 10 minute")](#sincronizare) · [Snap](#snap) · [Snapshot (instantaneu)](#snapshot) · [Stacking / Compositing](#stacking-compositing) · [Stick USB bootabil](#stick-usb-bootabil) · [`sudo`](#sudo) · [Sursă deschisă (open source)](#sursa-deschisa) · [Swap](#swap) · [systemd](#systemd) · [systemd-boot](#systemd-boot)
+**S** — [Sandbox (cutie de nisip)](#sandbox) · [Secure Boot](#secure-boot) · [Sesiune de utilizator](#sesiune) · [Shell (Bash, Zsh, Fish)](#shell) · [Sincronizare („așteaptă 10 minute")](#sincronizare) · [Snap](#snap) · [Snapshot (instantaneu)](#snapshot) · [Stacking / Compositing](#stacking-compositing) · [Stick USB bootabil](#stick-usb-bootabil) · [`sudo`](#sudo) · [Sursă deschisă (open source)](#sursa-deschisa) · [Swap](#swap) · [systemd](#systemd) · [`systemd-analyze`](#systemd-analyze) · [systemd-boot](#systemd-boot)
 
-**T** — [Telemetrie](#telemetrie) · [Terminal (consolă, emulator de terminal)](#terminal) · [Tiling (WM în mozaic)](#tiling) · [Timeshift](#timeshift)
+**T** — [Telemetrie](#telemetrie) · [Terminal (consolă, emulator de terminal)](#terminal) · [Tiling (WM în mozaic)](#tiling) · [Timeshift](#timeshift) · [Țintă systemd (target)](#tinta-systemd)
 
-**U** — [UEFI / EFI](#uefi-efi) · [Unelte de scris pe stick](#unelte-de-stick) · [Unix (UNIX)](#unix)
+**U** — [udev (managerul de dispozitive)](#udev) · [UEFI / EFI](#uefi-efi) · [Unelte de scris pe stick](#unelte-de-stick) · [Unix (UNIX)](#unix)
 
 **V** — [VFS (sistem de fișiere virtual)](#vfs) · [Ventoy](#ventoy) · [Verificarea mediei](#verificarea-mediei) · [VirtualBox](#virtualbox) · [vmlinuz](#vmlinuz)
 
