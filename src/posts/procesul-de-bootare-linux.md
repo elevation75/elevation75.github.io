@@ -154,7 +154,7 @@ Fiecare pas predă altuia, ca într-o ștafetă perfectă. Întregul lanț durea
 
 ## Încearcă acum
 
-Cel mai bun mod de a înțelege bootarea e să **măsori cum pornește calculatorul tău.**. Deschide un terminal și scrie:
+Cel mai bun mod de a înțelege bootarea e să **măsori cum pornește calculatorul tău**. Deschide un terminal și scrie:
 
 ```bash
 systemd-analyze
