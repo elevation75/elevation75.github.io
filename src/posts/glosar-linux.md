@@ -107,6 +107,14 @@ Al doilea capitol e despre primele secunde după ce apeși butonul de pornire �
 
 **GRUB** — cel mai cunoscut bootloader din lumea Linux: meniul lui e ecranul în care alegi între Windows, Linux sau o versiune mai veche a nucleului. Comanda `grub2-mkconfig` îl reconfigurează, iar pe sistemele cu mai multe sisteme instalate el ține ordinea. Apare în [ghidul Mint](/blog/ghid-instalare-linux-mint/) și [în cel Fedora](/blog/ghid-instalare-fedora/).
 
+<a id="initramfs"></a>
+
+**initramfs** — sistemul de fișiere temporar încărcat de GRUB împreună cu kernelul: conține doar driverele necesare ca să găsească și să monteze discul real, apoi dispare. E „ajutorul de cameră" al pornirii — fără el, kernelul n-ar ști de unde să-și ia rădăcina. Explicat pe larg în [Harta Linux, strat cu strat](/blog/harta-linux/).
+
+<a id="vmlinuz"></a>
+
+**vmlinuz** — fișierul kernelului Linux de pe disc, cel pe care GRUB îl caută și îl încarcă în memorie la pornire. Numele e istoric („vmlinux" comprimat); tu îl vezi mai des în `/boot` decât în conversații. Îl întâlnești în [Harta Linux, strat cu strat](/blog/harta-linux/).
+
 <a id="systemd-boot"></a>
 
 **systemd-boot** — bootloaderul modern, simplu și rapid, implicit pe multe instalări EFI (EndeavourOS îl folosește ca variantă principală). Face mai puține lucruri decât GRUB, dar le face repede. Se distinge ușor în meniul de pornire [EndeavourOS](/blog/ghid-instalare-endeavouros/).
@@ -215,6 +223,22 @@ Capitolul cu termenii care dau sensul de ansamblu: ce e Linux de fapt, cine l-a 
 
 **Kernel (nucleu, miez)** — inima sistemului de operare: partea care vorbește cu hardware-ul, împarte procesorul între programe și ține fișierele în siguranță. Interfața pe care o vezi stă deasupra lui. Dacă vrei să înțelegi de ce „Linux" e de fapt doar nucleul, citiți [Linux este miezul, kernel](/blog/linux-este-miezul-kernel/).
 
+<a id="apel-sistem"></a>
+
+**Apel de sistem (system call)** — cererea politicoasă prin care un program îl roagă pe kernel să facă ceva: să citească un fișier, să deschidă o rețea, să alocă memorie. Programele nu ating hardware-ul direct, ci trec prin kernel. Exemple: `read`, `write`, `open`. Vezi [Harta Linux, strat cu strat](/blog/harta-linux/).
+
+<a id="programator"></a>
+
+**Programator (scheduler)** — partea din kernel care decide ce proces primește timp pe procesor și cât. Cu câteva nuclee și sute de procese, el comută între ele atât de repede încât totul pare simultan. De aceea un calculator vechi „merge mai greu" când ai 50 de taburi deschise ([Harta Linux, strat cu strat](/blog/harta-linux/)).
+
+<a id="memorie-virtuala"></a>
+
+**Memorie virtuală** — iluzia prin care fiecare program crede că are RAM-ul doar pentru el. Kernelul traduce adresele „virtuale" pe RAM-ul real, în bucăți numite pagini, și poate scoate pe disc paginile folosite rar (vezi [swap](#swap)). Dacă memoria se termină de tot, un mecanism de ultimă oră închide un proces ca să salveze sistemul ([Harta Linux, strat cu strat](/blog/harta-linux/)).
+
+<a id="vfs"></a>
+
+**VFS (sistem de fișiere virtual)** — stratul din kernel care dă același mod de a citi și scrie fișiere, indiferent că stau pe [ext4](#ext4), pe [btrfs](#btrfs), pe un stick sau pe o rețea. Fără VFS, fiecare program ar trebui să știe cu ce disc vorbește. E baza ideii „totul e un fișier" ([Harta Linux, strat cu strat](/blog/harta-linux/)).
+
 <a id="modul-kernel"></a>
 
 **Modul de kernel** — o bucată de cod care se încarcă în nucleu **la nevoie** (placa video, rețeaua, criptarea), în loc să stea mereu în memorie. Când scriem „verifică dacă modulul s-a compilat corect", ne referim exact la bucățile astea opționale — mai ales la drivere ([Linux este miezul, kernel](/blog/linux-este-miezul-kernel/)).
@@ -259,9 +283,25 @@ Capitolul cu termenii care dau sensul de ansamblu: ce e Linux de fapt, cine l-a 
 
 **systemd** — „organizatorul" de start al distribuțiilor moderne: pornește serviciile, ține jurnalele și gestionează comenzile `systemctl`. E și împărțit în comunitate (unii îl urăsc), dar practic toate distribuțiile din ghidurile noastre îl folosesc ([EndeavourOS](/blog/ghid-instalare-endeavouros/)).
 
+<a id="pid-1"></a>
+
+**PID 1 (procesul inițial, init)** — primul program pe care kernelul îl pornește după ce a montat discul; primește numărul de proces 1 și devine părintele tuturor celorlalte procese. Pe distribuțiile moderne e de obicei [systemd](#systemd). Rolul îl are fiecare sistem, chiar dacă unealta e alta ([Harta Linux, strat cu strat](/blog/harta-linux/)).
+
+<a id="libc"></a>
+
+**libc (glibc, musl)** — biblioteca C care stă între fiecare program și kernel: ea transformă apelurile simple din program în apeluri de sistem reale. Pe majoritatea distribuțiilor e **glibc** (GNU C Library), pe sistemele ușoare (Alpine) **musl**. N-o vezi niciodată, dar aproape orice program se sprijină pe ea ([Harta Linux, strat cu strat](/blog/harta-linux/)).
+
 <a id="x11-wayland"></a>
 
 **X11 / Wayland** — protocoalele care fac posibilă fereastra, cursorul și tastatura pe ecran. **X11** e standardul moștenit din anii '80, **Wayland** e înlocuitorul mai modern, curat și securizat, pe care distribuțiile îl adoptează treptat. Diferența se discută în [DE sau WM?](/blog/de-sau-wm/).
+
+<a id="compositor"></a>
+
+**Compositor** — programul care decide cum arată fiecare fereastră pe ecran: unde stă, ce se ascunde sub ea, cum se suprapun. Pe Wayland, compozitorul e și serverul de display, într-un singur program — spre deosebire de X11, unde erau două piese separate. Vezi [Harta Linux, strat cu strat](/blog/harta-linux/).
+
+<a id="xwayland"></a>
+
+**XWayland** — stratul de compatibilitate care rulează aplicațiile vechi, scrise pentru X11, într-un sistem Wayland. Fără el, multe programe mai vechi n-ar merge pe distribuțiile noi. Apare în [Harta Linux, strat cu strat](/blog/harta-linux/).
 
 <a id="sandbox"></a>
 
@@ -535,6 +575,14 @@ Capitolul care desființează „frica de terminal": sunt doar cuvinte pe care l
 
 **Terminal (consolă, emulator de terminal)** — fereastra în care scrii comenzi și primești răspuns text. Se deschide cu **Ctrl + Alt + T** pe majoritatea distribuțiilor. Nu e obligatoriu, dar îți dă control direct — și e colacul de salvare când interfața nu mai răspunde ([ghidul Ubuntu](/blog/cum-instalezi-ubuntu/)).
 
+<a id="shell"></a>
+
+**Shell (Bash, Zsh, Fish)** — programul care rulează *în* terminal și înțelege comenzile tale; terminalul e doar fereastra. **Bash** e cel mai răspândit, **ZSH** e preferatul multora (implicit pe macOS), **Fish** e cel mai prietenos din cutie. Cu el lucrezi în [Terminalul fără frică](/blog/terminalul-fara-frica/) ([Harta Linux, strat cu strat](/blog/harta-linux/)).
+
+<a id="coreutils"></a>
+
+**coreutils (ls, cp, mv, cat)** — pachetul cu uneltele de bază ale liniei de comandă: `ls` listează, `cp` copiază, `mv` mută, `cat` afișează un fișier. Sunt moștenirea proiectului GNU și sunt pe fiecare sistem — primele comenzi pe care le înveți ([Terminalul fără frică](/blog/terminalul-fara-frica/)).
+
 <a id="prompt"></a>
 
 **Prompt (rândul de comandă)** — rândul care te așteaptă în terminal, în forma `utilizator@calculator:~$`. Spune trei lucruri înainte de fiecare comandă: cine ești, pe ce calculator, unde te afli (`~` înseamnă „acasă") — și că sistemul așteaptă ceva de la tine. Scrii după simbolul `$` și apeși Enter; dacă în loc de `$` vezi `#`, comanda rulează ca administrator. Cu ce se mănâncă, pas cu pas, în [Terminalul fără frică](/blog/terminalul-fara-frica/).
@@ -620,13 +668,13 @@ Reveni aici de fiecare dată când un cuvânt te oprește din citit: deschizi **
 
 ## Index alfabetic
 
-Toți cei 136 de termeni, în ordine alfabetică. Dai clic pe un termen și ajungi direct la explicația lui.
+Toți cei 148 de termeni, în ordine alfabetică. Dai clic pe un termen și ajungi direct la explicația lui.
 
-**A** — [Actualizare (upgrade)](#actualizare) · [Actualizări complete, nu parțiale](#actualizari-complete) · [Administrator (superuser, root)](#administrator) · [AHCI](#ahci) · [AppImage](#appimage) · [apt](#apt) · [Arhitecturi (Intel/AMD, ARM/ARM64, Apple Silicon, 64 biți)](#arhitecturi) · [AUR (Arch User Repository)](#aur)
+**A** — [Actualizare (upgrade)](#actualizare) · [Actualizări complete, nu parțiale](#actualizari-complete) · [Administrator (superuser, root)](#administrator) · [AHCI](#ahci) · [Apel de sistem (system call)](#apel-sistem) · [AppImage](#appimage) · [apt](#apt) · [Arhitecturi (Intel/AMD, ARM/ARM64, Apple Silicon, 64 biți)](#arhitecturi) · [AUR (Arch User Repository)](#aur)
 
 **B** — [Backup (copie de siguranță)](#backup) · [BIOS](#bios) · [Bluetooth](#bluetooth) · [Bootloader](#bootloader) · [Browser (navigator web)](#browser) · [BTRFS](#btrfs) · [Budgie](#budgie)
 
-**C** — [Cale (path, calea către un fișier)](#cale) · [chmod (change mode)](#chmod) · [Cinnamon](#cinnamon) · [Cloud (calcul în cloud)](#cloud) · [Codecuri (codecs)](#codecuri) · [Comandă](#comanda) · [Comenzi de sistem (`systemctl`, `lsblk`, `grub2-mkconfig`)](#comenzi-sistem) · [Conductă (pipe, `|`)](#conducta) · [Confidențialitate](#confidentialitate) · [Container (containerizare)](#container) · [COSMIC](#cosmic) · [Criptarea discului](#criptare) · [CSM / Legacy (modul vechi de pornire)](#csm)
+**C** — [Cale (path, calea către un fișier)](#cale) · [chmod (change mode)](#chmod) · [Cinnamon](#cinnamon) · [Cloud (calcul în cloud)](#cloud) · [Codecuri (codecs)](#codecuri) · [Comandă](#comanda) · [Comenzi de sistem (`systemctl`, `lsblk`, `grub2-mkconfig`)](#comenzi-sistem) · [Compositor](#compositor) · [Conductă (pipe, `|`)](#conducta) · [Confidențialitate](#confidentialitate) · [Container (containerizare)](#container) · [coreutils (ls, cp, mv, cat)](#coreutils) · [COSMIC](#cosmic) · [Criptarea discului](#criptare) · [CSM / Legacy (modul vechi de pornire)](#csm)
 
 **D** — [`dd`](#dd) · [Dependențe](#dependente) · [Depozit (repositoriu, repo)](#depozit) · [Distribuție (distro)](#distributie) · [DistroWatch](#distrowatch) · [dnf](#dnf) · [Driver (suport de hardware)](#driver) · [Dual boot](#dual-boot)
 
@@ -638,37 +686,37 @@ Toți cei 136 de termeni, în ordine alfabetică. Dai clic pe un termen și ajun
 
 **H** — [HTML](#html) · [Hyprland, i3, Sway, bspwm, AwesomeWM](#hyprland-i3)
 
-**I** — [ID de program (Flatpak)](#id-program) · [ISO (imagine de disc)](#iso) · [isolinux](#isolinux)
+**I** — [ID de program (Flatpak)](#id-program) · [initramfs](#initramfs) · [ISO (imagine de disc)](#iso) · [isolinux](#isolinux)
 
 **J** — [Jurnal (log)](#jurnal)
 
 **K** — [KDE Plasma](#kde-plasma) · [Kernel (nucleu, miez)](#kernel)
 
-**L** — [Libertate (software liber)](#libertate) · [Licență](#licenta) · [Linus Torvalds](#torvalds) · [`lspci`, `dxdiag`, `inxi`](#unelte-hardware) · [LTS (Long Term Support — suport pe termen lung)](#lts)
+**L** — [libc (glibc, musl)](#libc) · [Libertate (software liber)](#libertate) · [Licență](#licenta) · [Linus Torvalds](#torvalds) · [`lspci`, `dxdiag`, `inxi`](#unelte-hardware) · [LTS (Long Term Support — suport pe termen lung)](#lts)
 
-**M** — [Malware](#malware) · [`man` (manual)](#man) · [Manager de fișiere](#manager-fisiere) · [Mașină virtuală (VM)](#masina-virtuala) · [MATE](#mate) · [MBR](#mbr) · [Mediu desktop (Desktop Environment, DE)](#mediu-desktop) · [Mediu live (sesiune live, live USB)](#mediu-live) · [Memorie RAM](#ram) · [memtest (test RAM)](#memtest) · [Meniu de boot (Boot Menu)](#meniu-de-boot) · [Minix](#minix) · [Mod DD (scriere brută)](#mod-dd) · [Modul de kernel](#modul-kernel) · [Modurile instalatorului (Alongside / Replace / Erase / Manual)](#moduri-instalator) · [Montare (mount)](#montare) · [Multiboot](#multiboot)
+**M** — [Malware](#malware) · [`man` (manual)](#man) · [Manager de fișiere](#manager-fisiere) · [Mașină virtuală (VM)](#masina-virtuala) · [MATE](#mate) · [MBR](#mbr) · [Mediu desktop (Desktop Environment, DE)](#mediu-desktop) · [Mediu live (sesiune live, live USB)](#mediu-live) · [Memorie RAM](#ram) · [Memorie virtuală](#memorie-virtuala) · [memtest (test RAM)](#memtest) · [Meniu de boot (Boot Menu)](#meniu-de-boot) · [Minix](#minix) · [Mod DD (scriere brută)](#mod-dd) · [Modul de kernel](#modul-kernel) · [Modurile instalatorului (Alongside / Replace / Erase / Manual)](#moduri-instalator) · [Montare (mount)](#montare) · [Multiboot](#multiboot)
 
 **N** — [`nomodeset`](#nomodeset) · [NVIDIA / nouveau / nvidia-open](#nvidia)
 
 **O** — [Oglindă (mirror)](#oglinda)
 
-**P** — [Pachet](#pachet) · [Pachet `.deb` / `.rpm`](#deb-rpm) · [pacman](#pacman) · [Panou / taskbar / bară de activități / dock / meniu de start](#interfata) · [Pantheon (elementary OS), Deepin, LXDE, LXQt, MATE Desktop](#alte-medii) · [Partiție](#partitie) · [Partiționare](#partitionare) · [Permisiuni (drepturi de acces)](#permisiuni) · [Placă de rețea (Wi-Fi)](#placa-retea) · [Placă video (GPU)](#gpu) · [Procesor (CPU)](#procesor) · [Prompt (rândul de comandă)](#prompt) · [Puncte de montare](#puncte-de-montare)
+**P** — [Pachet](#pachet) · [Pachet `.deb` / `.rpm`](#deb-rpm) · [pacman](#pacman) · [Panou / taskbar / bară de activități / dock / meniu de start](#interfata) · [Pantheon (elementary OS), Deepin, LXDE, LXQt, MATE Desktop](#alte-medii) · [Partiție](#partitie) · [Partiționare](#partitionare) · [Permisiuni (drepturi de acces)](#permisiuni) · [PID 1 (procesul inițial, init)](#pid-1) · [Placă de rețea (Wi-Fi)](#placa-retea) · [Placă video (GPU)](#gpu) · [Procesor (CPU)](#procesor) · [Programator (scheduler)](#programator) · [Prompt (rândul de comandă)](#prompt) · [Puncte de montare](#puncte-de-montare)
 
 **Q** — [QEMU](#qemu)
 
 **R** — [Recuperare / SystemRescue](#recuperare) · [Richard Stallman (FSF)](#stallman) · [Rolling release](#rolling-release) · [RPM Fusion](#rpm-fusion) · [RSYNC](#rsync)
 
-**S** — [Sandbox (cutie de nisip)](#sandbox) · [Secure Boot](#secure-boot) · [Sincronizare („așteaptă 10 minute")](#sincronizare) · [Snap](#snap) · [Snapshot (instantaneu)](#snapshot) · [Stacking / Compositing](#stacking-compositing) · [Stick USB bootabil](#stick-usb-bootabil) · [`sudo`](#sudo) · [Sursă deschisă (open source)](#sursa-deschisa) · [Swap](#swap) · [systemd](#systemd) · [systemd-boot](#systemd-boot)
+**S** — [Sandbox (cutie de nisip)](#sandbox) · [Secure Boot](#secure-boot) · [Shell (Bash, Zsh, Fish)](#shell) · [Sincronizare („așteaptă 10 minute")](#sincronizare) · [Snap](#snap) · [Snapshot (instantaneu)](#snapshot) · [Stacking / Compositing](#stacking-compositing) · [Stick USB bootabil](#stick-usb-bootabil) · [`sudo`](#sudo) · [Sursă deschisă (open source)](#sursa-deschisa) · [Swap](#swap) · [systemd](#systemd) · [systemd-boot](#systemd-boot)
 
 **T** — [Telemetrie](#telemetrie) · [Terminal (consolă, emulator de terminal)](#terminal) · [Tiling (WM în mozaic)](#tiling) · [Timeshift](#timeshift)
 
 **U** — [UEFI / EFI](#uefi-efi) · [Unelte de scris pe stick](#unelte-de-stick) · [Unix (UNIX)](#unix)
 
-**V** — [Ventoy](#ventoy) · [Verificarea mediei](#verificarea-mediei) · [VirtualBox](#virtualbox)
+**V** — [VFS (sistem de fișiere virtual)](#vfs) · [Ventoy](#ventoy) · [Verificarea mediei](#verificarea-mediei) · [VirtualBox](#virtualbox) · [vmlinuz](#vmlinuz)
 
 **W** — [Widget](#widgeti) · [Window manager (WM)](#window-manager)
 
-**X** — [X11 / Wayland](#x11-wayland) · [Xfce](#xfce)
+**X** — [X11 / Wayland](#x11-wayland) · [Xfce](#xfce) · [XWayland](#xwayland)
 
 **Y** — [yay](#yay)
 
