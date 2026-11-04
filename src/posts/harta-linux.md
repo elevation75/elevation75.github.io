@@ -6,7 +6,7 @@ category: Inițiere
 cover:
   webp: /assets/img/cover-harta-linux.webp
   jpg: /assets/img/cover-harta-linux.jpg
-  alt: "Coperta articolului Harta Linux"
+  alt: "Diagramă: harta Linux strat cu strat, de la START și firmware până la desktop și primul program"
 ---
 
 Dacă ai încercat vreodată să înveți Linux, ai dat peste un munte de cuvinte: Ubuntu, GRUB, systemd, Wayland, Flatpak, kernel. Fiecare tutorial îți predă o bucată, așa că ajungi cu o cutie plină de piese de puzzle și fără imaginea de pe cutie.
