@@ -1391,6 +1391,10 @@ a.chip:hover { filter: brightness(0.94); transform: translateY(-1px); }
 }
 .post-figure img { width: 100%; }
 
+/* Imagine din articol care nu trebuie să umple coloana de text
+   (diagrame mici, rezoluție nativă redusă). */
+.post-figure--sm { max-width: 340px; margin-inline: auto; }
+
 .inline-thumb {
   float: right;
   display: block;

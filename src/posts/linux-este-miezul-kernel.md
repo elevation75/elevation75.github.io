@@ -12,7 +12,9 @@ cover:
 
 Linux este adesea numit doar un kernel, ceea ce poate fi un concept confuz pentru mulți utilizatori. Motivul pentru aceasta este că, în timp ce Linux este într-adevăr doar un kernel, el este și fundația unui sistem de operare complet. Pentru a înțelege acest lucru, trebuie să examinăm mai îndeaproape ce este un kernel și cum se încadrează în structura generală a unui sistem de operare.
 
-{% image "kernel-engine", "Diagramă: nucleul sistemului de operare", "Nucleul este motorul, sistemul de operare (OS) este mașina!" %}
+{% image "kernel-engine", "Diagramă: nucleul sistemului de operare", "", "post-figure--sm" %}
+
+Nucleul este motorul, sistemul de operare (OS) este mașina!
 
 ## Ce este un kernel?
 
