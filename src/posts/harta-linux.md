@@ -55,7 +55,7 @@ Răspunsul stă într-o partiție mică de pe disc, numită [ESP](/blog/glosar-l
   </div>
 </div>
 
-## GRUB și initramfs: urcătorul spre nucleu
+## GRUB și initramfs: podul spre nucleu
 
 GRUB (Grand Unified Bootloader) are o sarcină surprinzător de mică, dar absolut critică: găsește fișierul cu kernelul de pe disc — de obicei un fișier numit **vmlinuz** — îl încarcă în memorie și, împreună cu el, un ajutor mic numit **initramfs**.
 
@@ -181,7 +181,3 @@ Mergem o dată peste tot, de jos în sus:
 </div>
 
 Următorul pas logic: [Linux este miezul (kernel)](/blog/linux-este-miezul-kernel/) — stratul din mijloc, explicat pe îndelete.
-
----
-
-<em>Articol inspirat de video-ul „I Wish Someone Explained Linux to Me Like This" al canalului Bit Byte Talks (<a href="https://www.youtube.com/watch?v=4ZRPWvjnA3Y">YouTube</a>); conținutul a fost rescris integral pentru acest blog.</em>
