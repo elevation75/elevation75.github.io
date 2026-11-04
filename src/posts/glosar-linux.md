@@ -6,7 +6,7 @@ category: Inițiere
 cover:
   webp: /assets/img/cover-glosar.webp
   jpg: /assets/img/cover-glosar.jpg
-  alt: "Coperta articolului Glosar Linux"
+  alt: "Diagramă pe lemn: Glosar Termeni Linux — harta completă a jargonului tehnologic, cu panouri pentru kernel, userspace, terminal, distribuții, repository și shell script"
 ---
 
 Dacă ai citit măcar un ghid de-al nostru, ai dat probabil peste cuvinte ca **ISO**, **UEFI**, **partiție**, **rolling release** sau **tiling** — și poate te-ai oprit o clipă, întrebându-te exact ce înseamnă. Acest articol e făcut pentru momentele acelea.
